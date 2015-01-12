@@ -1,0 +1,54 @@
+<div class="main-container">
+  <div class="other_containers">
+    <div class="ui form">
+      <%= form_for(@event) do |f| %>
+
+          <% if @event.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+                <ul>
+                  <% @event.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+          <% end %>
+          <div class="two fields">
+            <div class="field" style="margin: 7px 0 0 0;">
+              <%= f.label :calendar_id %>
+              <%= f.collection_select :calendar_id, Calendar.order(:name),:id,:name, include_blank: false , class: "single-taggable-field"%>
+            </div>
+            <div class="field">
+              <%#= f.label :title %><br>
+              <%= f.text_field :title, placeholder: 'title' %>
+            </div>
+          </div>
+          <div class="field">
+            <%#= f.label :description %><br>
+            <%= f.text_field :description, placeholder: 'description' %>
+          </div>
+          <div class="two fields">
+            <div class="field">
+              <%#= f.label :start %><br>
+              <%= f.text_field :start, placeholder: 'Start Time', class: "datetimepicker" %>
+            </div>
+            <div class="field">
+              <%#= f.label :end %><br>
+              <%= f.text_field :end, placeholder: 'End Time', class: "datetimepicker" %>
+            </div>
+          </div>
+          <div class="actions">
+            <%= f.submit f.object.new_record? ? 'Create' : 'Update', class: 'ui blue mini submit button ok'%>
+          </div>
+      <% end %>
+    </div>
+    </div>
+  </div>
+
+
+<script>
+    $('.datetimepicker').datetimepicker({
+        format:'d-m-Y H:i:s'
+    });
+</script>

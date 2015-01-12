@@ -1,0 +1,25 @@
+.ui.form
+  = form_for @project do |f|
+    - if @project.errors.any?
+      #error_explanation
+        h2 = "#{pluralize(@project.errors.count, "error")} prohibited this project from being saved:"
+        ul
+          - @project.errors.full_messages.each do |message|
+            li = message
+
+    .fields
+      .eight.wide.field
+        = f.text_field :name, placeholder: 'Project Name'
+    .fields
+      .eight.wide.field
+        = f.text_area :description, placeholder: 'Description'
+    #tasks
+      = f.fields_for :tasks do |task|
+        = render 'task_fields', :f => task
+      .links
+        = link_to_add_association 'add task', f, :tasks
+    .actions
+      = f.submit f.object.new_record? ? 'Create' : 'Update', class: 'ui blue mini submit button ok'
+      = link_to 'Cancel', url_for(:back), class: 'ui mini black button'
+      br
+

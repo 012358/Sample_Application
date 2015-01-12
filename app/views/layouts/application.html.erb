@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= favicon_link_tag 'sm.jpg' %>
+  <title>Sajjad Murtaza</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+<div id="containers">
+  <div id="nav_bar"><%#= link_to 'Full Calendar', events_path, class:"ui icon calendar"  %>
+    <% unless user_signed_in? %>
+        <%= link_to "Sign in with Google", omniauth_authorize_path(User, :google_oauth2) %>
+    <% else %>
+        <%= link_to current_user.email, "#" %>
+    <% end %>
+    <%= link_to "<i class='ui home icon'></i> Home".html_safe, default_index_path %>
+    <%= link_to "<i class='ui calendar icon'></i> Full Calendar".html_safe, events_path %>
+
+    <%= link_to "<i class='ui tags icon'></i> Select 2".html_safe, tagging_select_tos_path %>
+    <%= link_to "<i class='ui tablet icon'></i> Api".html_safe, employees_path %>
+    <%= link_to "<i class='ui building icon'></i> Cocoon".html_safe, projects_path %>
+    <%= link_to "<i class='ui settings icon'></i> Enumeration".html_safe, enumerations_path %>
+    <%= link_to "<i class='ui user icon'></i> Users".html_safe, sign_up_user_index_path %>
+    <%= link_to "<i class='ui user icon'></i> Change password".html_safe, edit_user_registration_path %>
+    <%= link_to "<i class='ui road icon'></i> Route".html_safe, edit_user_registration_path %>
+    <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.email %></strong>.
+        <%= link_to "<i class='ui Sign out icon'></i> Logout".html_safe, destroy_user_session_path, method: :delete %>
+    <% end %>
+
+  </div>
+  <p class="notice"><%= notice %></p>
+
+  <p class="alert"><%= alert %></p>
+
+  <%= yield %>
+</div>
+
+<br><br>
+
+
+</body>
+</html>

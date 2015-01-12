@@ -1,0 +1,60 @@
+.main-container
+
+
+  .other_containers
+    br
+      .ui.buttons
+        br
+        = link_to "#{semantic_icon('add')} Project".html_safe, new_project_path, class: "ui button mini", remote: true
+    #form
+    br
+    #listing
+    br
+
+      table.ui.compact.table.data-listing
+        thead
+          tr
+            th.two.wide.column Serial #
+            th.three.wide.column Project Name
+            th.four.wide.column Description
+            th.six.wide.column Tasks
+            th Actions
+        tbody
+          - i =  1
+          - @projects.each do |project|
+            tr data-invoice=project.id
+              td = i
+              td.context-menu-one.box.menu-1 = link_to project.name, project_path(project)
+              td = truncate(project.description, length: 17)
+              td
+                = "#{project.tasks.count} tasks associated with #{project.name} project"
+              td
+                = link_to(semantic_icon('pencil').html_safe, edit_project_path(project), remote:true)
+                | |
+                = link_to(semantic_icon('trash').html_safe, project, data: {method: :delete, confirm: 'Are you sure?'})
+              - i=i+1
+    javascript:
+      $(function () {
+        $.contextMenu({
+          selector: '.context-menu-one',
+          callback: function (key, options) {
+          if(key == 'show')
+          {
+            window.location.href = "/events";
+          }
+          },
+          items: {
+            "edit": {name: "Edit"},
+            "show": {name: "Show"},
+            "copy": {name: "Copy"},
+            "paste": {name: "Paste"},
+            "delete": {name: "Delete"},
+            "sep1": "---------",
+            "quit": {name: "Quit"}
+          }
+        });
+
+        $('.context-menu-one').on('click', function (e) {
+          console.log('clicked', this);
+        })
+      });

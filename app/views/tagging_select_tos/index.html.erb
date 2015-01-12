@@ -1,0 +1,61 @@
+<div class="main-container">
+  <div class="other_containers">
+    <br>
+    <div class="ui buttons">
+      <br>
+      <%= link_to "#{semantic_icon('add')} Enter Tag".html_safe, new_tagging_select_to_path, class: "ui button mini" %>
+
+    </div>
+    <br>
+
+    <div id="form">
+
+    </div>
+    <br>
+
+    <br>
+
+
+    <div id="listing">
+      <br>
+
+      <table>
+        <thead>
+        <tr>
+          <th></th>
+          <th colspan="3"></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+          <% @tagging_select_tos.each do |tagging_select_to| %>
+
+              <td style="font-size: x-small;
+                      margin: 3px 0 0 5px;
+                      text-wrap:none;
+                      background-color: #2557A1;
+                      border: 2px solid #2557A1;
+                      border-radius: 3px;
+                      color: #CBD4F1;
+                      height: 12px;
+                      padding: 2px;"><%= tagging_select_to.name %></td>
+
+
+          <% end %>
+        </tr>
+        </tbody>
+      </table>
+
+      <br>
+
+    </div>
+  </div>
+</div>
+
+
+<%#= link_to 'New Tagging select to', new_tagging_select_to_path %>
+<!--.skill_detail-->
+<!--- @user.skills.each do |skill|-->
+<!--.skill-->
+<!--= skill.name-->

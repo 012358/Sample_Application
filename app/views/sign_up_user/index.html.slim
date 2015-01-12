@@ -1,0 +1,26 @@
+.main-container
+
+
+  .other_containers
+    br
+
+    #listing
+      br
+      br
+      .ui.very.relaxed.divided.list
+        - @users.each do |user|
+          .item
+            .icon
+              span
+                strong = user.email
+            .content
+              .header
+                .text
+                  strong = link_to user.last_sign_in_ip , '#'
+
+              .text
+                = user.last_sign_in_at.strftime('%A %v %r')
+              .text
+                |  sign_in_count:
+                = user.sign_in_count
+          br

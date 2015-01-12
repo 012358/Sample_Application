@@ -1,0 +1,2 @@
+class RouteTestingController < ApplicationController
+end

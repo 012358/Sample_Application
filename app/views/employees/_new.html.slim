@@ -1,0 +1,11 @@
+.row.text-center
+  = form_for(Employee.new, remote: true) do |f|
+    .large-10.large-centered.columns
+      = f.label :name
+      = f.text_field :name
+    .large-10.large-centered.columns
+      = f.label :extension
+      = f.number_field :extension
+
+    .large-10.large-centered.columns
+      .actions = f.submit 'Save'

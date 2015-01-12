@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @cocoon_example.name
+
+= link_to 'Edit', edit_cocoon_example_path(@cocoon_example)
+'|
+= link_to 'Back', cocoon_examples_path

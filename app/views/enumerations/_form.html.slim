@@ -1,0 +1,33 @@
+/= @enumeration.class.model_name.param_key
+br
+.main-container
+
+
+  .other_containers
+    br
+    #form
+      .ui.form
+        = form_for @enumeration.becomes(Enumeration) do |f|
+          - if @enumeration.errors.any?
+            #error_explanation
+              h2 = "#{pluralize(@enumeration.errors.count, "error")} prohibited this enumeration from being saved:"
+              ul
+                - @enumeration.errors.full_messages.each do |message|
+                  li = message
+
+          .fields
+            .eight.wide.field
+
+              = f.text_field :name, placeholder: 'Name'
+          .fields
+            .eight.wide.field
+
+              = f.number_field :value, placeholder: 'Value'
+          .fields
+            .eight.wide.field
+
+              = f.text_field :type, disabled: true
+          .actions
+            = f.submit f.object.new_record? ? 'Create' : 'Update', class: 'ui blue mini submit button ok'
+            = link_to 'Cancel', url_for(:back), class: 'ui mini black button'
+            br

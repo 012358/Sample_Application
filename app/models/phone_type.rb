@@ -1,0 +1,3 @@
+class PhoneType < Enumeration
+
+end

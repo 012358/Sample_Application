@@ -1,0 +1,21 @@
+h1 Listing cocoon_examples
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @cocoon_examples.each do |cocoon_example|
+      tr
+        td = cocoon_example.name
+        td = link_to 'Show', cocoon_example
+        td = link_to 'Edit', edit_cocoon_example_path(cocoon_example)
+        td = link_to 'Destroy', cocoon_example, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Cocoon example', new_cocoon_example_path

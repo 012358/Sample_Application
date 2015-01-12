@@ -1,0 +1,40 @@
+<div class="main-container">
+  <div class="other_containers">
+    <br>
+
+    <br>
+    <div class="ui form">
+
+      <%= form_for(@tagging_select_to) do |f| %>
+          <% if @tagging_select_to.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@tagging_select_to.errors.count, "error") %> prohibited this tagging_select_to from being saved:</h2>
+
+                <ul>
+                  <% @tagging_select_to.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+          <% end %>
+
+          <div class="fields">
+            <div class=" eight wide field">
+              <%= f.text_field :name, class: "single-taggable-field", placeholder: 'Enter Name' %>
+            </div>
+            <%#= f.label :name %><br>
+
+          </div>
+          <div class="actions">
+            <%#= f.submit %>
+            <%= f.submit f.object.new_record? ? 'Create' : 'Update', class: 'ui blue mini submit button ok'%>
+            <%#= link_to 'Cancel', url_for(:back), class: 'ui mini black button'%>
+          </div>
+      <% end %>
+
+    </div>
+
+
+  </div>
+</div>
+

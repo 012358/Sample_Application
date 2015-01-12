@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @enumeration.name
+p
+  strong Value:
+  = @enumeration.value
+p
+  strong Type:
+  = @enumeration.type
+
+= link_to 'Edit', edit_enumeration_path(@enumeration)
+'|
+= link_to 'Back', enumerations_path
