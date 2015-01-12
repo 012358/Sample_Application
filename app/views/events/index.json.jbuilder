@@ -3,5 +3,6 @@ json.array!(@events) do |event|
   json.title event.calendar.name.upcase
   json.start event.start
   json.end event.end
-  json.color event.calendar.color
+  json.textColor event.calendar.color
+  json.color '#E0E0E0'
 end

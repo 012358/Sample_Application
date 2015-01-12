@@ -3,7 +3,18 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on "page:change", ->
   calendar=$('#calendar').fullCalendar({
-    height: 470
+    height: 570
+    editable: true,
+    droppable: true,
+    draggable: true,
+    durationEditable: true,
+    eventStartEditable: true,
+    eventDurationEditable: true,
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'month,basicWeek,basicDay'
+    }
     eventSources: [
       {
         url: '/events.json',
@@ -16,4 +27,20 @@ $(document).on "page:change", ->
           alert('there was an error while fetching events!')
       }
     ]
+
+    eventDrop: (event) ->
+        $.ajax({
+          dataType: 'script',
+          type:"PATCH",
+          url: "/events/"+event.id,
+          data:
+            event:
+              title: event.title,
+              calendar_id: event.calendar_id,
+              start: event.start.format(),
+              end: event.end.format()
+        });
+
+    eventClick: (event) ->
+      window.open('/events/'+event.id)
   });

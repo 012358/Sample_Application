@@ -40,6 +40,7 @@
           </div>
           <div class="actions">
             <%= f.submit f.object.new_record? ? 'Create' : 'Update', class: 'ui blue mini submit button ok'%>
+            <%= link_to 'Cancel', url_for(:back), class: 'ui mini black button' %>
           </div>
       <% end %>
     </div>

@@ -1,24 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="main-container">
+  <div class="other_containers">
+    <br>
+    <br>
+        <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+        <p>
+          <strong>Title:</strong>
+          <%= @event.title %>
+        </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+        <p>
+          <strong>Description:</strong>
+          <%= @event.description %>
+        </p>
 
-<p>
-  <strong>Start time:</strong>
-  <%= @event.start %>
-</p>
+        <p>
+          <strong>Start time:</strong>
+          <%= @event.start %>
+        </p>
 
-<p>
-  <strong>End time:</strong>
-  <%= @event.end %>
-</p>
+        <p>
+          <strong>End time:</strong>
+          <%= @event.end %>
+        </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+        <%= link_to 'Edit', edit_event_path(@event) %> |
+        <%= link_to 'Back', events_path %>
+</div>
+</div>
