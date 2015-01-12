@@ -3,6 +3,6 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on "page:change", ->
   $(".single-taggable-field").select2(
-    tags: ["red", "green", "blue"]
+    tags: $('.single-taggable-field').data('options')
     width: "252px"
   );

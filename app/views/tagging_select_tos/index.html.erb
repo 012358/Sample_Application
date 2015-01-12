@@ -30,7 +30,7 @@
         <tbody>
         <tr>
           <% @tagging_select_tos.each do |tagging_select_to| %>
-
+              <%- tagging_select_to.name.split(',').each do |tagable| %>
               <td style="font-size: x-small;
                       margin: 3px 0 0 5px;
                       text-wrap:none;
@@ -39,9 +39,9 @@
                       border-radius: 3px;
                       color: #CBD4F1;
                       height: 12px;
-                      padding: 2px;"><%= tagging_select_to.name %></td>
+                      padding: 2px;"><%= tagable %></td>
 
-
+            <% end %>
           <% end %>
         </tr>
         </tbody>

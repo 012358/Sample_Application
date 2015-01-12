@@ -1,5 +1,7 @@
 <div class="main-container">
   <div class="other_containers">
+    <br><br>
+    <%= link_to "#{semantic_icon('unhide')}  View All Calendars".html_safe, calendars_path, class: "ui button mini" %>
 
 <div class="ui form">
 <%= form_for(@calendar) do |f| %>
