@@ -14,8 +14,6 @@
   <div id="nav_bar"><%#= link_to 'Full Calendar', events_path, class:"ui icon calendar"  %>
     <% unless user_signed_in? %>
         <%= link_to "Sign in with Google", omniauth_authorize_path(User, :google_oauth2) %>
-    <% else %>
-        <%= link_to current_user.email, "#" %>
     <% end %>
     <%= link_to "<i class='ui home icon'></i> Home".html_safe, default_index_path %>
     <%= link_to "<i class='ui calendar icon'></i> Full Calendar".html_safe, events_path %>
@@ -28,7 +26,8 @@
     <%= link_to "<i class='ui user icon'></i> Change password".html_safe, edit_user_registration_path %>
     <%= link_to "<i class='ui road icon'></i> Route".html_safe, edit_user_registration_path %>
     <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.email %></strong>.
+        <%= link_to current_user.email, "#" %>
+
         <%= link_to "<i class='ui Sign out icon'></i> Logout".html_safe, destroy_user_session_path, method: :delete %>
     <% end %>
 
