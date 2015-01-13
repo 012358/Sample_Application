@@ -15,4 +15,9 @@ This Sample_Application covered all basic concepts like
 #### Nested forms(cocoon)
 [Cocoon Documentation](https://github.com/nathanvda/cocoon)  
 (Make dynamic nested forms). In Our application
-+ Add multiple task(form) against project.
++ Add multiple task(form) against project.  
+
+#### Authentication(Devise)
+[Flexible authentication solution for Rails](https://github.com/plataformatec/devise)  
+(Allows you to have multiple models signed in at the same time.). In our application  
++ Also Login from Google [Here Documentation](https://github.com/zquestz/omniauth-google-oauth2)
