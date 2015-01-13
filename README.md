@@ -1,4 +1,4 @@
-# Sample_Application
+## SM-Sample_Application
 This Sample_Application covered all basic concepts like
 #### Calendar(Full Calendar Plugin)  
 [Calendar view like Full Calendar](http://fullcalendar.io)  
