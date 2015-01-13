@@ -23,7 +23,7 @@ This Sample_Application covered all basic concepts like
 + Also Login from Google [Here Documentation](https://github.com/zquestz/omniauth-google-oauth2)  
 
 #### STI-Single Table Inheritance(Enumeration)
-[STI lets you save different models inheriting from the same model inside a single table.](http://samurails.com/tutorial/single-table-inheritance-with-rails-4-part-1/)
+[STI lets you save different models inheriting from the same model inside a single table.](http://samurails.com/tutorial/single-table-inheritance-with-rails-4-part-1/)  
 For example  
 +  You have an employee model.
 + The employees can be of two types : manager or developer(They pretty much share the same attributes and columns.Creating two tables having the exact same fields would be bad.)
