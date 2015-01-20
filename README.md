@@ -28,14 +28,16 @@ For example
 +  You have an employee model.
 + The employees can be of two types : manager or developer(They pretty much share the same attributes and columns.Creating two tables having the exact same fields would be bad.)
 + With STI, you can just keep your employee model and simply subclass it with your two types of employee.  
-###### How To Use
+###### How To Implement
 
 ```javascript
-ss
+class Parent < ActiveRecord::Base
+            + any code here
+end
 ```
 #### Pagination(Kaminari)
 [Flexible solution for pagination](https://github.com/amatsuda/kaminari)
-###### How To Use  
+###### How To Implement  
  
 ```javascript
 gem 'kaminari'
