@@ -39,6 +39,11 @@ rake db:migrate
 'In MODEL(here in USER model)' :
 					devise :database_authenticatable, :registerable,:recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
+'In ROUTES' :
+					devise_for :users
+
+
+
 ```
 
 #### STI-Single Table Inheritance(Enumeration)
