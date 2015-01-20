@@ -45,8 +45,8 @@ rake db:migrate
 
 ###### Strategy to authenticate with Google
 
-gem 'omniauth-google-oauth2'  
-bundle install  
++ gem 'omniauth-google-oauth2'  
++ bundle install  
 + Go to 'https://console.developers.google.com'  
 + Select your project.  
 + Click 'APIs & auth'(APIs)
