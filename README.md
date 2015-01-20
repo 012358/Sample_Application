@@ -31,7 +31,11 @@ For example
 
 #### Pagination(Kaminari)
 [Flexible solution for pagination](https://github.com/amatsuda/kaminari)  
-1. How To Use
-⋅⋅1. Ordered sub-list
-⋅⋅*. Ordered sub-list
+1. How To Use  
+⋅⋅1. Ordered sub-list  
+⋅⋅*. Ordered sub-list  
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+```
 
