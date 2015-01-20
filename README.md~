@@ -26,6 +26,7 @@ This Sample_Application covered all basic concepts like
 
 ```javascript
 gem 'devise'  
+bundle install  
 rails generate devise:install  
 rails generate devise MODEL(in our application USER)  
 rake db:migrate  
@@ -42,6 +43,63 @@ rake db:migrate
 'In ROUTES' :
 					devise_for :users
 
+###### Strategy to authenticate with Google
+
+gem 'omniauth-google-oauth2'  
+bundle install  
++ Go to 'https://console.developers.google.com'  
++ Select your project.  
++ Click 'APIs & auth'(APIs)
++ Make sure "Contacts API" and "Google+ API" are on.  
++ Click 'APIs & auth'(credentials)  
++ Note 'CLIENT ID' and 'CLIENT SECRET'
++ Go to Consent Screen, and provide an 'EMAIL ADDRESS' and a 'PRODUCT NAME'  
++ Wait 10 minutes for changes to take effect.  
+
+'In ROUTES' :
+
+				devise_for :users, :controllers => { :omniauth_callbacks => 'omniauth_callbacks' }
+
+'IN CONTROLLER'(OmniauthCallbacks):
+
+				class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+				  def google_oauth2
+				    # You need to implement the method below in your model (e.g. app/models/user.rb)
+				    @user = User.find_for_google_oauth2(request.env["omniauth.auth"], current_user)
+
+				    if @user.persisted?
+				      flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Google"
+				      sign_in_and_redirect @user, :event => :authentication
+				    else
+				      session["devise.google_data"] = request.env["omniauth.auth"]
+				      redirect_to new_user_registration_url
+				    end
+				  end
+
+				end
+
+'In MODEL'(USER) :
+				class User < ActiveRecord::Base
+				  devise :database_authenticatable, :registerable,
+					 :recoverable, :rememberable, :trackable, :validatable,
+					 :omniauthable, :omniauth_providers => [:google_oauth2]
+
+				  def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
+				    data = access_token.info
+				    user = User.where(:email => data["email"]).first
+
+				    # Uncomment the section below if you want users to be created if they don't exist
+				    if user.blank?
+					user = User.new(email: data["email"],
+					   password: Devise.friendly_token[0,20]
+					)
+				      user.save!
+				    end
+
+				    user
+				  end
+
+				end
 
 
 ```

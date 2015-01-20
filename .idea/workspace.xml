@@ -29,46 +29,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1278">
-              <caret line="36" column="14" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30813125" vertical-offset="0" max-vertical-offset="1818">
-              <caret line="12" column="21" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="omniauth_callbacks_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/omniauth_callbacks_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="396">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.slim" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/projects/index.html.slim">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1170">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="projects_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/projects_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -99,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="user.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/user.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="522">
-              <caret line="5" column="22" selection-start-line="3" selection-start-column="2" selection-end-line="5" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.57024795" vertical-offset="0" max-vertical-offset="726">
+              <caret line="23" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1149,30 +1109,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1278">
-          <caret line="36" column="14" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/projects/index.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/projects_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1440">
-          <caret line="56" column="6" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/enumerations/index.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21785174" vertical-offset="324" max-vertical-offset="1242">
@@ -1213,22 +1149,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="522">
-          <caret line="5" column="22" selection-start-line="3" selection-start-column="2" selection-end-line="5" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/omniauth_callbacks_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="396">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rbenv/versions/2.1.1/lib/ruby/gems/2.1.0/gems/devise-3.4.1/lib/devise/mapping.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33238232" vertical-offset="199" max-vertical-offset="3258">
@@ -1239,8 +1159,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30813125" vertical-offset="0" max-vertical-offset="1818">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.20542082" vertical-offset="0" max-vertical-offset="1818">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3604488" vertical-offset="391" max-vertical-offset="1278">
+          <caret line="36" column="14" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/omniauth_callbacks_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3966942" vertical-offset="0" max-vertical-offset="726">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/projects/index.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/projects_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1440">
+          <caret line="56" column="6" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.57024795" vertical-offset="0" max-vertical-offset="726">
+          <caret line="23" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
