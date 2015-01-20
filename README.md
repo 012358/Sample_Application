@@ -35,5 +35,6 @@ For example
  
 ```javascript
 gem 'kaminari'
+bundle install
 ```
 
