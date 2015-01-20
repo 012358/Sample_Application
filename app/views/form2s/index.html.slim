@@ -1,0 +1,23 @@
+h1 Listing form2s
+
+table
+  thead
+    tr
+      th Name
+      th Amount
+      th
+      th
+      th
+
+  tbody
+    - @form2s.each do |form2|
+      tr
+        td = form2.name
+        td = form2.amount
+        td = link_to 'Show', form2
+        td = link_to 'Edit', edit_form2_path(form2)
+        td = link_to 'Destroy', form2, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Form2', new_form2_path

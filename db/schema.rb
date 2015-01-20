@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150108100623) do
+ActiveRecord::Schema.define(version: 20150120065621) do
+
+  create_table "billings", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.string   "account_number"
+    t.boolean  "completed",      default: false
+  end
 
   create_table "calendars", force: true do |t|
     t.string   "name"
@@ -51,9 +59,30 @@ ActiveRecord::Schema.define(version: 20150108100623) do
     t.datetime "updated_at"
   end
 
+  create_table "form1s", force: true do |t|
+    t.string   "name"
+    t.integer  "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "form2s", force: true do |t|
+    t.string   "name"
+    t.float    "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "projects", force: true do |t|
     t.string   "name"
     t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "quotes", force: true do |t|
+    t.float    "price"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

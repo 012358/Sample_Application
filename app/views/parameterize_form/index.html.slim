@@ -1,0 +1,34 @@
+.main-container
+
+
+  .other_containers
+    br
+      .ui.buttons
+        br
+        = link_to "#{semantic_icon('add')} Form 1".html_safe, new_form1_path, class: "ui button mini"
+        = link_to "#{semantic_icon('add')} Form 2".html_safe, new_form2_path, class: "ui button mini"
+        = link_to "#{semantic_icon('add')} Quote".html_safe, new_quote_path, class: "ui button mini"
+    #form
+    br
+    #listing
+    br
+      - Form1.form1_attribute.each do |column|
+        = column
+
+        br
+      Strong
+        = "Total Record(Form1) => #{Form1.all.count}"
+    br
+    hr
+      - Form2.column_names.each do |column|
+        = column
+        br
+      Strong
+        ="Total Record(Form2) => #{Form2.all.count}"
+    br
+    hr
+      - Quote.column_names.each do |column|
+        = column
+        br
+      Strong
+        ="Total Record(Quotes) => #{Quote.all.count}"

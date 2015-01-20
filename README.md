@@ -27,4 +27,10 @@ This Sample_Application covered all basic concepts like
 For example  
 +  You have an employee model.
 + The employees can be of two types : manager or developer(They pretty much share the same attributes and columns.Creating two tables having the exact same fields would be bad.)
-+ With STI, you can just keep your employee model and simply subclass it with your two types of employee.
++ With STI, you can just keep your employee model and simply subclass it with your two types of employee.  
+
+#### Pagination(Kaminari)
+[Flexible solution for pagination](https://github.com/amatsuda/kaminari)
+1. How To Use
+⋅⋅* Unordered sub-list. 
+

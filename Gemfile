@@ -34,6 +34,18 @@ gem 'foundation-rails'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'kaminari'
+
+
+######################## ELASTIC SEARCH #######################
+gem 'elasticsearch-model', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
+gem 'elasticsearch-rails', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
+
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'cocoon'

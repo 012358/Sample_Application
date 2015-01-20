@@ -1,0 +1,29 @@
+.main-container
+
+
+  .other_containers
+    #formm
+
+      Strong
+        = model
+
+
+      .ui.form
+        = form_for model.new do |f|
+          - form_attributes.each do |column|
+            /= model.columns_hash["#{column}"].type
+            - if column=='id' or column=='created_at' or column=='updated_at'
+              .fields
+                .eight.wide.field
+                  = f.hidden_field :"#{column}"
+            - else
+              - if model.columns_hash["#{column}"].type.to_s=='text'
+                .fields
+                  .eight.wide.field
+                    = f.text_area :"#{column}", placeholder: "#{column}"
+              - else
+                .fields
+                  .eight.wide.field
+                    = f.text_field :"#{column}", placeholder: "#{column}"
+          = f.submit class: 'ui blue mini submit button ok'
+          = link_to 'Cancel', url_for(:back), class: 'ui mini black button'

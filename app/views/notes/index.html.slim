@@ -1,0 +1,18 @@
+.main-container
+
+
+  .other_containers
+    br
+    #form
+    br
+    #listing
+    br
+      .ui.red.tag.label
+        | References in migration
+      br
+      strong | rails g model ProductCategory product:references category:references
+
+      .ui.red.tag.label
+        | Callbacks
+        br
+        strong | before_action (formerly named before_filter) is a callback that is performed before the real action is executed.

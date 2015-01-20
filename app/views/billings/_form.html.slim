@@ -1,0 +1,21 @@
+.main-container
+
+
+  .other_containers
+    #form
+      br
+      br
+      br
+      br
+      .ui.form
+        = form_for @bill do |f|
+
+          .fields
+            .six.wide.field
+              = f.text_field :title, placeholder: 'Enter Bill title'
+          .fields
+            .six.wide.field
+              = f.text_field :account_number, placeholder: 'Enter Account Number'
+          .actions
+            = f.submit f.object.new_record? ? 'Create' : 'Update', class: 'ui blue mini submit button ok'
+            = link_to 'Cancel', url_for(:back), class: 'ui mini black button'

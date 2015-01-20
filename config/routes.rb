@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :form2s
+
+  resources :form1s
+
+  get 'parameterize_form/index'
+
+  get 'notes/index'
+
   get 'sign_up_user/index'
   devise_for :users, :controllers => { :omniauth_callbacks => 'omniauth_callbacks' }
   # devise_for :users
@@ -9,6 +17,16 @@ Rails.application.routes.draw do
 
   resources :projects
 
+  ############################### ROUTES EXAMPLES ####################################################
+  # get 'billings', to: 'billings#index'
+  # get '/billings/:id', to: 'billings#show', as: 'billing'
+  # delete '/billings/:id', to: 'billings#destroy', as: 'billing_destroy'
+  resources :billings
+  get 'switch_task_completed' => 'billings#switch_task_completed'
+  ############################### END ROUTES EXAMPLES ################################################
+
+  get 'search', to: 'search#search'
+
   resources :employees
 
   resources :cocoon_examples
@@ -16,6 +34,8 @@ Rails.application.routes.draw do
   resources :tagging_select_tos
 
   resources :calendars
+
+  resources :quotes
 
   resources :events
   # The priority is based upon order of creation: first created -> highest priority.
