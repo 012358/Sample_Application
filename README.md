@@ -32,7 +32,11 @@ For example
 
 ```javascript
 class Parent < ActiveRecord::Base
-            + any code here
+            
+end
+***
+class Child < Parend
+
 end
 ```
 #### Pagination(Kaminari)
