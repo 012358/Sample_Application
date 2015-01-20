@@ -30,7 +30,7 @@ For example
 + With STI, you can just keep your employee model and simply subclass it with your two types of employee.  
 
 #### Pagination(Kaminari)
-[Flexible solution for pagination](https://github.com/amatsuda/kaminari)
+[Flexible solution for pagination](https://github.com/amatsuda/kaminari)  
 1. How To Use
-⋅⋅* Unordered sub-list. 
+⋅⋅1. Ordered sub-list
 
