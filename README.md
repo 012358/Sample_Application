@@ -31,10 +31,12 @@ For example
 ###### How To Implement
 
 ```javascript
+'In Model'
+
 class Parent < ActiveRecord::Base
             
 end
-***
+
 class Child < Parend
 
 end

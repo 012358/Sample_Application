@@ -34,7 +34,7 @@ For example
 class Parent < ActiveRecord::Base
             
 end
-***
+
 class Child < Parend
 
 end
