@@ -51,9 +51,8 @@ For example
 				<% end %>
 		    Where Form
 				<%= form_for @enumeration.becomes(Enumeration) do |f| %>  
-become use for  
-              change from a superclass to a subclass without accessing the “type” attribute directly.  
-	      Returns an instance of the specified klass with the attributes of the current record.
+become use for
+              Change from a superclass to a subclass without accessing the “type” attribute directly.Returns an instance of the specified klass with the attributes of the current record.
 ```
 #### Pagination(Kaminari)
 [Flexible solution for pagination](https://github.com/amatsuda/kaminari)

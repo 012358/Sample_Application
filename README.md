@@ -28,6 +28,7 @@ For example
 +  You have an employee model.
 + The employees can be of two types : manager or developer(They pretty much share the same attributes and columns.Creating two tables having the exact same fields would be bad.)
 + With STI, you can just keep your employee model and simply subclass it with your two types of employee.  
+
 ###### How To Implement
 
 ```javascript
@@ -51,9 +52,8 @@ For example
 				<% end %>
 		    Where Form
 				<%= form_for @enumeration.becomes(Enumeration) do |f| %>  
-become use for  
-              change from a superclass to a subclass without accessing the “type” attribute directly.  
-	      Returns an instance of the specified klass with the attributes of the current record.
+become use for
+              Change from a superclass to a subclass without accessing the “type” attribute directly.Returns an instance of the specified klass with the attributes of the current record.
 ```
 #### Pagination(Kaminari)
 [Flexible solution for pagination](https://github.com/amatsuda/kaminari)
