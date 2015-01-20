@@ -31,15 +31,29 @@ For example
 ###### How To Implement
 
 ```javascript
-In Model:
+'In MODEL'      :
 
-		class Parent < ActiveRecord::Base
-			    
-		end
+			class Enumeration < ActiveRecord::Base
+				    
+			end
 
-		class Child < Parend
+			class Child < Parend
 
-		end
+			end
+'In CONTROLLER' :
+			def new
+		    	   @enumeration = Enumeration.new(type: params[:type])
+		        end
+'In Views'      :
+		    Where Linke
+				<% @enumerations.subclasses.each do |subclass| %>
+					  <%= link_to subclass, new_enumeration_path(type: subclass) %>
+				<% end %>
+		    Where Form
+				<%= form_for @enumeration.becomes(Enumeration) do |f| %>  
+become use for  
+              change from a superclass to a subclass without accessing the “type” attribute directly.  
+	      Returns an instance of the specified klass with the attributes of the current record.
 ```
 #### Pagination(Kaminari)
 [Flexible solution for pagination](https://github.com/amatsuda/kaminari)
