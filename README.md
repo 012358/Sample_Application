@@ -36,5 +36,5 @@ For example
 ```javascript
 gem 'kaminari'
 bundle install
-```
+In CONTROLLER => @instance_variable = Model.all.order("id asc").page( params[:page]).per(2)
 
