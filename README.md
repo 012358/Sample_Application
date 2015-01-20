@@ -37,4 +37,5 @@ For example
 gem 'kaminari'
 bundle install
 In CONTROLLER => @instance_variable = Model.all.order("id asc").page( params[:page]).per(2)
+In VIEW       => <%= paginate @instance_variable %>
 
