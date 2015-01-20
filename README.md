@@ -33,7 +33,11 @@ rake db:migrate
 'In config/environments/development.rb' :
 					config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }  
 
+'In ANY CONTROLLER(or APPLICATION CONTROLLER)' :
+					before_action :authenticate_user!
 
+'In MODEL(here in USER model)' :
+					devise :database_authenticatable, :registerable,:recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
 ```
 
