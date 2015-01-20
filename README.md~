@@ -31,13 +31,15 @@ For example
 ###### How To Implement
 
 ```javascript
-class Parent < ActiveRecord::Base
-            
-end
+In Model:
 
-class Child < Parend
+		class Parent < ActiveRecord::Base
+			    
+		end
 
-end
+		class Child < Parend
+
+		end
 ```
 #### Pagination(Kaminari)
 [Flexible solution for pagination](https://github.com/amatsuda/kaminari)
