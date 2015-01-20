@@ -30,11 +30,10 @@ For example
 + With STI, you can just keep your employee model and simply subclass it with your two types of employee.  
 
 #### Pagination(Kaminari)
-[Flexible solution for pagination](https://github.com/amatsuda/kaminari)  
+[Flexible solution for pagination](https://github.com/amatsuda/kaminari)
 ###### How To Use  
  
 ```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
+gem 'kaminari'
 ```
 
