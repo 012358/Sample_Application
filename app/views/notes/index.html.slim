@@ -8,11 +8,16 @@
     #listing
     br
       .ui.red.tag.label
+        | Public folder(Rails MVC)
+      br
+      Strong When Request comes from server(index/test.html), web server first check(index/test.html) in PUBLIC DIRECTORY, if matches the request, it return without accessing the RAILS FRAMEWORK.
+    br
+      .ui.red.tag.label
         | References in migration
       br
-      strong | rails g model ProductCategory product:references category:references
-
+      strong  rails g model ProductCategory product:references category:references
+    br
       .ui.red.tag.label
         | Callbacks
-        br
-        strong | before_action (formerly named before_filter) is a callback that is performed before the real action is executed.
+      br
+      strong  before_action (formerly named before_filter) is a callback that is performed before the real action is executed.

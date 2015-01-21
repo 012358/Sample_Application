@@ -17,6 +17,57 @@ This Sample_Application covered all basic concepts like
 (Make dynamic nested forms). In Our application
 + Add multiple task(form) against project.  
 
+#### STI-Single Table Inheritance(Enumeration)
+[STI lets you save different models inheriting from the same model inside a single table.](http://samurails.com/tutorial/single-table-inheritance-with-rails-4-part-1/)  
+For example  
++  You have an employee model.
++ The employees can be of two types : manager or developer(They pretty much share the same attributes and columns.Creating two tables having the exact same fields would be bad.)
++ With STI, you can just keep your employee model and simply subclass it with your two types of employee.  
+
+###### How To Implement
+
+```javascript
+'In MODEL'      :
+
+			class Enumeration < ActiveRecord::Base
+				    
+			end
+
+			class Child < Parend
+
+			end
+
+'In CONTROLLER' :
+
+			def new
+		    	   @enumeration = Enumeration.new(type: params[:type])
+		        end
+
+'In Views'      :
+
+		    Where Linke
+				<% @enumerations.subclasses.each do |subclass| %>
+					  <%= link_to subclass, new_enumeration_path(type: subclass) %>
+				<% end %>
+
+		    Where Form
+				<%= form_for @enumeration.becomes(Enumeration) do |f| %>  
+
+become use for
+              Change from a superclass to a subclass without accessing the “type” attribute directly.Returns an instance of the specified klass with the attributes of the current record.
+```
+#### Pagination(Kaminari)
+[Flexible solution for pagination](https://github.com/amatsuda/kaminari)
+###### How To Implement  
+ 
+```javascript
+gem 'kaminari'
+bundle install
+In CONTROLLER :  @instance_variable = Model.all.order("id asc").page( params[:page]).per(2)
+In VIEW       :  <%= paginate @instance_variable %>
+```
+
+
 #### Authentication(Devise)
 [Flexible authentication solution for Rails](https://github.com/plataformatec/devise)  
 (Allows you to have multiple models signed in at the same time.). In our application  
@@ -104,52 +155,4 @@ rake db:migrate
 
 ```
 
-#### STI-Single Table Inheritance(Enumeration)
-[STI lets you save different models inheriting from the same model inside a single table.](http://samurails.com/tutorial/single-table-inheritance-with-rails-4-part-1/)  
-For example  
-+  You have an employee model.
-+ The employees can be of two types : manager or developer(They pretty much share the same attributes and columns.Creating two tables having the exact same fields would be bad.)
-+ With STI, you can just keep your employee model and simply subclass it with your two types of employee.  
-
-###### How To Implement
-
-```javascript
-'In MODEL'      :
-
-			class Enumeration < ActiveRecord::Base
-				    
-			end
-
-			class Child < Parend
-
-			end
-
-'In CONTROLLER' :
-
-			def new
-		    	   @enumeration = Enumeration.new(type: params[:type])
-		        end
-
-'In Views'      :
-
-		    Where Linke
-				<% @enumerations.subclasses.each do |subclass| %>
-					  <%= link_to subclass, new_enumeration_path(type: subclass) %>
-				<% end %>
-
-		    Where Form
-				<%= form_for @enumeration.becomes(Enumeration) do |f| %>  
-
-become use for
-              Change from a superclass to a subclass without accessing the “type” attribute directly.Returns an instance of the specified klass with the attributes of the current record.
-```
-#### Pagination(Kaminari)
-[Flexible solution for pagination](https://github.com/amatsuda/kaminari)
-###### How To Implement  
- 
-```javascript
-gem 'kaminari'
-bundle install
-In CONTROLLER :  @instance_variable = Model.all.order("id asc").page( params[:page]).per(2)
-In VIEW       :  <%= paginate @instance_variable %>
 
