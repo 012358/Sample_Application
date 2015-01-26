@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @rating_user.name
+
+= link_to 'Edit', edit_rating_user_path(@rating_user)
+'|
+= link_to 'Back', rating_users_path

@@ -19,6 +19,7 @@
  *= require jquery.contextMenu
  *= require prettify.sunburst
  *= require_self
+
   *= require_tree .
  */
 

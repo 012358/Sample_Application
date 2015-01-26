@@ -1,0 +1,23 @@
+.main-container
+
+
+  .other_containers
+    br
+    #form
+    br
+      = paginate @important_points
+      br
+      = link_to 'New Important point', new_important_point_path
+    #listing
+    br
+
+
+      - @important_points.each do |important_point|
+        br
+          - if important_point.title.present?
+            .ui.red.tag.label = important_point.title
+            br
+          Strong = important_point.description
+
+
+

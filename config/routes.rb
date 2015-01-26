@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :rating_users
+
+  resources :rating_posts
+
+
+  resources :important_points
+
   resources :form2s
 
   resources :form1s

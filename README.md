@@ -17,6 +17,26 @@ This Sample_Application covered all basic concepts like
 (Make dynamic nested forms). In Our application
 + Add multiple task(form) against project.  
 
+#### PDF(Wicked PDF)
+[Wicked PDF](https://github.com/mileszs/wicked_pdf)  
+(PDF generator (from HTML) plugin for Ruby on Rails)  
++ .............wicked_pdf is a wrapper for wkhtmltopdf, you'll need to install that, too.............  
+```javascript
+gem 'wicked_pdf'  
+gem 'wkhtmltopdf-binary'  
+
+'In CONTROLEER':		respond_to do |format|
+				      format.html
+				      format.pdf do
+					render :pdf => "file_name"
+					#render pdf:
+						templete: 'controller_name/file_name.pdf.slim'
+				      end
+				    end
+				  end
+
+```
+
 #### STI-Single Table Inheritance(Enumeration)
 [STI lets you save different models inheriting from the same model inside a single table.](http://samurails.com/tutorial/single-table-inheritance-with-rails-4-part-1/)  
 For example  

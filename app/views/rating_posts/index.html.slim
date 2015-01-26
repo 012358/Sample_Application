@@ -1,0 +1,21 @@
+h1 Listing rating_posts
+
+table
+  thead
+    tr
+      th Title
+      th
+      th
+      th
+
+  tbody
+    - @rating_posts.each do |rating_post|
+      tr
+        td = rating_post.title
+        td = link_to 'Show', rating_post
+        td = link_to 'Edit', edit_rating_post_path(rating_post)
+        td = link_to 'Destroy', rating_post, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Rating post', new_rating_post_path

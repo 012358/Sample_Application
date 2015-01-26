@@ -1,0 +1,24 @@
+.main-container
+
+
+  .other_containers
+    br
+    #form
+    br
+    #listing
+    br
+      = form_for @important_point do |f|
+        - if @important_point.errors.any?
+          #error_explanation
+            h2 = "#{pluralize(@important_point.errors.count, "error")} prohibited this important_point from being saved:"
+            ul
+              - @important_point.errors.full_messages.each do |message|
+                li = message
+
+        .field
+
+          = f.text_field :title
+        .field
+
+          = f.text_area :description
+        .actions = f.submit 'Save'

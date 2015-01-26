@@ -1,0 +1,22 @@
+.main-container
+
+
+  .other_containers
+    br
+      .ui.buttons
+        br
+        = link_to "#{semantic_icon('add')} Project".html_safe, new_project_path, class: "ui button mini", remote: true
+    #form
+    br
+    #listing
+    br
+
+      p#notice = notice
+
+      p
+        strong Title:
+        = @rating_post.title
+
+      = link_to 'Edit', edit_rating_post_path(@rating_post)
+      '|
+      = link_to 'Back', rating_posts_path

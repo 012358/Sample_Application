@@ -1,0 +1,21 @@
+h1 Listing rating_users
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @rating_users.each do |rating_user|
+      tr
+        td = rating_user.name
+        td = link_to 'Show', rating_user
+        td = link_to 'Edit', edit_rating_user_path(rating_user)
+        td = link_to 'Destroy', rating_user, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Rating user', new_rating_user_path
