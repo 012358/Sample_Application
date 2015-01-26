@@ -32,8 +32,8 @@
       <file leaf-file-name="20150108100623_devise_create_users.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/migrate/20150108100623_devise_create_users.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5365854" vertical-offset="0" max-vertical-offset="864">
-              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.6585366" vertical-offset="0" max-vertical-offset="864">
+              <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -295,6 +295,20 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Migrations" />
               <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.projectView.v2.nodes.folders.MigrationsFolder" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="calendar_practice" />
+              <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.projectView.v2.nodes.RailsProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="calendar_practice" />
+              <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.projectView.v2.nodes.RailsModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.projectView.v2.nodes.folders.ControllersFolderNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -823,14 +837,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/controllers/search_controller_test.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="726">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/important_points_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.446281" vertical-offset="0" max-vertical-offset="1098">
@@ -879,14 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/search_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09587217" vertical-offset="0" max-vertical-offset="751">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14634146" vertical-offset="0" max-vertical-offset="1314">
@@ -905,8 +903,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20150108100623_devise_create_users.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5365854" vertical-offset="0" max-vertical-offset="864">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.6585366" vertical-offset="0" max-vertical-offset="864">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
           <folding />
         </state>
       </provider>
