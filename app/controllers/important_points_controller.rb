@@ -7,7 +7,9 @@ class ImportantPointsController < ApplicationController
       format.html
       format.pdf do
         render pdf: 'index',
-               template: 'important_points/index.pdf.slim'
+               layout: 'pdf.html.erb',
+               template: 'important_points/index.pdf.slim',
+               header: { :right => '[page] of [topage]'}
         # 'important_points/index.pdf.slim'
       end
     end

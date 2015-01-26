@@ -30,7 +30,7 @@ gem 'wkhtmltopdf-binary'
 				      format.pdf do
 					render :pdf => "file_name"
 					#render pdf:
-						templete: 'controller_name/file_name.pdf.slim'
+						#templete: 'controller_name/file_name.pdf.slim'
 				      end
 				    end
 				  end
