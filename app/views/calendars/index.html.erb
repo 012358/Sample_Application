@@ -18,7 +18,7 @@
                 <td><%= calendar.name %></td>
                 <td><%= calendar.color %></td>
                 <td>
-                <%= link_to(semantic_icon('pencil').html_safe, edit_project_path(calendar), remote:true) %>
+                <%= link_to(semantic_icon('pencil').html_safe, edit_calendar_path(calendar)) %>
 
                 <%= link_to(semantic_icon('trash').html_safe, calendar, data: {method: :delete, confirm: 'Are you sure?'})%>
 

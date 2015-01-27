@@ -20,7 +20,8 @@
           <div class="two fields">
             <div class="field" style="margin: 7px 0 0 0;">
               <%= f.label :calendar_id %>
-              <%= f.collection_select :calendar_id, Calendar.order(:name),:id,:name, include_blank: false , class: "single-taggable-field"%>
+              <%= f.text_field :calendar_id, class: "single-field",data: {options: Calendar.all} %>
+              <%#= f.collection_select :calendar_id, Calendar.order(:name),:id,:name, include_blank: false , class: "single-taggable-field"%>
             </div>
             <div class="field">
               <%#= f.label :title %><br>

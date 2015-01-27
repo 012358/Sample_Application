@@ -42,7 +42,7 @@ class CalendarsController < ApplicationController
   def update
     respond_to do |format|
       if @calendar.update(calendar_params)
-        format.html { redirect_to @calendar, notice: 'Calendar was successfully updated.' }
+        format.html { redirect_to calendars_path }
         format.json { render :show, status: :ok, location: @calendar }
       else
         format.html { render :edit }

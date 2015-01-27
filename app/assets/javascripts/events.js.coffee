@@ -2,6 +2,13 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on "page:change", ->
+
+  $('.single-field').each ->
+    $(this).select2
+      data: $(this).data('options')
+      width: "252px"
+      multiple: false
+
   calendar=$('#calendar').fullCalendar({
     height: 570
     editable: true,
@@ -40,6 +47,8 @@ $(document).on "page:change", ->
               start: event.start.format(),
               end: event.end.format()
         });
+    eventMouseover: (event, jsEvent, view) ->
+      $(jsEvent.target).attr "title", event.description
 
     eventClick: (event) ->
       window.open('/events/'+event.id)
