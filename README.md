@@ -11,7 +11,33 @@ This Sample_Application covered all basic concepts like
 (Select2 add a form field which can auto fill text & can take multiple tabs(similar to fb) and gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options.). Here in our application  
 + Multiple attribute show in select2 field
 + You can choise and search from dropdown and also add new which is not predefined in select2 dropdown.   
+###### How To Implement  
+ 
+```javascript
+gem "select2-rails"  
+'In app/assets/javascripts/application.js': 
+				//= require select2
 
+'In app/assets/stylesheets/application.css':
+				*= require select2
+
+<%= f.text_field :name, class: "single-taggable-field",data: {options: Enumeration.pluck(:name)}, placeholder: 'Enter Name' %>  
+$(".single-taggable-field").select2(  
+    tags: $('.single-taggable-field').data('options')  
+    width: "252px"  
+  );  
+
+<%= f.text_field :calendar_id, class: "single-field",data: {options: Calendar.all} %>  
+$('.single-field').each ->  
+    $(this).select2  
+      data: $(this).data('options')  
+      width: "252px"  
+      multiple: false  
+
+'In MODEL': 		def as_json(options= {})  
+    				{id: self.id, text: self.name}  
+  			end  
+```
 #### Nested forms(cocoon)
 [Cocoon Documentation](https://github.com/nathanvda/cocoon)  
 (Make dynamic nested forms). In Our application
