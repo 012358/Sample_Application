@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
 
+ruby '2.1.1'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
 # Use sqlite3 as the database for Active Record
-gem 'pg'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -47,6 +49,10 @@ gem 'wkhtmltopdf-binary'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
 end
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
