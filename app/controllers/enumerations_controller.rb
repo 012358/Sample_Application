@@ -5,6 +5,8 @@ class EnumerationsController < ApplicationController
   # GET /enumerations.json
   def index
     @enumerations = Enumeration.all
+    EmailType
+    PhoneType
   end
 
   # GET /enumerations/1
@@ -15,6 +17,7 @@ class EnumerationsController < ApplicationController
   # GET /enumerations/new
   def new
     @enumeration = Enumeration.new(type: params[:type])
+
   end
 
   # GET /enumerations/1/edit
@@ -24,6 +27,8 @@ class EnumerationsController < ApplicationController
   # POST /enumerations
   # POST /enumerations.json
   def create
+    puts '###########'
+    p enumeration_params
     @enumeration = Enumeration.new(enumeration_params)
 
     respond_to do |format|
