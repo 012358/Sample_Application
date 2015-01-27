@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-ruby '2.1.1'
+ruby '2.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
@@ -53,6 +53,7 @@ group :development do
 end
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
