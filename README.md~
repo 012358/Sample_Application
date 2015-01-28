@@ -78,11 +78,20 @@ gem 'wkhtmltopdf-binary'
 				      format.pdf do
 					render :pdf => "file_name"
 					#render pdf:
-						#templete: 'controller_name/file_name.pdf.slim'
+					#templete: 'controller_name/file_name.pdf.slim'
 				      end
 				    end
 				  end
 
+```
+
+```javascript
+'For download PDF'  
+'In Controller'  
+		pdf = render_to_string :pdf => 'sajjad',  
+                             template: 'billings/show.pdf.slim',  
+                             :encoding => 'UTF-8'  
+      		send_data(pdf, :filename => @bill.title,  :type=>'application/pdf')  
 ```
 
 #### STI-Single Table Inheritance(Enumeration)

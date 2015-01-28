@@ -1,0 +1,14 @@
+.names
+  | Title:
+  br
+  = @bill.title
+br
+.names
+  | Account #:
+  br
+  = @bill.account_number
+br
+.names
+  | Status:
+  br
+  = @bill.completed ? 'Paid' : 'Bill not fully paid'

@@ -16,6 +16,8 @@
             = check_box_tag 'completed', bill.id, bill.completed, class: 'bill_check_box', 'data-load-event-url' => switch_task_completed_path(bill: bill.id)
             = bill.account_number
             = ",  #{bill.completed ? 'Paid' : 'Bill not fully paid' } "
+            br
+          = link_to 'Download Pdf', billing_path(bill, format: :pdf)
         - else
           = check_box_tag 'completed', bill.id, bill.completed, class: 'bill_check_box', 'data-load-event-url' => switch_task_completed_path(bill: bill.id)
           = bill.title
@@ -26,5 +28,7 @@
           = link_to 'Show', billing_path(bill)
           | |
           = link_to 'Delete', billing_path(bill), method: :delete
+          | |
+          = link_to 'Download Pdf', billing_path(bill, format: :pdf)
         hr
         br

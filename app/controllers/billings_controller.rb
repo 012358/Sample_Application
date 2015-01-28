@@ -8,7 +8,18 @@ class BillingsController < ApplicationController
 
   def show
     @bill = Billing.find(params[:id])
-  end
+
+    respond_to  do |format|
+      format.html
+      format.pdf do
+      pdf = render_to_string :pdf => 'sajjad-murtaza',
+                             layout: 'pdf.html.erb',
+                             template: 'billings/show.pdf.slim',
+                             :encoding => 'UTF-8'
+      send_data(pdf, :filename => @bill.title,  :type=>'application/pdf')
+    end
+    end
+    end
 
   def new
     @bill = Billing.new
