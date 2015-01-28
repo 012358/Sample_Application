@@ -21,19 +21,40 @@ gem "select2-rails"
 
 'In app/assets/stylesheets/application.css':
 				*= require select2
+```
 
-<%= f.text_field :name, class: "single-taggable-field",data: {options: Enumeration.pluck(:name)}, placeholder: 'Enter Name' %>  
-$(".single-taggable-field").select2(  
-    tags: $('.single-taggable-field').data('options')  
-    width: "252px"  
-  );  
+```javascript
+'If multiple:true, then you can use this way'  
 
-<%= f.text_field :calendar_id, class: "single-field",data: {options: Calendar.all} %>  
-$('.single-field').each ->  
-    $(this).select2  
-      data: $(this).data('options')  
-      width: "252px"  
-      multiple: false  
+'In Form'  
+		<%= f.text_field :name, class: "single-taggable-field",data: {options: Enumeration.pluck(:name)}, placeholder: 'Enter Name' %>
+ 
+'In coffee'  
+		$(".single-taggable-field").select2(  
+		    tags: $('.single-taggable-field').data('options')  
+		    width: "252px"  
+		  );  
+In tags: actaully there is array  
+like  
+tags: [sajjad, moin]  
+
+```
+
+```javascript
+
+'If multiple:false, then use this way'  
+
+		<%= f.text_field :calendar_id, class: "single-field",data: {options: Calendar.all} %>  
+
+		$('.single-field').each ->  
+		    $(this).select2  
+		      data: $(this).data('options')  
+		      width: "252px"  
+		      multiple: false  
+
+```
+
+```javascript
 
 'In MODEL': 		def as_json(options= {})  
     				{id: self.id, text: self.name}  
