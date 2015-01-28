@@ -219,11 +219,11 @@ rake db:migrate
 			      authentication: 'plain',  
 			      enable_starttls_auto: true  
 			  }  
-
+```
 + In Production => config.action_mailer.default_url_options = { host: 'localhost', port: 3000}  
 + [Documentation also here](http://www.peoplecancode.com/en/tutorials/how-to-manage-users-with-devise-ruby-on-rails)  
 
-```
+
 
 
 
