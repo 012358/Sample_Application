@@ -1,13 +1,17 @@
 .name{
-  margin: 35px 0 0 0;
-  height: 75px;
+  height: 65px;
   color: #ffffff;
   font-weight: bold;
-  padding: 8px 0 0 35px;
-  width: 100px;
+  padding: 12px 0 0 30px;
+  width: 80px;
   overflow: hidden;
   background-color: #666666;
   -ms-transform: rotate(320deg); /* IE 9 */
   -webkit-transform: rotate(310deg); /* Chrome, Safari, Opera */
   transform: rotate(300deg); /* Standard syntax */
+  display: block;
+}
+
+.other-information{
+  margin: 135px 0 0 0;
 }
