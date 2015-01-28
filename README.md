@@ -197,7 +197,8 @@ rake db:migrate
 				    user
 				  end
 
-				end  
+				end
+```
 ```javascript
 
 ###### Settings
