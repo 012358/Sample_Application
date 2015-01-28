@@ -198,6 +198,8 @@ rake db:migrate
 				  end
 
 				end
+```
+
 ##### Settings
 
 'In Production Environment'  
@@ -218,6 +220,6 @@ rake db:migrate
 + In Production => config.action_mailer.default_url_options = { host: 'localhost', port: 3000}  
 + [Documentation also here](http://www.peoplecancode.com/en/tutorials/how-to-manage-users-with-devise-ruby-on-rails)  
 
-```
+
 
 
