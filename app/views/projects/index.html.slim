@@ -33,8 +33,17 @@
                 | |
                 = link_to(semantic_icon('trash').html_safe, project, data: {method: :delete, confirm: 'Are you sure?'})
               - i=i+1
+
+      .ui.small.modal
+        i.close.icon
+        .header
+          | Sajjad are you sure ?
+        .content
+          .description
+            p You cannot edit, delete, copy, paste and quit. Its just for testing.
     javascript:
       $(function () {
+
         $.contextMenu({
           selector: '.context-menu-one',
           callback: function (key, options) {
@@ -42,10 +51,13 @@
           {
             window.location.href = "/events";
           }
+          if(key != '' && key != 'show'){
+            $('.small.modal').modal('show');
+          }
           },
           items: {
+            "show": {name: "Go to Calendar"},
             "edit": {name: "Edit"},
-            "show": {name: "Calendar"},
             "copy": {name: "Copy"},
             "paste": {name: "Paste"},
             "delete": {name: "Delete"},
