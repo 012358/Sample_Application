@@ -200,7 +200,7 @@ rake db:migrate
 				end  
 
 
-###### Settings  
+###### Settings
 
 'In Production Environment'  
 
