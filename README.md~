@@ -83,12 +83,17 @@ For example
 			class Child < Parend
 
 			end
+```
+```javascript
 
 'In CONTROLLER' :
 
 			def new
 		    	   @enumeration = Enumeration.new(type: params[:type])
 		        end
+```
+
+```javascript
 
 'In Views'      :
 
