@@ -141,6 +141,8 @@ rake db:migrate
 'In ROUTES' :
 					devise_for :users
 
+```
+
 ###### Strategy to authenticate with Google
 
 + gem 'omniauth-google-oauth2'  
@@ -154,9 +156,15 @@ rake db:migrate
 + Go to Consent Screen, and provide an 'EMAIL ADDRESS' and a 'PRODUCT NAME'  
 + Wait 10 minutes for changes to take effect.  
 
+```javascript
+
 'In ROUTES' :
 
 				devise_for :users, :controllers => { :omniauth_callbacks => 'omniauth_callbacks' }
+
+```
+
+```javascript
 
 'IN CONTROLLER'(OmniauthCallbacks):
 
@@ -175,6 +183,9 @@ rake db:migrate
 				  end
 
 				end
+```
+
+```javascript
 
 'In MODEL'(USER) :
 				class User < ActiveRecord::Base
