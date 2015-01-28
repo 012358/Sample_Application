@@ -198,9 +198,6 @@ rake db:migrate
 				  end
 
 				end
-```
-```javascript
-
 ###### Settings
 
 'In Production Environment'  

@@ -197,9 +197,7 @@ rake db:migrate
 				    user
 				  end
 
-				end  
-```javascript
-
+				end
 ###### Settings
 
 'In Production Environment'  
