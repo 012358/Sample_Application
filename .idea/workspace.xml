@@ -29,21 +29,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="development.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="development.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="239" max-vertical-offset="990">
-              <caret line="47" column="3" selection-start-line="36" selection-start-column="2" selection-end-line="47" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.54460716" vertical-offset="239" max-vertical-offset="990">
+              <caret line="36" column="77" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="77" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="production.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="production.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.68292683" vertical-offset="990" max-vertical-offset="1836">
-              <caret line="83" column="90" selection-start-line="83" selection-start-column="90" selection-end-line="83" selection-end-column="90" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1098" max-vertical-offset="1836">
+              <caret line="94" column="3" selection-start-line="83" selection-start-column="2" selection-end-line="94" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -900,18 +900,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
+    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="239" max-vertical-offset="990">
-          <caret line="47" column="3" selection-start-line="36" selection-start-column="2" selection-end-line="47" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1098" max-vertical-offset="1836">
+          <caret line="94" column="3" selection-start-line="83" selection-start-column="2" selection-end-line="94" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68292683" vertical-offset="990" max-vertical-offset="1836">
-          <caret line="83" column="90" selection-start-line="83" selection-start-column="90" selection-end-line="83" selection-end-column="90" />
+        <state vertical-scroll-proportion="0.54460716" vertical-offset="239" max-vertical-offset="990">
+          <caret line="36" column="77" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="77" />
           <folding />
         </state>
       </provider>
