@@ -198,7 +198,7 @@ rake db:migrate
 				  end
 
 				end  
-
+```javascript
 
 ###### Settings
 
