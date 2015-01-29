@@ -8,7 +8,9 @@ This Sample_Application covered all basic concepts. [Click for Live Demo](https:
 + [In sm-sample-application search in following files](https://sm-sample-application.herokuapp.com/)  
 1. Calendars  
 2. Events  
-###### How To Implement  
+
+###### How To Implement
+
 ```javascript
 gem 'fullcalendar-rails'  
 bundle install  
@@ -56,6 +58,7 @@ bundle install
 + You can choise and search from dropdown and also add new which is not predefined in select2 dropdown.   
 + [In sm-sample-application search in following files](https://sm-sample-application.herokuapp.com/)  
 1. TaggingSelectTos
+
 ###### How To Implement  
  
 ```javascript
