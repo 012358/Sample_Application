@@ -15,17 +15,17 @@
     <% if user_signed_in? %>
       <div id="nav_bar"><%#= link_to 'Full Calendar', events_path, class:"ui icon calendar"  %>
         <%= link_to "<i class='ui home icon'></i> Home".html_safe, default_index_path %>
-        <%= link_to "<i class='ui calendar icon'></i> Full Calendar".html_safe, events_path %>
+        <%= link_to "<i class='ui calendar icon'></i> Calendar".html_safe, events_path %>
 
-        <%= link_to "<i class='ui tags icon'></i> Select 2".html_safe, tagging_select_tos_path %>
+        <%= link_to "<i class='ui tags icon'></i> Tagging".html_safe, tagging_select_tos_path %>
         <%= link_to "<i class='ui tablet icon'></i> Api".html_safe, employees_path %>
-        <%= link_to "<i class='ui building icon'></i> Cocoon/Right-click".html_safe, projects_path %>
+        <%= link_to "<i class='ui building icon'></i> NestedForm/RightClickMenu".html_safe, projects_path %>
         <%= link_to "<i class='ui settings icon'></i> Enumeration".html_safe, enumerations_path %>
         <%= link_to "<i class='ui user icon'></i> Users".html_safe, sign_up_user_index_path %>
         <%= link_to "<i class='ui user icon'></i> Change".html_safe, edit_user_registration_path %>
         <%= link_to "<i class='ui help icon'></i> Notes".html_safe, important_points_path %>
         <%= link_to "<i class='ui payment icon'></i> Billing/Pagination".html_safe, billings_path %>
-        <%= link_to "<i class='ui retweet icon'></i> Parameterize Form".html_safe, parameterize_form_index_path %>
+        <%= link_to "<i class='ui retweet icon'></i> ParameterizeForm".html_safe, parameterize_form_index_path %>
         <%= link_to "<i class='ui file outline icon'></i> Pdf".html_safe, important_points_path(format: :pdf) %>
         <%#= link_to current_user.email, "#" %>
         <%= link_to "<i class='ui Sign out icon'></i> Logout".html_safe, destroy_user_session_path, method: :delete %>

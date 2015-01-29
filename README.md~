@@ -4,14 +4,58 @@ This Sample_Application covered all basic concepts. [Click for Live Demo](https:
 [Calendar view like Full Calendar](http://fullcalendar.io)  
 (FullCalendar is for displaying events, and it is a solution for event content-management. Beyond dragging an event to a different time/day, you can change an event's name, etc. )  
 + You can add Calendar(e.g Test-Calendar 1), Every calendar has color
-+ Add Events for particular Calendar, Events have different color.
++ Add Events for particular Calendar, Events have different color.  
++ [In sm-sample-application search in following files](https://sm-sample-application.herokuapp.com/)  
+1. Calendars  
+2. Events  
+###### How To Implement  
+```javascript
+gem 'fullcalendar-rails'  
+bundle install  
+'In your application.css.scss':  
+			*= require fullcalendar
+
+'In application.js':  
+			//= require fullcalendar
+			//= require gcal
+			//= require fullcalendar/gcal
+'In application.js the try to follow this sequence'  
+			//= require moment
+			//= require jquery
+			//= require jquery_ujs
+			//= require turbolinks
+			//= require fullcalendar
+			//= require fullcalendar/gcal
+
+'In html file'  
+		#calendar').fullCalendar();
+
+'In coffee file(events.coffee.js)'  
+		    eventSources: [
+		      {
+			url: '/events.json',  
+			type: 'GET',
+			allDay: false,
+			color: 'red'
+			borderColor: '#bccee0',
+			textColor: 'black'
+			error: ->
+			  alert('there was an error while fetching events!')  
+		      }
+		      {
+			url: 'https://www.google.com/calendar/feeds/od305bghpa8fvhjoksdg31glro%40group.calendar.google.com/public/basic'
+			color: '#166BEC'
+			textColor: '#FFB504'
+		      }
+```
 
 #### Taggable(Select2)
 [Taggable View Like Demo Select2](https://select2.github.io/examples.html)  
 (Select2 add a form field which can auto fill text & can take multiple tabs(similar to fb) and gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options.). Here in our application  
 + Multiple attribute show in select2 field
 + You can choise and search from dropdown and also add new which is not predefined in select2 dropdown.   
-
++ [In sm-sample-application search in following files](https://sm-sample-application.herokuapp.com/)  
+1. TaggingSelectTos
 ###### How To Implement  
  
 ```javascript
@@ -56,7 +100,8 @@ tags: [sajjad, moin]
 
 ```javascript
 
-'In MODEL': 		def as_json(options= {})  
+'In MODEL':
+	 		def as_json(options= {})  
     				{id: self.id, text: self.name}  
   			end  
 ```
@@ -64,7 +109,10 @@ tags: [sajjad, moin]
 [Cocoon Documentation](https://github.com/nathanvda/cocoon)  
 (Make dynamic nested forms). In Our application
 + Add multiple task(form) against project.  
+```javascript
+gem "cocoon"  
 
+```
 #### PDF(Wicked PDF)
 [Wicked PDF](https://github.com/mileszs/wicked_pdf)  
 (PDF generator (from HTML) plugin for Ruby on Rails)  

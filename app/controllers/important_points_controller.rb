@@ -9,7 +9,13 @@ class ImportantPointsController < ApplicationController
         render pdf: 'index',
                layout: 'pdf.html.erb',
                template: 'important_points/index.pdf.slim',
-               header: { :right => '[page] of [topage]'}
+               header: { :right => '[page] of [topage]'},
+               margin: {top: 0,
+                        bottom: 0,
+                        left: 0,
+                        right: 0},
+               outline: {outline: true,
+                         outline_depth: 2}
         # 'important_points/index.pdf.slim'
       end
     end

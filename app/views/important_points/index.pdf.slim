@@ -1,5 +1,15 @@
-.name
-  | Sajjad Murtaza
+#information
+  .image
 
-.other-information
-  | Sajjad
+  .name
+    /= link_to 'Testing', 'http://www.google.com', html_options: {name: 'chapter1'}
+    | Sajjad Murtaza, Lahore Pakistan
+    .since
+      | Working since 2014
+    .skill_detail
+      - ['Ruby On Rails', 'Ruby', 'Coffee Script', 'jQuery', 'JavaScript', 'BootStrap', 'Semanti UI', 'Google Api', 'Heroku', 'Github'].each do |skill|
+        .skill
+          = skill
+    .summary
+      | Sajjad Murtaz a has a strong background in all aspects developing projects, programming and
+        implementation.Create and maintain product documentation.

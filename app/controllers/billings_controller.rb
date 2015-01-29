@@ -17,7 +17,48 @@ class BillingsController < ApplicationController
                              template: 'billings/show.pdf.slim',
                              :encoding => 'UTF-8'
       send_data(pdf, :filename => @bill.title,  :type=>'application/pdf')
-    end
+      # def application_review_pdf
+      #   @applicants = @job.applicants
+      #   paths_array = []
+      #   html = render_to_string('employers/jobs/pdf/application_review_pdf.pdf.erb')
+      #   pdf = WickedPdf.new.pdf_from_string(html,
+      #                                       toc: {
+      #                                           disable_dotted_lines: true,
+      #                                           disable_toc_links: true,
+      #                                           level_indentation: 3,
+      #                                           text_size_shrink: 0.5,
+      #                                           depth: 2
+      #                                       },
+      #                                       header: {:html => {:template => 'employers/jobs/pdf/header.pdf.erb'}})
+      #
+      #   save_path = Rails.root.join('public', 'application.pdf')
+      #   File.open(save_path, 'wb') do |file|
+      #     file << pdf
+      #   end
+      #   paths_array << save_path
+      #   @applicants.each do |app|
+      #     paths_array << app.resume.path unless app.resume.blank?
+      #     paths_array << app.cover_letter.path unless app.cover_letter.blank?
+      #   end
+      #   begin
+      #     Pdftk.new.merge(paths_array, "#{Rails.root}/public/application_review.pdf")
+      #     send_file(
+      #         "#{Rails.root}/public/application_review.pdf",
+      #         filename: "application_review_#{@job.title}.pdf",
+      #         type: 'application/pdf'
+      #     )
+      #   rescue
+      #     send_file(
+      #         "#{Rails.root}/public/application_review.pdf",
+      #         filename: "application_review_#{@job.title}.pdf",
+      #         type: 'application/pdf'
+      #     )
+      #   end
+      # end
+      #
+      # https://github.com/webkrak/pdftk
+
+      end
     end
     end
 
