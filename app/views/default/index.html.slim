@@ -1,40 +1,46 @@
 .main-container
 
-
   .other_containers
+    .github-fork style="margin: 30px 0 0 0; float: right"
+      = link_to image_tag('forkme_right_darkblue_121621.png'), 'https://github.com/sajjadmurtaza49/SM-Sample_Application', target: '_blank'
     br
 
     #form
     br
     #listing
 
-      div style="margin: 70px 0 0 200px;"
+    div style="margin: 30px 0 0 0;"
+      h2
+        font color="#696969"
+          | Sajjad Murtaza ...
 
 
-        h2
-          font color="#696969"
-            | Sajjad Murtaza ...
+    div style="margin: 30px 0 0 0;"
+      .bxslider
 
-
-
-    .bxslider
-      = image_tag 'toy_story.jpg'
-
-      = image_tag 'nemo.jpg'
-      = image_tag 'up.jpg'
-      = image_tag 'walle.jpg'
-
-        br
+        = image_tag '1.jpg'
+        = image_tag '2.jpg'
+        = image_tag '3.jpg'
+        = image_tag '4.jpg'
+        = image_tag '6.jpg'
 
         /= audio_tag('aud.mp3',  controls: 'controls')
         /span style="margin: 0 0 0 240px"
         /  = audio_tag('aud.mp3',  controls: 'controls')
+
+    footer.ui.three.column.page.grid
+      .column
+      #status-bar
+        .column
+          = "© 2015 - All Rights Reserved - "
+          =mail_to "sajjad.murtaza49@yahoo.com", nil, :style => 'font-weight: bold'
+      .column
 
 javascript:
   $(document).ready(function () {
     $('.bxslider').bxSlider({
       auto: true,
       autoControls: true
-    });
 
+    });
   });

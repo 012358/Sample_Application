@@ -33,3 +33,4 @@
 //= require prettify
 //= require billings
 //= require projects
+//= require user

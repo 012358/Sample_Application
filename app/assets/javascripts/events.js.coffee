@@ -1,14 +1,13 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on "page:change", ->
 
+  # apply select2(taggable) in events form for calendar column(support for searching).
   $('.single-field').each ->
     $(this).select2
       data: $(this).data('options')
       width: "252px"
       multiple: false
 
+  # Show Calendar(full calendar jQuery) in event index page against #calendar id.
   calendar=$('#calendar').fullCalendar({
     height: 570
     editable: true,
@@ -17,11 +16,15 @@ $(document).on "page:change", ->
     durationEditable: true,
     eventStartEditable: true,
     eventDurationEditable: true,
+
+    # Show heading of calendar
     header: {
       left: 'prev,next today',
       center: 'title',
       right: 'month,basicWeek,basicDay'
     }
+
+    # Event sources from where data come that show on calendar.
     eventSources: [
       {
         url: '/events.json',

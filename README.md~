@@ -1,5 +1,41 @@
 ## SM-Sample_Application
 This Sample_Application covered all basic concepts. [Click for Live Demo](https://sm-sample-application.herokuapp.com/)
+
+#### Slider(bxslider-rails)
+[Documentation](https://github.com/manfe/bxslider-rails)  
+[Live Demo](http://bxslider.com/)  
+
++ [In sm-sample-application search in following files](https://sm-sample-application.herokuapp.com/)  
++ Defaults
+
+###### How To Implement
+
+```javascript
+gem 'bxslider-rails'  
+bundle install  
+'application.js must appear like': 
+			//= require jquery
+			//= require jquery_ujs
+			//= require bxslider
+
+'stylesheets/application.css like this':
+			*= require_self
+			*= require bxslider
+			*= require_tree .
+
+'In View':
+			.bxslider
+			      = image_tag '1.png'  
+			      = image_tag '2.png'  
+
+'In coffee script' :
+			$(document).ready ->
+			  $(".bxslider").bxSlider  
+			    auto: true  
+			    autoControls: true  
+
+
+```
 #### Calendar(Full Calendar Plugin)  
 [Calendar view like Full Calendar](http://fullcalendar.io)  
 (FullCalendar is for displaying events, and it is a solution for event content-management. Beyond dragging an event to a different time/day, you can change an event's name, etc. )  

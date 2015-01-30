@@ -1,9 +1,7 @@
 class BillingsController < ApplicationController
 
   def index
-
     @billings = Billing.all.order("id asc").page( params[:page]).per(2)
-
   end
 
   def show

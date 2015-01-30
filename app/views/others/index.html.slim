@@ -5,11 +5,32 @@
     br
       .ui.buttons
         br
+      .other-links
+        .ui.teal.tag.label
+          = link_to "<i class='ui user icon'></i> Users".html_safe, sign_up_user_index_path
+        .ui.teal.tag.label
+          = link_to "<i class='ui user icon'></i> Change Password".html_safe, edit_user_registration_path
+        .ui.teal.tag.label
+          = link_to "<i class='ui help icon'></i> Notes".html_safe, important_points_path
 
-        = link_to "<i class='ui user icon'></i> Users".html_safe, sign_up_user_index_path, class: "ui button mini"
-        = link_to "<i class='ui user icon'></i> Change Password".html_safe, edit_user_registration_path, class: "ui button mini"
-        = link_to "<i class='ui help icon'></i> Notes".html_safe, important_points_path, class: "ui button mini"
     #form
-    br
+
     #listing
-    br
+
+      div style="margin: 0 0 0 0;"
+        .bxslider
+
+          = image_tag 'enumeration.png'
+          = image_tag 'user.png'
+          = image_tag 'events.png'
+          = image_tag 'pdf.png'
+
+
+javascript:
+  $(document).ready(function () {
+    $('.bxslider').bxSlider({
+      auto: true,
+      autoControls: true
+
+    });
+  });

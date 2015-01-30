@@ -1,6 +1,20 @@
 <div class="main-container">
-  <div class="other_containers">
-    <div style="margin: 100px 0 0 350px;">
+  <div class="other_containerrs">
+    <div style="margin: 30px 0 0 0;">
+      <div class="bxslider">
+        <%= image_tag '1.jpg'%>
+        <%= image_tag '2.jpg'%>
+        <%= image_tag '3.jpg'%>
+        <%= image_tag '4.jpg'%>
+        <%= image_tag '6.jpg'%>
+      </div>
+    </div>
+
+
+<div style="margin: 1px 0 0 350px;">
+
+
+
 
 
       <h2><font color="red"><%= flash[:error] %></font></h2>
@@ -50,5 +64,15 @@
 
 
     </div>
+
    </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+    $('.bxslider').bxSlider({
+    auto: true,
+    autoControls: true
+    });
+    });
+</script>
