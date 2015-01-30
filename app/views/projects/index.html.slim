@@ -41,32 +41,4 @@
         .content
           .description
             p You cannot edit, delete, copy, paste and quit. Its just for testing.
-    javascript:
-      $(function () {
 
-        $.contextMenu({
-          selector: '.context-menu-one',
-          callback: function (key, options) {
-          if(key == 'show')
-          {
-            window.location.href = "/events";
-          }
-          if(key != '' && key != 'show'){
-            $('.small.modal').modal('show');
-          }
-          },
-          items: {
-            "show": {name: "Go to Calendar"},
-            "edit": {name: "Edit"},
-            "copy": {name: "Copy"},
-            "paste": {name: "Paste"},
-            "delete": {name: "Delete"},
-            "sep1": "---------",
-            "quit": {name: "Quit"}
-          }
-        });
-
-        $('.context-menu-one').on('click', function (e) {
-          console.log('clicked', this);
-        })
-      });

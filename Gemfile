@@ -38,9 +38,15 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'kaminari'
 
+########################### PDF ###############################
+
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'pdftk'
+
+############### SLIDER ######################################
+
+gem 'bxslider-rails'
 
 
 

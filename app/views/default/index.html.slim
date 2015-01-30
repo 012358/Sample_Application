@@ -13,14 +13,28 @@
 
         h2
           font color="#696969"
-            | Default Page ...
+            | Sajjad Murtaza ...
 
 
 
-        = image_tag 'ror.jpg'
+    .bxslider
+      = image_tag 'toy_story.jpg'
+
+      = image_tag 'nemo.jpg'
+      = image_tag 'up.jpg'
+      = image_tag 'walle.jpg'
+
         br
 
         /= audio_tag('aud.mp3',  controls: 'controls')
         /span style="margin: 0 0 0 240px"
         /  = audio_tag('aud.mp3',  controls: 'controls')
 
+javascript:
+  $(document).ready(function () {
+    $('.bxslider').bxSlider({
+      auto: true,
+      autoControls: true
+    });
+
+  });

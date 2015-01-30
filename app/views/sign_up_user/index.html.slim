@@ -3,24 +3,25 @@
 
   .other_containers
     br
-
+    .ui.buttons
+      br
+        = link_to "<i class='ui user icon'></i> Users".html_safe, sign_up_user_index_path, class: "ui button mini"
+        = link_to "<i class='ui user icon'></i> Change Password".html_safe, edit_user_registration_path, class: "ui button mini"
+        = link_to "<i class='ui help icon'></i> Notes".html_safe, important_points_path, class: "ui button mini"
     #listing
-      br
-      br
-      .ui.very.relaxed.divided.list
-        - @users.each do |user|
-          .item
-            .icon
-              span
-                strong = user.email
-            .content
-              .header
-                .text
-                  strong = link_to user.last_sign_in_ip , '#'
 
-              .text
-                = user.last_sign_in_at.strftime('%A %v %r')
-              .text
-                |  sign_in_count:
-                = user.sign_in_count
-          br
+      br
+      br
+      table.ui.striped.large.table
+        thead
+          tr
+            th Email
+            th IP
+            th Last SignIn Time
+            th SignIn Count
+        - @users.each do |user|
+          tr
+            td = user.email
+            td = link_to user.last_sign_in_ip , '#'
+            td = user.last_sign_in_at.strftime('%A %v %r')
+            td = user.sign_in_count

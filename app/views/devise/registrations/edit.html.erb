@@ -1,5 +1,12 @@
 <div class="main-container">
   <div class="other_containers">
+    <div class="ui buttons">
+      <br><br>
+      <%= link_to "<i class='ui user icon'></i> Users".html_safe, sign_up_user_index_path, class: "ui button mini" %>
+      <%= link_to "<i class='ui user icon'></i> Change Password".html_safe, edit_user_registration_path, class: "ui button mini" %>
+      <%= link_to "<i class='ui help icon'></i> Notes".html_safe, important_points_path, class: "ui button mini" %>
+    </div>
+    <div id='formm'>
     <div class="ui form">
       <br><br>
       <h2>Edit <%= resource_name.to_s.humanize %></h2>
@@ -48,8 +55,9 @@
 
       <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'ui red mini submit button ok' %></p>
 
-      <%= link_to "Back", :back %>
+      <%= link_to 'Cancel', url_for(:back), class: 'ui mini black button' %>
 
     </div>
   </div>
+</div>
 </div>

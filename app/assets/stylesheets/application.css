@@ -18,9 +18,10 @@
  *= require templete
  *= require jquery.contextMenu
  *= require prettify.sunburst
- *= require_self
 
-  *= require_tree .
+ *= require_self
+ *= require bxslider
+ *= require_tree .
  */
 
 

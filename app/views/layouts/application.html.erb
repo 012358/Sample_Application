@@ -21,13 +21,12 @@
         <%= link_to "<i class='ui tablet icon'></i> Api".html_safe, employees_path %>
         <%= link_to "<i class='ui building icon'></i> NestedForm/RightClickMenu".html_safe, projects_path %>
         <%= link_to "<i class='ui settings icon'></i> Enumeration".html_safe, enumerations_path %>
-        <%= link_to "<i class='ui user icon'></i> Users".html_safe, sign_up_user_index_path %>
-        <%= link_to "<i class='ui user icon'></i> Change".html_safe, edit_user_registration_path %>
-        <%= link_to "<i class='ui help icon'></i> Notes".html_safe, important_points_path %>
+
         <%= link_to "<i class='ui payment icon'></i> Billing/Pagination".html_safe, billings_path %>
         <%= link_to "<i class='ui retweet icon'></i> ParameterizeForm".html_safe, parameterize_form_index_path %>
         <%= link_to "<i class='ui file outline icon'></i> Pdf".html_safe, important_points_path(format: :pdf) %>
-        <%#= link_to current_user.email, "#" %>
+        <%= link_to "<i class='ui terminal icon'></i> Others".html_safe, others_index_path %>
+
         <%= link_to "<i class='ui Sign out icon'></i> Logout".html_safe, destroy_user_session_path, method: :delete %>
   </div>
 

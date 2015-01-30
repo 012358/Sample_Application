@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'others/index'
+
   resources :rating_users
 
   resources :rating_posts

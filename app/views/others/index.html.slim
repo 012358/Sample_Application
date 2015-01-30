@@ -3,26 +3,13 @@
 
   .other_containers
     br
-    .ui.buttons
-      br
+      .ui.buttons
+        br
+
         = link_to "<i class='ui user icon'></i> Users".html_safe, sign_up_user_index_path, class: "ui button mini"
         = link_to "<i class='ui user icon'></i> Change Password".html_safe, edit_user_registration_path, class: "ui button mini"
         = link_to "<i class='ui help icon'></i> Notes".html_safe, important_points_path, class: "ui button mini"
     #form
     br
-      = paginate @important_points
-      br
-      = link_to 'New Important point', new_important_point_path
     #listing
     br
-
-
-      - @important_points.each do |important_point|
-        br
-          - if important_point.title.present?
-            .ui.red.tag.label = important_point.title
-            br
-          Strong = important_point.description
-
-
-

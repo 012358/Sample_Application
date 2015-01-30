@@ -15,6 +15,13 @@ class BillingsController < ApplicationController
       pdf = render_to_string :pdf => 'sajjad-murtaza',
                              layout: 'pdf.html.erb',
                              template: 'billings/show.pdf.slim',
+                             header: { :right => '[page] of [topage]'},
+                             margin: {top: 0,
+                                      bottom: 0,
+                                      left: 0,
+                                      right: 0},
+                             outline: {outline: true,
+                                       outline_depth: 2},
                              :encoding => 'UTF-8'
       send_data(pdf, :filename => @bill.title,  :type=>'application/pdf')
       # def application_review_pdf
