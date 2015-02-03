@@ -2,7 +2,7 @@
 
   .other_containers
     .github-fork style="margin: 30px 0 0 0; float: right"
-      = link_to image_tag('forkme_right_darkblue_121621.png'), 'https://github.com/sajjadmurtaza49/SM-Sample_Application', target: '_blank'
+      = link_to image_tag('forkme_right_darkblue_121621.png'), 'https://github.com/sajjadmurtaza49/rails-sample-application', target: '_blank'
     br
 
     #form
@@ -12,7 +12,7 @@
     div style="margin: 30px 0 0 0;"
       h2
         font color="#696969"
-          | Sajjad Murtaza ...
+          | “The only true wisdom is in knowing you know nothing.”
 
 
     div style="margin: 30px 0 0 0;"
@@ -32,8 +32,8 @@
       .column
       #status-bar
         .column
-          = "© 2015 - All Rights Reserved - "
-          =mail_to "sajjad.murtaza49@yahoo.com", nil, :style => 'font-weight: bold'
+          = "© #{Time.now.strftime("%Y")} - All Rights Reserved - "
+          = mail_to "sajjad.murtaza49@yahoo.com", nil, :style => 'font-weight: bold'
       .column
 
 javascript:

@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @contact.name
+p
+  strong Photo:
+  = image_tag @contact.photo.url(:large)
+
+= link_to 'Edit', edit_contact_path(@contact)
+'|
+= link_to 'Back', contacts_path

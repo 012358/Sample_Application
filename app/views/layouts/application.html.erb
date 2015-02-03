@@ -2,7 +2,7 @@
 <html>
 <head>
   <%= favicon_link_tag 'sm.jpg' %>
-  <title>Sajjad Murtaza</title>
+  <title>Microgigz</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -26,6 +26,7 @@
         <%= link_to "<i class='ui retweet icon'></i> ParameterizeForm".html_safe, parameterize_form_index_path %>
         <%= link_to "<i class='ui file outline icon'></i> Pdf".html_safe, important_points_path(format: :pdf) %>
         <%= link_to "<i class='ui terminal icon'></i> Others".html_safe, others_index_path %>
+        <%= link_to "<i class='ui photo icon'></i> Image Cropping".html_safe, contacts_path %>
 
         <%= link_to "<i class='ui Sign out icon'></i> Logout".html_safe, destroy_user_session_path, method: :delete %>
   </div>

@@ -10,11 +10,12 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require moment
 //= require jquery
 //= require jquery_ujs
+//= require jquery.Jcrop.min
+//= require jquery.Jcrop
+//= require moment
 //= require bxslider
-//= require jquery_ujs
 //= require turbolinks
 //= require fullcalendar
 //= require fullcalendar/gcal
