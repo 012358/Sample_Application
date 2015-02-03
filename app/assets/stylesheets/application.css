@@ -18,10 +18,12 @@
  *= require templete
  *= require jquery.contextMenu
  *= require prettify.sunburst
-
- *= require_self
  *= require bxslider
+ *= require jquery.Jcrop
+ *= require jquery.Jcrop.min
  *= require_tree .
+
+
  */
 
 

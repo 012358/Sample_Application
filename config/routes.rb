@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   resources :form1s
 
+  resources :contacts
+
   get 'parameterize_form/index'
 
   get 'notes/index'
