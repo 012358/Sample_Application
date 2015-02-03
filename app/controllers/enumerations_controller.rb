@@ -5,6 +5,10 @@ class EnumerationsController < ApplicationController
   # GET /enumerations.json
   def index
     @enumerations = Enumeration.all
+    if @enumerations.empty?
+      Enumeration.create(name: 'sajjad.murtaza49@yahoo.com', value: 1, type: 'EmailType')
+      Enumeration.create(name: '0092-7852184', value: 1, type: 'PhoneType')
+    end
     EmailType
     PhoneType
   end

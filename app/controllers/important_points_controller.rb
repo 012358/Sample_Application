@@ -2,7 +2,7 @@ class ImportantPointsController < ApplicationController
   before_action :set_important_point, only: [:show, :edit, :update, :destroy]
 
   def index
-    @important_points = ImportantPoint.all.order('created_at ASC').page( params[:page]).per(10)
+    @important_points = ImportantPoint.all.order('created_at ASC')
     respond_to  do |format|
       format.html
       format.pdf do

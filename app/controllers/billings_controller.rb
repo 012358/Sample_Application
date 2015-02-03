@@ -2,6 +2,11 @@ class BillingsController < ApplicationController
 
   def index
     @billings = Billing.all.order("id asc").page( params[:page]).per(2)
+    if @billings.empty?
+      Billing.create(title: 'Sajjad Murtaza', account_number: '100-101-1000', completed: false)
+      Billing.create(title: 'Sajjad Murtaza', account_number: '100-101-1001', completed: true)
+    end
+    @billings
   end
 
   def show

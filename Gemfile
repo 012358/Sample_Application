@@ -37,8 +37,13 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'kaminari'
+<<<<<<< HEAD
 gem 'paperclip', '~> 4.2.1'
 gem 'jcrop-rails-v2', '~> 0.9.12.3'
+=======
+
+
+>>>>>>> sm-temp
 ########################### PDF ###############################
 
 gem 'wicked_pdf'

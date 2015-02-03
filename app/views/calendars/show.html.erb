@@ -1,14 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="main-container">
+  <div class="other_containers">
+    <br><br>
+        <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @calendar.name %>
-</p>
+        <p>
+          <strong>Name:</strong>
+          <%= @calendar.name %>
+        </p>
 
-<p>
-  <strong>Color:</strong>
-  <%= @calendar.color %>
-</p>
+        <p>
+          <strong>Color:</strong>
+          <%= @calendar.color %>
+        </p>
 
-<%= link_to 'Edit', edit_calendar_path(@calendar) %> |
-<%= link_to 'Back', calendars_path %>
+    <p>
+      <strong>Total Events:</strong>
+      <%= @calendar.events.count %>
+    </p>
+    <br>
+    <strong>Events:</strong>
+        <% @calendar.events.each do |event|%>
+            <div class="ui bulleted list">
+              <a class="item"><%= event.title %></a>
+              <div class="list">
+                <a class="item"><%= event.description %></a>
+                <a class="item">Start Date: <%= event.start %></a>
+                <a class="item">End Date: <%= event.end %></a>
+              </div>
+            </div>
+            <br>
+        <hr>
+        <% end %>
+
+</div>
+</div>

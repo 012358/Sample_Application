@@ -9,6 +9,12 @@ class EventsController < ApplicationController
       format.html
       format.json
     end
+
+    if @events.empty?
+      Event.create(calendar_id: Calendar.find_by(name: 'Sajjad Murtaza Calendar').id, title: 'This is a Sample Event.', description: 'You can Add multiple events against Single Calendar', start: Time.now, end: Time.now+123456)
+    end
+    @events
+
   end
 
   # GET /events/1

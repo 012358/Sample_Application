@@ -21,6 +21,7 @@
                 <%= link_to(semantic_icon('pencil').html_safe, edit_calendar_path(calendar)) %>
 
                 <%= link_to(semantic_icon('trash').html_safe, calendar, data: {method: :delete, confirm: 'Are you sure?'})%>
+                  <%= link_to(semantic_icon('unhide').html_safe, calendar) %>
 
               </tr>
             <% end %>
@@ -28,7 +29,10 @@
         </table>
 
         <br>
-
+    <div style="color: #006600">
+      1. Show All Calendar.<br>
+      2. Edit, Delete, Show(with all Events of associated Calendar).
+      </div>
 
 </div>
     </div>
