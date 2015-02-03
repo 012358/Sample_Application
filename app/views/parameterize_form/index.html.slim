@@ -5,9 +5,9 @@
     br
       .ui.buttons
         br
-        = link_to "#{semantic_icon('add')} Form 1".html_safe, new_form1_path, class: "ui button mini"
-        = link_to "#{semantic_icon('add')} Form 2".html_safe, new_form2_path, class: "ui button mini"
-        = link_to "#{semantic_icon('add')} Quote".html_safe, new_quote_path, class: "ui button mini"
+        = link_to "#{semantic_icon('add')} Form - with name and value".html_safe, new_form1_path, class: "ui button mini"
+        = link_to "#{semantic_icon('add')} Form - with name and amount".html_safe, new_form2_path, class: "ui button mini"
+        = link_to "#{semantic_icon('add')} - with price and description".html_safe, new_quote_path, class: "ui button mini"
     #form
     br
     #listing
@@ -17,18 +17,24 @@
 
         br
       Strong
-        = "Total Record(Form1) => #{Form1.all.count}"
+        = "Total Record(Form - with name and value) => #{Form1.all.count}"
     br
     hr
       - Form2.column_names.each do |column|
         = column
         br
       Strong
-        ="Total Record(Form2) => #{Form2.all.count}"
+        ="Total Record(Form - with name and amount) => #{Form2.all.count}"
     br
     hr
       - Quote.column_names.each do |column|
         = column
         br
       Strong
-        ="Total Record(Quotes) => #{Quote.all.count}"
+        ="Total Record(Quotes - with price and description) => #{Quote.all.count}"
+    hr
+    br
+    div style="color: #006600"
+      | 1. There is parameterize for example.
+      br
+      | 2. On the basis of Attributes in Table, Create form(mean for many table we use only one form for all)

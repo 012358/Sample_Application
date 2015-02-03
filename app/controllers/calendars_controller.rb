@@ -5,6 +5,11 @@ class CalendarsController < ApplicationController
   # GET /calendars.json
   def index
     @calendars = Calendar.all
+
+    if @calendars.empty?
+       Calendar.create(name: 'Sajjad Murtaza Calendar', color: '#E29792')
+    end
+
   end
 
   # GET /calendars/1

@@ -5,6 +5,9 @@ class TaggingSelectTosController < ApplicationController
   # GET /tagging_select_tos.json
   def index
     @tagging_select_tos = TaggingSelectTo.all
+    if @tagging_select_tos.empty?
+      TaggingSelectTo.create(name: 'Sajjad-Murtaza-Testing-Taggable')
+    end
   end
 
   # GET /tagging_select_tos/1
