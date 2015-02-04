@@ -1,21 +1,26 @@
-h1 Listing contacts
+.main-container
 
-table
-  thead
-    tr
-      th Name
-      th
-      th
-      th
 
-  tbody
-    - @contacts.each do |contact|
-      tr
-        td = contact.name
-        td = link_to 'Show', contact
-        td = link_to 'Edit', edit_contact_path(contact)
-        td = link_to 'Destroy', contact, data: {:confirm => 'Are you sure?'}, :method => :delete
+  .other_containers
+    br
+    h1 Listing contacts
 
-br
+    table
+      thead
+        tr
+          th Name
+          th
+          th
+          th
 
-= link_to 'New Contact', new_contact_path
+      tbody
+        - @contacts.each do |contact|
+          tr
+            td = contact.name
+            td = link_to 'Show', contact
+            td = link_to 'Edit', edit_contact_path(contact)
+            td = link_to 'Destroy', contact, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+    br
+
+    = link_to 'New Contact', new_contact_path
