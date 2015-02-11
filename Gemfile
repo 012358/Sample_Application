@@ -32,7 +32,7 @@ gem 'select2-rails'
 
 gem 'slim-rails'
 
-gem "org_chart", "~>0.0.3"
+# gem "org_chart", "~>0.0.3"
 
 gem 'foundation-rails'
 gem 'devise'
