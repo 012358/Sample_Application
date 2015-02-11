@@ -1,0 +1,22 @@
+.ui.form
+  = form_for @organize_datum do |f|
+    - if @organize_datum.errors.any?
+      #error_explanation
+        h2 = "#{pluralize(@organize_datum.errors.count, "error")} prohibited this organize_datum from being saved:"
+        ul
+          - @organize_datum.errors.full_messages.each do |message|
+            li = message
+
+    .fields
+      .eight.wide.field
+        = f.text_field :name, placeholder: 'Sajjad Murtaza'
+    .fields
+      .eight.wide.field
+        = f.text_field :title, placeholder: 'Software Engineer'
+    .fields
+      .eight.wide.field
+        = f.select(:parentId, options_for_select(OrganizeDatum.all.collect {|o| [ "#{o.name} ( #{o.title} )", o.id ]}), include_blank: true)
+    .actions
+      = f.submit f.object.new_record? ? 'Create' : 'Update', class: 'ui blue mini submit button ok'
+      = link_to 'Cancel', url_for(:back), class: 'ui mini black button'
+      br

@@ -1,0 +1,19 @@
+.main-container
+  .other_containers
+    br
+    br
+      = link_to "<i class='ui add icon'></i> Chart".html_safe, new_organize_datum_path, class: "ui button mini"
+    br
+    table#peopleTable style=("display: none;")
+      tr
+        th id
+        th parent id
+        th Name
+        th Title
+      - @organize_data.each do |organize_datum|
+        tr
+          td = organize_datum.id
+          td = organize_datum.parentId
+          td = organize_datum.name
+          td = organize_datum.title
+      #people

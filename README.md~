@@ -356,7 +356,27 @@ rake db:migrate
 + In Development Environment => config.action_mailer.default_url_options = { host: 'localhost', port: 3000}  
 + [Documentation also here](http://www.peoplecancode.com/en/tutorials/how-to-manage-users-with-devise-ruby-on-rails)  
 
+#### Chart(GetOrgChart)  
 
+[GetOrgChart Documentation](http://www.getorgchart.com/Documentation)  
+(Provides the best way to visualize and understand workforce by simple and easy to illustrate hierarchical relationships.)[Github](https://github.com/mirfan899/org_chart)  
++ In Our application  
++ Organizedata  
 
+###### How To Implement
+
+```javascript
+gem "org_chart", "~>0.0.3"  
+bundle install  
+
+'In app/assets/javascripts/application.js': 
+			//= require getorgchart
+
+'In app/assets/stylesheets/application.css':
+			*= require getorgchart  
+
++ Load from HTML table element.[demo](http://jsfiddle.net/GetOrgChart/7RKTv/)  
+
+```
 
 

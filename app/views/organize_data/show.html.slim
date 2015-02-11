@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @organize_datum.name
+p
+  strong Title:
+  = @organize_datum.title
+p
+  strong Parentid:
+  = @organize_datum.parentId
+
+= link_to 'Edit', edit_organize_datum_path(@organize_datum)
+'|
+= link_to 'Back', organize_data_path

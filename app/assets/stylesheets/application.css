@@ -21,6 +21,7 @@
  *= require bxslider
  *= require jquery.Jcrop
  *= require jquery.Jcrop.min
+ *= require getorgchart
  *= require_tree .
 
 

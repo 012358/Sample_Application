@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.Jcrop.min
 //= require jquery.Jcrop
+//= require getorgchart
 //= require moment
 //= require bxslider
 //= require turbolinks
@@ -35,3 +36,4 @@
 //= require billings
 //= require projects
 //= require user
+//= require organize_data
