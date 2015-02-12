@@ -5,8 +5,10 @@ $(document).on "page:change", ->
   $('#people').getOrgChart({
     theme: "cassandra"
     color: "neutralgrey"
-    gridView: true
+    zoomable: true
+    printable: true
     editable: false
+    gridView: true
   });
 
   $('#people').getOrgChart("loadFromHTMLTable", document.getElementById("peopleTable"));

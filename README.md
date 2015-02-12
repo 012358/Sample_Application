@@ -377,6 +377,16 @@ bundle install
 
 + Load from HTML table element.[demo](http://jsfiddle.net/GetOrgChart/7RKTv/)  
 
+
 ```
+OR  
+
+```javascript
++ getorgchart.js(javascript)  
++ getorgchart.css(stylesheet)  
++ org_chart.png(images)  
++ if icon not show try this => asset-url("org_chart.png") replcae with url('org_chart.png')  
+```
+
 
 
