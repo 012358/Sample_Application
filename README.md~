@@ -1,15 +1,15 @@
 ## SM-Sample_Application
 This Sample_Application covered all basic concepts. [Click for Live Demo](https://sm-sample-application.herokuapp.com/)  
 
-### Slider(bxslider-rails)  
-### Calendar(Full Calendar Plugin)  
-### Taggable(Select2)
-### Nested forms(cocoon)
-### PDF(Wicked PDF)
-### STI-Single Table Inheritance(Enumeration)
-### Pagination(Kaminari)
-### Authentication(Devise)
-### Chart(GetOrgChart)
+###### Slider(bxslider-rails)  
+###### Calendar(Full Calendar Plugin)  
+###### Taggable(Select2)
+###### Nested forms(cocoon)
+###### PDF(Wicked PDF)
+###### STI-Single Table Inheritance(Enumeration)
+###### Pagination(Kaminari)
+###### Authentication(Devise)
+###### Chart(GetOrgChart)
 
 
 #### Slider(bxslider-rails)
