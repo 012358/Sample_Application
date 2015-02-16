@@ -59,8 +59,8 @@ gem 'bxslider-rails'
 
 
 ######################## ELASTIC SEARCH #######################
-
-
+gem 'elasticsearch-model', '~> 0.1.6'
+gem 'elasticsearch-rails', '~> 0.1.6'
 
 group :development do
   gem 'better_errors'
