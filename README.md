@@ -53,7 +53,7 @@ bundle install
 + You can add Calendar(e.g Test-Calendar 1), Every calendar has color
 + Add Events for particular Calendar, Events have different color.  
 + [In sm-sample-application search in following files](https://sm-sample-application.herokuapp.com/)  
-1. Calendars  
+1. Calendars(there is also importing data from file and save in db)  
 2. Events  
 
 ###### How To Implement
@@ -400,4 +400,90 @@ OR
 ```
 
 
+
+#### Rake Task
+
+[Rake-Task-Management-Essentials](http://it-ebooks.info/book/3561/)  
++ In lib => tasks(In our projects)
++ Example 1  
+[desc =>  description to your rake tasks with the desc method]  
+
+```javascript
+
+	task :say_hello_task do  
+	  desc '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'  
+	  puts 'Hello My First Rake Task ... '  
+	  puts '####################'  
+	end  
+
+rake say_hello_task  
+```
+
++ Example 2  
+```javascript
+	namespace :sample do  
+		task :say_hello_task do  
+
+		  desc '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'  
+		  puts 'Hello My First Rake Task ... '  
+		  puts '####################'  
+
+		end  
+	end  
+
+rake sample:say_hello_task
+```
+
++ Example 3  
+
+```javascript
+	
+		task :say_hello_task do  
+		  puts 'Hello My First Rake Task ... '  
+		end  
+	
+		task :rake_task =>  :say_hello_task do  
+		  puts 'Hello My First Rake Task ... '  
+		end  
+
+rake rake_task  
+
+```
+[If one task in namespace then pass as a string like :rake_task =>  'db:say_hello_task'(here db is namespace)]  
+[If the dependent task is in the same namespace, you don't have to pass it as a string]  
+
++ Example 4  
+[Passing arguments to the tasks]  
+```javascript
+	namespace :sample do  
+		task :say_hello_task do  
+		  puts ENV['TITLE'] || 'Blog'  
+		end  
+	end  
+
+rake sample:say_hello_task TITLE='sm-sample-application'
+```
+
+#### CSV, XLS
+
+[Exporting CSV and Excel](http://railscasts.com/episodes/362-exporting-csv-and-excel)  
++ In Calendar  
++ format.csv {render text: @calendars.to_csv} #{ send_data @calendars.to_csv }  
++ format.xls # make own templete e.g. index.xls.erb  
++ For XLS we have to register new mine type  
++ Mime::Type.register "application/xls", :xls  
+
+```javascript
+In model :  
+
+  def self.to_csv(option = {})  
+    CSV.generate(option) do |csv|  
+      csv << column_names  
+      all.each do |calendar|  
+        csv << calendar.attributes.values_at(*column_names)  
+      end  
+    end  
+  end  
+
+```
 

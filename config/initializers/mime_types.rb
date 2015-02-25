@@ -2,3 +2,9 @@
 
 # Add new mime types for use in respond_to blocks:
 # Mime::Type.register "text/richtext", :rtf
+
+
+
+# register new mine type
+
+Mime::Type.register "application/xls", :xls

@@ -6,8 +6,15 @@ class CalendarsController < ApplicationController
   def index
     @calendars = Calendar.all
 
+    respond_to do |format|
+      format.html
+      format.json
+      format.csv {render text: @calendars.to_csv} #{ send_data @calendars.to_csv }
+      format.xls # {render text: @calendars.to_csv((col_sep: "\t"))}
+    end
+
     if @calendars.empty?
-       Calendar.create(name: 'Sajjad Murtaza Calendar', color: '#E29792')
+       Calendar.create(name: 'Sajjad Test Calendar', color: '#E29792')
     end
 
   end
@@ -15,6 +22,11 @@ class CalendarsController < ApplicationController
   # GET /calendars/1
   # GET /calendars/1.json
   def show
+  end
+
+  def import
+    Calendar.import(params[:file])
+    redirect_to calendars_path, notice: "Calendar imported."
   end
 
   # GET /calendars/new

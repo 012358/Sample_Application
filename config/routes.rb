@@ -46,7 +46,9 @@ Rails.application.routes.draw do
 
   resources :tagging_select_tos
 
-  resources :calendars
+  resources :calendars do
+    collection { post :import }
+  end
 
   resources :quotes
 

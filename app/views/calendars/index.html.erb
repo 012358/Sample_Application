@@ -1,7 +1,8 @@
 <div class="main-container">
   <div class="other_containers">
         <br><br>
-
+    <%= link_to "CSV", calendars_path(format: "csv") %> |
+    <%= link_to "Excel", calendars_path(format: "xls") %>
         <table class="ui compact table data-listing">
           <thead>
             <tr>
@@ -27,6 +28,13 @@
             <% end %>
           </tbody>
         </table>
+
+    <h2>Import Products</h2>
+
+    <%= form_tag import_calendars_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Import" %>
+    <% end %>
 
         <br>
     <div style="color: #006600">
