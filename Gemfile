@@ -43,7 +43,8 @@ gem 'kaminari'
 gem 'paperclip', '~> 4.2.1'
 gem 'jcrop-rails-v2', '~> 0.9.12.3'
 
-
+# ########### EDITOR
+gem 'ckeditor', github: 'galetahub/ckeditor'
 
 ########################### PDF ###############################
 
@@ -60,6 +61,13 @@ gem 'bxslider-rails'
 ######################## ELASTIC SEARCH #######################
 gem 'elasticsearch-model', '~> 0.1.6'
 gem 'elasticsearch-rails', '~> 0.1.6'
+
+# #####################
+gem 'geocoder'
+gem 'gmaps4rails'
+
+# ################ AUDIT
+gem "audited-activerecord", "~> 4.0"
 
 group :development do
   gem 'better_errors'

@@ -1,0 +1,37 @@
+.main-container
+
+
+  .other_containers
+    br
+      .ui.buttons
+
+        br
+          = form_tag locations_path, :method => :get do
+            = text_field_tag :search, params[:search]
+            = submit_tag "Search Near", :name => nil
+
+
+        h1 Listing locations
+
+        table
+          thead
+            tr
+              th Address
+              th Latitude
+              th Longitude
+              th
+              th
+              th
+
+          tbody
+            - @locations.each do |location|
+              tr
+                td = location.address
+                td = location.latitude
+                td = location.longitude
+                td = link_to 'Show(map)', location
+                td = link_to 'Destroy', location, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+        br
+
+        = link_to 'New Location', new_location_path

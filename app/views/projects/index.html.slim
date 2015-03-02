@@ -49,3 +49,36 @@
         br
         | 3. Right-Click on Project-Name, there menu appear.
 
+      div style="color: red"
+        br
+        br
+        - @projects.each do |project|
+          p
+            | ******************
+          = "#{project.name} => ( Changes #{project.audits.count} times .."
+          br
+          - audit = project.audits.last
+          div style="color:green ; margin-left: 10px;"
+            = audit.action
+            = "  the #{audit.auditable_type}"
+          br
+          - changes = audit.audited_changes
+
+          /++++++++++++ CREATE
+          - if audit.action == 'create'
+            div style="color: grey; margin-left: 30px;"
+              - changes.each do |key|
+                = "#{key[0]} : #{key[1]}"
+                br
+          /++++++++++++ UPDATE
+          - if audit.action == 'update'
+            div style="color: grey; margin-left: 30px;"
+              - changes.keys.each do|key|
+                =
+                = "#{key} changed from #{changes[key][0]} to #{changes[key][1]}"
+                br
+          br
+
+
+
+

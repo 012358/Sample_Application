@@ -10,6 +10,9 @@ This Sample_Application covered all basic concepts. [Click for Live Demo](https:
 + Pagination(Kaminari)  
 + Authentication(Devise)  
 + Chart(GetOrgChart)  
++ Google map api  
++ Audits  
++ cEditor  
 
 
 #### Slider(bxslider-rails)
@@ -486,4 +489,17 @@ In model :
   end  
 
 ```
+
+#### Google map  
+
++ In Location
+
+#### Audits
+
++ In Project
+
+#### cEditor
+
++ [editor](https://github.com/galetahub/ckeditor)  
++ Employee
 

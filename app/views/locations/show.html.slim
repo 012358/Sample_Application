@@ -1,0 +1,30 @@
+.main-container
+
+
+  .other_containers
+    br
+      .ui.buttons
+
+        br
+        p#notice = notice
+
+        p
+          strong Address:
+          = @location.address
+        p
+          strong Latitude:
+          = @location.latitude
+        p
+          strong Longitude:
+          = @location.longitude
+        p
+          ul
+            - for location in @location.nearbys(200)
+              li
+                = link_to "#{location.address}, #{location.distance.round(2)} miles away ", location
+
+        = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}"
+
+        = link_to 'Edit', edit_location_path(@location)
+        '|
+        = link_to 'Back', locations_path

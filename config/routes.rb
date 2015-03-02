@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+  resources :locations
+
   resources :organize_data
 
   get 'others/index'

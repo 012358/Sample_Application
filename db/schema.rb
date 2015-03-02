@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150211111017) do
+ActiveRecord::Schema.define(version: 20150302102741) do
+
+  create_table "audits", force: true do |t|
+    t.integer  "auditable_id"
+    t.string   "auditable_type"
+    t.integer  "associated_id"
+    t.string   "associated_type"
+    t.integer  "user_id"
+    t.string   "user_type"
+    t.string   "username"
+    t.string   "action"
+    t.text     "audited_changes"
+    t.integer  "version",         default: 0
+    t.string   "comment"
+    t.string   "remote_address"
+    t.string   "request_uuid"
+    t.datetime "created_at"
+  end
+
+  add_index "audits", ["associated_id", "associated_type"], name: "associated_index"
+  add_index "audits", ["auditable_id", "auditable_type"], name: "auditable_index"
+  add_index "audits", ["created_at"], name: "index_audits_on_created_at"
+  add_index "audits", ["request_uuid"], name: "index_audits_on_request_uuid"
+  add_index "audits", ["user_id", "user_type"], name: "user_index"
 
   create_table "billings", force: true do |t|
     t.datetime "created_at"
@@ -21,12 +44,39 @@ ActiveRecord::Schema.define(version: 20150211111017) do
     t.boolean  "completed",      default: false
   end
 
+  create_table "calendar_users", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "calendar_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "calendar_users", ["calendar_id"], name: "index_calendar_users_on_calendar_id"
+  add_index "calendar_users", ["user_id"], name: "index_calendar_users_on_user_id"
+
   create_table "calendars", force: true do |t|
     t.string   "name"
     t.string   "color"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  create_table "ckeditor_assets", force: true do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
 
   create_table "cocoon_examples", force: true do |t|
     t.string   "name"
@@ -40,13 +90,6 @@ ActiveRecord::Schema.define(version: 20150211111017) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "employees", force: true do |t|
-    t.string   "name"
-    t.integer  "extension"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -90,6 +133,14 @@ ActiveRecord::Schema.define(version: 20150211111017) do
     t.datetime "updated_at"
   end
 
+  create_table "locations", force: true do |t|
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "organize_data", force: true do |t|
     t.integer  "parentId"
     t.string   "name"
@@ -120,6 +171,13 @@ ActiveRecord::Schema.define(version: 20150211111017) do
 
   create_table "rating_users", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "staffs", force: true do |t|
+    t.string   "name"
+    t.integer  "extension"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

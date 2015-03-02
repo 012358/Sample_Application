@@ -129,12 +129,15 @@
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v4.1.5, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v4.1.5, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v5.0.1.20140414130214, rbenv: 2.1.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="audited (v4.0.0, rbenv: 2.1.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="audited-activerecord (v4.0.0, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.9, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="better_errors (v2.0.0, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="binding_of_caller (v0.7.2, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.2, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.7.12, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bxslider-rails (v4.1.0, rbenv: 2.1.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ckeditor (v4.1.1@96c2ba, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="climate_control (v0.0.3, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cocaine (v0.5.5, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cocoon (v1.2.6, rbenv: 2.1.1) [gem]" level="application" />
@@ -154,6 +157,8 @@
     <orderEntry type="library" scope="PROVIDED" name="faraday (v0.9.0, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="foundation-rails (v5.4.5.0, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fullcalendar-rails (v2.2.3.0, rbenv: 2.1.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="geocoder (v1.2.7, rbenv: 2.1.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="gmaps4rails (v2.1.2, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hashie (v3.3.1, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hike (v1.2.3, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v0.7.0, rbenv: 2.1.1) [gem]" level="application" />
@@ -182,6 +187,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rack (v1.5.2, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v0.6.2, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails (v4.1.5, rbenv: 2.1.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails-observers (v0.1.2, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails_12factor (v0.0.3, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails_serve_static_assets (v0.0.3, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails_stdout_logging (v0.0.3, rbenv: 2.1.1) [gem]" level="application" />

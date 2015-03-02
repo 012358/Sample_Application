@@ -37,3 +37,4 @@
 //= require projects
 //= require user
 //= require organize_data
+//= require ckeditor/init

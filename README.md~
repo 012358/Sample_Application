@@ -10,6 +10,9 @@ This Sample_Application covered all basic concepts. [Click for Live Demo](https:
 + Pagination(Kaminari)  
 + Authentication(Devise)  
 + Chart(GetOrgChart)  
++ Google map api  
++ Audits  
++ cEditor  
 
 
 #### Slider(bxslider-rails)
@@ -53,7 +56,7 @@ bundle install
 + You can add Calendar(e.g Test-Calendar 1), Every calendar has color
 + Add Events for particular Calendar, Events have different color.  
 + [In sm-sample-application search in following files](https://sm-sample-application.herokuapp.com/)  
-1. Calendars  
+1. Calendars(there is also importing data from file and save in db)  
 2. Events  
 
 ###### How To Implement
@@ -486,4 +489,17 @@ In model :
   end  
 
 ```
+
+#### Google map  
+
++ In Location
+
+#### Audits
+
++ In Project
+
+#### cEditor
+
++ [editor](https://github.com/galetahub/ckeditor)  
++ Employee
 

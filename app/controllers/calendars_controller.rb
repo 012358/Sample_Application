@@ -4,7 +4,7 @@ class CalendarsController < ApplicationController
   # GET /calendars
   # GET /calendars.json
   def index
-    @calendars = Calendar.all
+    @calendars = Calendar.all.where(user_id: current_user.id)
 
     respond_to do |format|
       format.html
@@ -14,7 +14,7 @@ class CalendarsController < ApplicationController
     end
 
     if @calendars.empty?
-       Calendar.create(name: 'Sajjad Test Calendar', color: '#E29792')
+       Calendar.create(name: 'Sajjad Murtaza Calendar', color: '#E29792')
     end
 
   end
@@ -86,6 +86,6 @@ class CalendarsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def calendar_params
-      params.require(:calendar).permit(:name, :color)
+      params.require(:calendar).permit(:name, :color, :user_id)
     end
 end

@@ -1,12 +1,19 @@
-p#notice = notice
+.main-container
 
-p
-  strong Name:
-  = @employee.name
-p
-  strong Extension:
-  = @employee.extension
 
-= link_to 'Edit', edit_employee_path(@employee)
-'|
-= link_to 'Back', employees_path
+  .other_containers
+    br
+      .ui.buttons
+        br
+        p#notice = notice
+
+        p
+          strong Name:
+          = @employee.name.html_safe
+        p
+          strong Extension:
+          = @employee.extension
+
+        = link_to 'Edit', edit_employee_path(@employee)
+        '|
+        = link_to 'Back', employees_path

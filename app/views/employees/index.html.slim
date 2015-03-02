@@ -1,26 +1,21 @@
-/h1 Listing employees
-/
-/table
-/  thead
-/    tr
-/      th Name
-/      th Extension
-/      th
-/      th
-/      th
-/
-/  tbody
-/    - @employees.each do |employee|
-/      tr
-/        td = employee.name
-/        td = employee.extension
-/        td = link_to 'Show', employee
-/        td = link_to 'Edit', edit_employee_path(employee)
-/        td = link_to 'Destroy', employee, data: {:confirm => 'Are you sure?'}, :method => :delete
-/
-/br
-/
-/= link_to 'New Employee', new_employee_path
-.row
-  .large-8.columns
-    = render partial: 'new'
+.main-container
+
+
+  .other_containers
+    br
+      .ui.buttons
+
+        br
+          = link_to "#{semantic_icon('add')}  Location(api)".html_safe, locations_path, class: "ui button mini"
+          br
+          div style=("color: #006600")
+            | 1. Google map.
+            br
+
+        br
+        = link_to "#{semantic_icon('add')}  Employee".html_safe, new_employee_path, class: "ui button mini"
+        br
+      div style=("color: #006600")
+        | 1. Override Table Name.
+        br
+

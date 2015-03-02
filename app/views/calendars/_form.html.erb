@@ -4,7 +4,7 @@
     <%= link_to "#{semantic_icon('unhide')}  View All Calendars".html_safe, calendars_path, class: "ui button mini" %>
 
 <div class="ui form">
-<%= form_for(@calendar) do |f| %>
+<%= form_for(@calendar, url:{action:  @calendar.new_record? ? :create : :update}) do |f| %>
   <% if @calendar.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
@@ -16,6 +16,10 @@
       </ul>
     </div>
   <% end %>
+
+      <!-- CURRENT USER -->
+      <%= f.hidden_field :user_id, value: current_user.id %>
+
       <div class="two fields">
   <div class="field">
     <%#= f.label :name %><br>

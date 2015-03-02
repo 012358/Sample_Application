@@ -1,5 +1,7 @@
 class Calendar < ActiveRecord::Base
   has_many :events, dependent: :destroy
+  has_many :calendar_users
+  belongs_to :user
 
 
   def as_json(options= {})
