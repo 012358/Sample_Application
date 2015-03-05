@@ -13,6 +13,7 @@ This Sample_Application covered all basic concepts. [Click for Live Demo](https:
 + Google map api  
 + Audits  
 + cEditor  
++ Test Cases  
 
 
 #### Slider(bxslider-rails)
@@ -502,4 +503,11 @@ In model :
 
 + [editor](https://github.com/galetahub/ckeditor)  
 + Employee
+
+#### Test Cases(RSpec, FactoryGirl)
+
++ In RSpec
+
++ [1](https://leanpub.com/everydayrailsrspec/read)  
++ [2]()
 

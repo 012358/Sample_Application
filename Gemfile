@@ -69,10 +69,19 @@ gem 'gmaps4rails'
 # ################ AUDIT
 gem "audited-activerecord", "~> 4.0"
 
+
+gem 'sidekiq'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+  gem "factory_girl_rails", "~> 4.0"
+end
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'sqlite3'
+
 end
 group :production do
   gem 'pg'
