@@ -22,7 +22,7 @@
           - if important_point.title.present?
             .ui.red.tag.label = important_point.title
             br
-          Strong = important_point.description
+          Strong = important_point.description.html_safe
 
 
 
