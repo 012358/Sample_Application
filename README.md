@@ -349,6 +349,18 @@ rake db:migrate
 
 ```
 
+```javascript
+
+'In Initializer/devise.rb':
+			require "omniauth-google-oauth2"
+  			if Rails.env.production?  
+    				config.omniauth :google_oauth2, '527836605419-ibmv7n2o5dl23nfacdlpcrnqbl712fdd.apps.googleusercontent.com', 'F-IV8IKn4x46WuIdDMjDQq7m', 				{ access_type: 'offline', approval_prompt: '' }  
+  			else  
+    				config.omniauth :google_oauth2, '527836605419-hknvtvfe9564sk7bf5cq9tepgfgjpq7t.apps.googleusercontent.com', 'pQsuytMa-_JPFIPajdfSR0DH', 				{ access_type: 'offline', approval_prompt: '' }  
+  			end  
+
+```
+
 ###### Settings
 
 ```javascript
@@ -370,6 +382,7 @@ rake db:migrate
 ```
 + In Development Environment => config.action_mailer.default_url_options = { host: 'localhost', port: 3000}  
 + [Documentation also here](http://www.peoplecancode.com/en/tutorials/how-to-manage-users-with-devise-ruby-on-rails)  
++ [Twitter](https://apps.twitter.com/)  
 
 #### Chart(GetOrgChart)  
 

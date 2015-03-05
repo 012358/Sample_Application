@@ -39,6 +39,8 @@ gem 'foundation-rails'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 gem 'kaminari'
 
 gem 'paperclip', '~> 4.2.1'

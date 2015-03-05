@@ -13,6 +13,7 @@ This Sample_Application covered all basic concepts. [Click for Live Demo](https:
 + Google map api  
 + Audits  
 + cEditor  
++ Test Cases  
 
 
 #### Slider(bxslider-rails)
@@ -348,6 +349,18 @@ rake db:migrate
 
 ```
 
+```javascript
+
+'In Initializer/devise.rb':
+			require "omniauth-google-oauth2"
+  			if Rails.env.production?  
+    				config.omniauth :google_oauth2, '527836605419-ibmv7n2o5dl23nfacdlpcrnqbl712fdd.apps.googleusercontent.com', 'F-IV8IKn4x46WuIdDMjDQq7m', 				{ access_type: 'offline', approval_prompt: '' }  
+  			else  
+    				config.omniauth :google_oauth2, '527836605419-hknvtvfe9564sk7bf5cq9tepgfgjpq7t.apps.googleusercontent.com', 'pQsuytMa-_JPFIPajdfSR0DH', 				{ access_type: 'offline', approval_prompt: '' }  
+  			end  
+
+```
+
 ###### Settings
 
 ```javascript
@@ -502,4 +515,11 @@ In model :
 
 + [editor](https://github.com/galetahub/ckeditor)  
 + Employee
+
+#### Test Cases(RSpec, FactoryGirl)
+
++ In RSpec
+
++ [1](https://leanpub.com/everydayrailsrspec/read)  
++ [2]()
 
