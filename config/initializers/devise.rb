@@ -258,17 +258,17 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
   if Rails.env.production?
-
     config.omniauth :google_oauth2, '527836605419-ibmv7n2o5dl23nfacdlpcrnqbl712fdd.apps.googleusercontent.com', 'F-IV8IKn4x46WuIdDMjDQq7m', { access_type: 'offline', approval_prompt: '' }
     config.omniauth :twitter, "28F2802Rso0P8vcZFW49zbhSk", "qyyMLNQLIlTvGY7cmtThpgV8Hh7puHcGojJ8mPFNndsj8proZo"
     config.omniauth :facebook, "593760194091934", "b5fe115c5e7f1764abfff37f0ff73ff4"
-
+    config.omniauth :linkedin, "777fdpyrtl8840", "aN2gYa9Hx6k8dz0p"
+    config.omniauth :github, "ddc763209d0cff4f5520", "5b97d469986544ee05128cc92167cce7d9d32942"
   else
-
-
     config.omniauth :google_oauth2, '527836605419-hknvtvfe9564sk7bf5cq9tepgfgjpq7t.apps.googleusercontent.com', 'pQsuytMa-_JPFIPajdfSR0DH', { access_type: 'offline', approval_prompt: '' }
     config.omniauth :twitter, "hOt3bXXeuTAl9D1wry423iOgm", "zcEih7BStugk0c4ZgZOpNmbVybgYEJ4S42A5vHRuimiSSLzOFv"
     config.omniauth :facebook, "376752309164053", "c576d09745a2e6f5477f236ae1ae5bcf"
+    config.omniauth :linkedin, "7753iywhlttyzl", "FNCKENAfOH663JYS"
+    config.omniauth :github, "2fce19401bf3dd0f76c6", "28b408fbfaeca874633dafa91f2d832cde58618b"
 
   end
 

@@ -383,6 +383,9 @@ rake db:migrate
 + In Development Environment => config.action_mailer.default_url_options = { host: 'localhost', port: 3000}  
 + [Documentation also here](http://www.peoplecancode.com/en/tutorials/how-to-manage-users-with-devise-ruby-on-rails)  
 + [Twitter](https://apps.twitter.com/)  
++ [Facebook](https://developers.facebook.com/apps/593760194091934/dashboard/)  
++ [LinkedIn](https://www.linkedin.com/secure/developer)  
++ [GitHub](https://github.com/settings/applications)  
 
 #### Chart(GetOrgChart)  
 

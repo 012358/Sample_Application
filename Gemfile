@@ -36,11 +36,19 @@ gem 'slim-rails'
 # gem "org_chart", "~>0.0.3"
 
 gem 'foundation-rails'
+
+########### AUTHENTICATION
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+gem 'omniauth-linkedin-oauth2'
+gem 'omniauth-github'
+
+
+
+############ PAGINATION
 gem 'kaminari'
 
 gem 'paperclip', '~> 4.2.1'
