@@ -1,21 +1,21 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
-  # GET /events
-  # GET /events.json
   def index
-    @events = Event.all
+    @events = [] #= Event.all
+    user_calendars = Calendar.all.where(user_id: current_user.id)
+    user_calendars.each do |calendar|
+       @events+=(calendar.events)
+    end
     respond_to do |format|
       format.html
       format.json
     end
 
-    if @events.empty?
-      Calendar.create(name: 'Sajjad Murtaza Calendar', color: '#E29792')
-      Event.create(calendar_id: Calendar.find_by(name: 'Sajjad Murtaza Calendar').id, title: 'This is a Sample Event.', description: 'You can Add multiple events against Single Calendar', start: Time.now, end: Time.now+123456)
+    if current_user.calendars.empty?
+      Calendar.create(name: "Sajjad Murtaza Calendar #{current_user.email}", color: '#E29792', user_id: current_user.id)
+      Event.create(calendar_id: Calendar.find_by(name: "Sajjad Murtaza Calendar #{current_user.email}").id, title: "This is a (#{current_user.email}) Event.", description: 'You can Add multiple events against Single Calendar', start: Time.now, end: Time.now+123456)
     end
-    @events
-
   end
 
   # GET /events/1

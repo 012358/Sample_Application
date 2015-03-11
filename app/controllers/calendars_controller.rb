@@ -1,10 +1,8 @@
 class CalendarsController < ApplicationController
   before_action :set_calendar, only: [:show, :edit, :update, :destroy]
 
-  # GET /calendars
-  # GET /calendars.json
   def index
-    @calendars = Calendar.all.where(user_id: current_user.id)
+    @calendars = Calendar.all.where(user_id: current_user.id) # Return Current User Calendar
 
     respond_to do |format|
       format.html
@@ -12,11 +10,6 @@ class CalendarsController < ApplicationController
       format.csv {render text: @calendars.to_csv} #{ send_data @calendars.to_csv }
       format.xls # {render text: @calendars.to_csv((col_sep: "\t"))}
     end
-
-    if @calendars.empty?
-       Calendar.create(name: 'Sajjad Murtaza Calendar', color: '#E29792')
-    end
-
   end
 
   # GET /calendars/1
@@ -45,7 +38,7 @@ class CalendarsController < ApplicationController
 
     respond_to do |format|
       if @calendar.save
-        format.html { redirect_to events_url, notice: 'Calendar was successfully created.' }
+        format.html { redirect_to events_url}
         format.json { render :show, status: :created, location: @calendar }
       else
         format.html { render :new }

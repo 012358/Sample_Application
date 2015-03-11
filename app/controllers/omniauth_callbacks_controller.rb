@@ -4,7 +4,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     p '________________________'
     p request.env["omniauth.auth"].provider
     p '________________________'
-    @user = User.find_for_google_oauth2(request.env["omniauth.auth"], current_user)
+    @user = User.find_for_oauth(request.env["omniauth.auth"], current_user)
 
     if @user.persisted?
       flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Google"
@@ -16,16 +16,10 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
-
-
-
-
-
   alias_method :google_oauth2, :all
   alias_method :twitter, :all
   alias_method :facebook, :all
   alias_method :linkedin, :all
   alias_method :github, :all
-
 end
 

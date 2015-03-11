@@ -2,6 +2,7 @@
   <div class="other_containers">
     <div class="ui form">
       <br><br>
+      <div style="margin: 1px 0 0 350px;">
             <h2>Sign up</h2>
 
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -37,6 +38,7 @@
             <% end %>
 
             <%= render "devise/shared/links" %>
+        </div>
     </div>
   </div>
 </div>

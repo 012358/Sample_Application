@@ -1,0 +1,2 @@
+ICONS = { google_oauth2: 'google plus', twitter: 'twitter', facebook: 'facebook', linkedin: 'linkedin', github: 'github'}
+COLOR = { google_oauth2: 'blue', twitter: 'twitter', facebook: 'facebook', linkedin: 'linkedin', github: 'black' }

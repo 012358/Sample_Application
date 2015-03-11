@@ -81,6 +81,8 @@ gem 'gmaps4rails'
 gem "audited-activerecord", "~> 4.0"
 
 
+
+
 gem 'sidekiq'
 
 group :development, :test do

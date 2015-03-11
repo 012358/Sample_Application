@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :messages
+
   mount Ckeditor::Engine => '/ckeditor'
   resources :locations
 

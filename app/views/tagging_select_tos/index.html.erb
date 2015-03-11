@@ -46,11 +46,11 @@
         </tr>
         </tbody>
       </table>
-
       <br>
-
     </div>
     <div style="color: #006600">
+      <br>
+      <%= link_to "#{semantic_icon(ICONS[:linkedin])}".html_safe, omniauth_authorize_path(:user, :linkedin), class: "ui #{COLOR[:linkedin]} mini submit button ok" %>
       <br>
       1. Customizable select box with support for Searching, Tagging, Remote data sets.<br>
       2. Here Remote-data Set(comes from Enumerations).<br>

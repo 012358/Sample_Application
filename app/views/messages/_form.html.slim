@@ -1,0 +1,7 @@
+= form_for Message.new, remote: true do |f|
+
+  .field
+    = f.label :content
+    #new_message
+      = f.text_field :content
+  .actions = f.submit 'Save'

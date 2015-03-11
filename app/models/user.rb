@@ -10,13 +10,8 @@ class User < ActiveRecord::Base
 
   validates_presence_of :email
 
-  def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
-    p '&&&&&&&&&&&&'
-
-    p data = access_token.info
-    p '&&&&&&&&&&&&'
-    p data.nickname
-    p '&&&&&&&&&&&&'
+  def self.find_for_oauth(access_token, signed_in_resource=nil)
+    data = access_token.info
 
     if access_token.provider == "twitter"
       user = User.where(:email => "#{data["nickname"]}@twitter.com").first
@@ -30,18 +25,13 @@ class User < ActiveRecord::Base
         user = User.new(email: data["email"],
            password: Devise.friendly_token[0,20]
         )
-
     if access_token.provider == "twitter"
-      p '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
-      p user.email = "#{data["nickname"]}@twitter.com"
+      user.email = "#{data["nickname"]}@twitter.com"
       user.save
     else
       user.save!
     end
-
     end
-
     user
   end
-
 end
