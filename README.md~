@@ -14,6 +14,7 @@ This Sample_Application covered all basic concepts. [Click for Live Demo](https:
 + Audits  
 + cEditor  
 + Test Cases  
++ Twilio
 
 
 #### Slider(bxslider-rails)
@@ -181,6 +182,13 @@ gem 'wkhtmltopdf-binary'
 					render :pdf => "file_name"
 					#render pdf:
 					#templete: 'controller_name/file_name.pdf.slim'
+
+
+					 #outline: {outline: true, outline_depth: 2},
+					 #header:{content:render_to_string('name.pdf.slim',layout:nil)},
+					 #footer:{content:render_to_string('name.pdf.slim',layout: nil)}
+
+
 				      end
 				    end
 				  end
@@ -525,5 +533,27 @@ In model :
 + In RSpec
 
 + [1](https://leanpub.com/everydayrailsrspec/read)  
-+ [2]()
 
+#### Twilio
+
++ [Documentation](https://www.twilio.com/blog/2014/10/twilio-on-rails-part-2-rails-4-app-sending-sms-mms.html)  
+
+```javascript
+'In Cofig/filename.rb':
+		require 'rubygems'   
+		require 'twilio-ruby'  
+
+		# put your own credentials here
+		account_sid = 'AC20aef60110fea26f6ba10374edsajjad'
+		auth_token = 'f8a93cc98d52c2c3c19fa290d14sajjad'
+
+		# set up a client to talk to the Twilio REST API
+		TWILIO_CLIENT = Twilio::REST::Client.new account_sid, auth_token
+
+'In Controller':
+		TWILIO_CLIENT.account.messages.create({
+                                        :from => '+13346974340',
+                                        :to => '+92 342 7852184',
+                                        :body => "Please enter #{code} ",
+                                    })
+```

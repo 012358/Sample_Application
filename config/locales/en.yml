@@ -20,4 +20,21 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+
+  date:
+      formats:
+        default: '%m/%d/%Y'
+        only_day: '%e'
+        short: '%d %b %H:%M'
+
   hello: "Hello world"
+
+  menu:
+    show: "Client Details"
+
+  last_update: "Last Updated: %{date}"
+
+
+  contact:
+      prices:
+        show_price: "%{price_dollar}$"
