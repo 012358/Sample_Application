@@ -1,5 +1,6 @@
 .main-container
-
+  - if can? :read,  @enumerations
+    p '@'
 
   .other_containers
     br
@@ -41,21 +42,41 @@
                     | |
                     = link_to semantic_icon('trash').html_safe, enumeration_path(enumeration), data: {:confirm => 'Are you sure?'}, :method => :delete
 
-          br
+        br
 
+        p
+          | Setup the Rails Application for Internationalization (en.yml) and Helper(application_helper.rb)
+          br
+          = link_to t('hello'), '#'
+          br
+          = link_to t('menu.show'), '#'
+          br
+          = t('last_update', :date => l(Enumeration.last.created_at, format: :short))
+          br
+          = show_helping_data t'hello'
+          br
+          = t 'contact.prices.show_price' , :price_dollar => 50
+          br
+          = I18n.l Enumeration.last.created_at, format: :short
+          br
+          = I18n.l Enumeration.last.created_at, format: :short
+        br
+
+
+        div ng-app=""
+          p Input something in the input box:
           p
-            | Setup the Rails Application for Internationalization (en.yml) and Helper(application_helper.rb)
+            | Name:
             br
-            = link_to t('hello'), '#'
+            input ng-model="name" type="text" placeholder= 'First Name'
             br
-            = link_to t('menu.show'), '#'
-            br
-            = t('last_update', :date => l(Enumeration.last.created_at, format: :short))
-            br
-            = show_helping_data t'hello'
-            br
-            = t 'contact.prices.show_price' , :price_dollar => 50
-            br
-            = I18n.l Enumeration.last.created_at, format: :short
-            br
-            = I18n.l Enumeration.last.created_at, format: :short
+            input ng-model="last_name" type="text" placeholder= 'Last Name'
+          p
+            | Full Name:
+            span ng-bind="name"
+            span style="left-margin: 3px;" ng-bind="last_name"
+          br
+          p
+            | Multiplying
+          p
+            | {{name*1 + last_name*1}}

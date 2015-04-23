@@ -1,5 +1,9 @@
 $(document).on "page:change", ->
 
+  $('#help').hide();
+  $('#help-icon').click ->
+    $('#help').show();
+
   # apply select2(taggable) in events form for calendar column(support for searching).
   $('.single-field').each ->
     $(this).select2

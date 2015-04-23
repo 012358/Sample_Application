@@ -3,7 +3,9 @@ class CalendarsController < ApplicationController
 
   def index
     @calendars = Calendar.all.where(user_id: current_user.id) # Return Current User Calendar
-
+    @last_month_calendars = Calendar.range_events
+    #Calendar.first.events.reorder('id')
+    @calendar_having_gt_10_events = Calendar.joins(:events).group('calendars.id').having('count(events.id) >10')
     respond_to do |format|
       format.html
       format.json
@@ -12,8 +14,6 @@ class CalendarsController < ApplicationController
     end
   end
 
-  # GET /calendars/1
-  # GET /calendars/1.json
   def show
   end
 
@@ -55,7 +55,7 @@ class CalendarsController < ApplicationController
         format.html { redirect_to calendars_path }
         format.json { render :show, status: :ok, location: @calendar }
       else
-        format.html { render :edit }
+        format.html { render inline: "<%= @calendar.name %><p><%= link_to 'Back', url_for(:back) %></p>" }
         format.json { render json: @calendar.errors, status: :unprocessable_entity }
       end
     end

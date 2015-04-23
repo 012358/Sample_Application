@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :book_marks
+
+  resources :skills
+
   resources :messages
 
   mount Ckeditor::Engine => '/ckeditor'
@@ -28,6 +32,7 @@ Rails.application.routes.draw do
 
   get 'sign_up_user/index'
   devise_for :users, :controllers => { :omniauth_callbacks => 'omniauth_callbacks' }
+  resources :user
   # devise_for :users
   resources :enumerations
 

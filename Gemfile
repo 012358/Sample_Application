@@ -81,7 +81,13 @@ gem 'gmaps4rails'
 gem "audited-activerecord", "~> 4.0"
 
 
+####### ANGULAR
+gem 'angularjs-rails'
 
+# ##### Authorization
+gem 'cancancan'
+gem 'hirb'
+gem 'country_select'
 
 gem 'sidekiq'
 

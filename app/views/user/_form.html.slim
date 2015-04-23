@@ -1,0 +1,27 @@
+br
+.ui.form
+  = form_for @user do |f|
+    .two.fields
+      .field
+        = f.label :name
+        = f.text_field :name
+    .two.fields
+      .field
+        = f.label :phone
+        = f.text_field :phone
+    .two.fields
+      .field
+        = f.label :job_title
+        = f.text_field :job_title
+    .two.fields
+      .field
+        = f.label :country
+        = country_select("user", "country", priority_countries: ["GB", "FR", "DE"])
+    .one.fields
+      .field
+        = f.label :address
+        = f.cktext_area :address
+
+
+
+    .actions = f.submit 'Save'

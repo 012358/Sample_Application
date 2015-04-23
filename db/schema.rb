@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150306120815) do
+ActiveRecord::Schema.define(version: 20150413154804) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,13 @@ ActiveRecord::Schema.define(version: 20150306120815) do
     t.string   "title"
     t.string   "account_number"
     t.boolean  "completed",      default: false
+  end
+
+  create_table "book_marks", force: true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "calendar_users", force: true do |t|
@@ -184,6 +191,13 @@ ActiveRecord::Schema.define(version: 20150306120815) do
     t.datetime "updated_at"
   end
 
+  create_table "skills", force: true do |t|
+    t.string   "name"
+    t.integer  "skill_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "staffs", force: true do |t|
     t.string   "name"
     t.integer  "extension"
@@ -207,6 +221,15 @@ ActiveRecord::Schema.define(version: 20150306120815) do
 
   add_index "tasks", ["project_id"], name: "index_tasks_on_project_id", using: :btree
 
+  create_table "user_skills", force: true do |t|
+    t.integer  "skill_id"
+    t.integer  "user_id"
+    t.string   "rating"
+    t.string   "experience"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -220,6 +243,11 @@ ActiveRecord::Schema.define(version: 20150306120815) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.string   "phone"
+    t.string   "job_title"
+    t.text     "address"
+    t.string   "country"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

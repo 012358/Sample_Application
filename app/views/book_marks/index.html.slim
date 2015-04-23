@@ -1,0 +1,23 @@
+h1 Listing book_marks
+
+table
+  thead
+    tr
+      th Title
+      th Url
+      th
+      th
+      th
+
+  tbody
+    - @book_marks.each do |book_mark|
+      tr
+        td = book_mark.title
+        td = book_mark.url
+        td = link_to 'Show', book_mark
+        td = link_to 'Edit', edit_book_mark_path(book_mark)
+        td = link_to 'Destroy', book_mark, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Book mark', new_book_mark_path

@@ -28,6 +28,8 @@
         <%= link_to "<i class='ui terminal icon'></i> Others".html_safe, others_index_path %>
         <%= link_to "<i class='ui bar chart icon'></i> Chart View".html_safe, organize_data_path %>
         <%= link_to "<i class='ui photo icon'></i> Image Cropping".html_safe, contacts_path %>
+        <%= link_to "<i class='ui filter icon'></i> Skill".html_safe, skills_path %>
+        <%= link_to "<i class='ui edit icon'></i> Edit Profile".html_safe, edit_user_path(current_user) %>
 
         <%= link_to "<i class='ui Sign out icon'></i> Logout".html_safe, destroy_user_session_path, method: :delete %>
   </div>

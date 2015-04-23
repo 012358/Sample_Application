@@ -11,6 +11,7 @@ class EnumerationsController < ApplicationController
     end
     EmailType
     PhoneType
+    SkillType
   end
 
   # GET /enumerations/1

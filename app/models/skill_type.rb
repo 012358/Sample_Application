@@ -1,0 +1,3 @@
+class SkillType < Enumeration
+
+end
