@@ -5,6 +5,10 @@ class UserController < ApplicationController
 
   end
 
+  def show
+
+  end
+
   def update
     @user.update(user_params)
     redirect_to calendars_path

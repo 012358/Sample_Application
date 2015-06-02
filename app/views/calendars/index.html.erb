@@ -24,7 +24,6 @@
 
                 <%= link_to(semantic_icon('trash').html_safe, calendar, data: {method: :delete, confirm: 'Are you sure?'})%>
                   <%= link_to(semantic_icon('unhide').html_safe, calendar) %>
-
               </tr>
             <% end %>
           </tbody>
@@ -93,6 +92,12 @@
     <div style="color: #006600">
       1. Show All Calendar.<br>
       2. Edit, Delete, Show(with all Events of associated Calendar).
+      <br><br>
+      <%= link_to "get 'all_calendars', 'calendar#index'", all_calendars_path%><br>
+      <%= link_to "get 'calendar/:id', 'calendar#show', as: 'show-me_last_calendar' ", showme_last_calendar_path(Calendar.last) %><br>
+      <%= link_to "get 'calendar/:id/edit', 'calendar#edit', as: 'last_calendar_toupdate' ", last_calendar_toupdate_path(Calendar.last) %><br>
+
+
       </div>
 
 </div>

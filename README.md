@@ -14,7 +14,8 @@ This Sample_Application covered all basic concepts. [Click for Live Demo](https:
 + Audits  
 + cEditor  
 + Test Cases  
-+ Twilio
++ Twilio  
++ Delayed::Job  
 
 
 #### Slider(bxslider-rails)
@@ -534,6 +535,10 @@ In model :
 
 + [1](https://leanpub.com/everydayrailsrspec/read)  
 
+#### Delayed::Job
++ [Documentation](https://github.com/collectiveidea/delayed_job)
++ [Lecture](http://railscasts.com/episodes/171-delayed-job?view=asciicast)  
+
 #### Twilio
 
 + [Documentation](https://www.twilio.com/blog/2014/10/twilio-on-rails-part-2-rails-4-app-sending-sms-mms.html)  
@@ -557,3 +562,5 @@ In model :
                                         :body => "Please enter #{code} ",
                                     })
 ```
+
+

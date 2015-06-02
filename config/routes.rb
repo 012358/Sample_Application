@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :friendships
+
   resources :book_marks
 
   resources :skills
@@ -63,6 +65,14 @@ Rails.application.routes.draw do
   resources :quotes
 
   resources :events
+
+
+
+  ##################################
+  get 'all_calendars', to: 'calendars#index'
+  get 'calendars/:id', to: 'calendar#show', as: 'showme_last_calendar'
+  get 'calendars/:id/edit', to: 'calendar#edit', as: 'last_calendar_toupdate'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

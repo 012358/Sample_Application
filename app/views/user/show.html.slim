@@ -1,0 +1,19 @@
+br
+br
+= @user.email
+br
+p -----------------------------
+- count = 1
+- @user.friends.each do |friend|
+  = "Friend #{count}: #{friend.email}"
+  - count = count + 1
+  br
+br
+/= @user.friendships.first.friend.email
+/= link_to "Add Friend", friendships_path(:friend_id => @user), :method => :post
+
+
+- @user.inverse_friends.each do |inverse_friend|
+  = "Inverse Friend #{count}: #{inverse_friend.email}"
+  - count = count + 1
+  br

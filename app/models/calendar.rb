@@ -1,9 +1,13 @@
 class Calendar < ActiveRecord::Base
+  include MultiInheri1
+  include MultiInheri2
   has_many :events, -> { order('created_at DESC') }, dependent: :destroy
   has_many :calendar_users
   belongs_to :user
 
-  before_validation :check_something
+  serialize :other_details
+
+  after_save :test_it
 
   validates_format_of :name, :with => /\A[a-z A-Z]+\z/,  :message => "Please use only regular letters as name"
 
@@ -20,7 +24,7 @@ class Calendar < ActiveRecord::Base
     CSV.foreach(file.path, headers: true) do |row|
       calendar = find_by_id(row['id']) || new
       calendar.attributes = row.to_hash
-      calendar.save!
+      calendar.save
     end
   end
 
@@ -40,6 +44,20 @@ class Calendar < ActiveRecord::Base
   def check_something
     p 'Check Some Things ..... ******************'
   end
+
+  def serialize_other_details
+    self.other_details = {name: 'Sajjad', education: 'Bs Computer Science'}
+  end
+
+  def test_it
+    p "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWw"
+    p self.color
+    p '$'
+    p self.color="red"
+    true
+  end
+
+
 end
 
 
