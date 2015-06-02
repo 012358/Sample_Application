@@ -57,21 +57,21 @@
             | ******************
           = "#{project.name} => ( Changes #{project.audits.count} times .."
           br
-          - audit = project.audits.last
+          - audit = project.try(:audits).try(:last)
           div style="color:green ; margin-left: 10px;"
-            = audit.action
-            = "  the #{audit.auditable_type}"
+            = audit.try(:action)
+            = "  the #{audit.try(:auditable_type)}"
           br
-          - changes = audit.audited_changes
+          - changes = audit.try(:audited_changes)
 
           /++++++++++++ CREATE
-          - if audit.action == 'create'
+          - if audit.try(:action) == 'create'
             div style="color: grey; margin-left: 30px;"
               - changes.each do |key|
                 = "#{key[0]} : #{key[1]}"
                 br
           /++++++++++++ UPDATE
-          - if audit.action == 'update'
+          - if audit.try(:action) == 'update'
             div style="color: grey; margin-left: 30px;"
               - changes.keys.each do|key|
                 =

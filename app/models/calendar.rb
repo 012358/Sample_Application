@@ -7,8 +7,6 @@ class Calendar < ActiveRecord::Base
 
   serialize :other_details
 
-  after_save :test_it
-
   validates_format_of :name, :with => /\A[a-z A-Z]+\z/,  :message => "Please use only regular letters as name"
 
 
@@ -41,20 +39,8 @@ class Calendar < ActiveRecord::Base
     where(created_at: (Time.now.midnight - 30.day)..Time.now.midnight)
   end
 
-  def check_something
-    p 'Check Some Things ..... ******************'
-  end
-
   def serialize_other_details
     self.other_details = {name: 'Sajjad', education: 'Bs Computer Science'}
-  end
-
-  def test_it
-    p "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWw"
-    p self.color
-    p '$'
-    p self.color="red"
-    true
   end
 
 
