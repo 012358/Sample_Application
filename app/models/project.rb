@@ -16,6 +16,7 @@ class Project < ActiveRecord::Base
     }
   end
 
+
   settings do
     mapping dynamic: true do
       [:name].each do |attr|
@@ -23,5 +24,24 @@ class Project < ActiveRecord::Base
       end
     end
   end
+
+  # settings index: { number_of_shards: 1 } do
+  #   mappings dynamic: 'false' do
+  #     indexes :name, analyzer: 'english'
+  #   end
+  # end
+
+  # def self.search(query)
+  #   __elasticsearch__.search(
+  #       {
+  #           query: {
+  #               multi_match: {
+  #                   query: query,
+  #                   fields: ['name']
+  #               }
+  #           }
+  #       }
+  #   )
+  # end
 
 end

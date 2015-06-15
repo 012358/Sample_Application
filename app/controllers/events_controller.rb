@@ -12,10 +12,10 @@ class EventsController < ApplicationController
       format.json
     end
 
-    if current_user.calendars.empty?
-      Calendar.create(name: "Sajjad Murtaza Calendar #{current_user.email}", color: '#E29792', user_id: current_user.id)
-      Event.create(calendar_id: Calendar.find_by(name: "Sajjad Murtaza Calendar #{current_user.email}").id, title: "This is a (#{current_user.email}) Event.", description: 'You can Add multiple events against Single Calendar', start: Time.now, end: Time.now+123456)
-    end
+    # if current_user.calendars.empty?
+    #   Calendar.create(name: "Sajjad Murtaza Calendar #{current_user.email}", color: '#E29792', user_id: current_user.id)
+    #   Event.create(calendar_id: Calendar.find_by(name: "Sajjad Murtaza Calendar #{current_user.email}").id, title: "This is a (#{current_user.email}) Event.", description: 'You can Add multiple events against Single Calendar', start: Time.now, end: Time.now+123456)
+    # end
   end
 
   # GET /events/1

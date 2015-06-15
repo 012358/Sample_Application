@@ -16,6 +16,9 @@ This Sample_Application covered all basic concepts. [Click for Live Demo](https:
 + Test Cases  
 + Twilio  
 + Delayed::Job  
++ Elastic Search  
++ Rake Task  
++ CSV, XLS  
 
 
 #### Slider(bxslider-rails)
@@ -369,8 +372,9 @@ rake db:migrate
   			end  
 
 ```
+------------   
 
-###### Settings
+###### Smtp Settings
 
 ```javascript
 
@@ -383,12 +387,40 @@ rake db:migrate
 			  config.action_mailer.smtp_settings = {  
 			      address: 'smtp.gmail.com',  
 			      port: 587,  
-			      user_name: 'sajjadmurtaza.nxb@gmail.com',  
-			      password: '0123******', 
+			      user_name: 'alerts.test@gmail.com',  
+			      password: 'test', 
 			      authentication: 'plain',  
 			      enable_starttls_auto: true  
 			  }  
+'ANOTHER'  
+* Use gem 'mail'  
+
+* 'In Initializer: setup_email.rb'   
+ENVIRONMENT = YAML.load_file("#{Rails.root}/config/config.yml")[Rails.env]  
+  
+ActionMailer::Base.smtp_settings = {  
+    :address =>             'smtp.gmail.com',  
+    :port =>                587,  
+    :user_name =>           'alerts.test@gmail.com',  
+    :password =>            'test',  
+    :authentication =>      'plain',  
+    :enable_starttls_auto => true,  
+    :openssl_verify_mode => 'none'  
+}  
+ActionMailer::Base.default_url_options[:host] = "#{ENVIRONMENT['environment']}"
+
+* 'In config/config.yml'
+development:  
+  environment: localhost:3000  
+
+staging:  
+  environment: https://test-staging.com  
+
+production:   
+  environment: https://test.com  
 ```
+------------ 
+
 + In Development Environment => config.action_mailer.default_url_options = { host: 'localhost', port: 3000}  
 + [Documentation also here](http://www.peoplecancode.com/en/tutorials/how-to-manage-users-with-devise-ruby-on-rails)  
 + [Twitter](https://apps.twitter.com/)  
@@ -433,6 +465,7 @@ OR
 #### Rake Task
 
 [Rake-Task-Management-Essentials](http://it-ebooks.info/book/3561/)  
+[Intro to Rake](https://www.youtube.com/watch?v=gR0YfJrg9pg&index=7&list=PL7A85FD7803A8CB1F)  
 + In lib => tasks(In our projects)
 + Example 1  
 [desc =>  description to your rake tasks with the desc method]  
@@ -496,6 +529,7 @@ rake sample:say_hello_task TITLE='sm-sample-application'
 #### CSV, XLS
 
 [Exporting CSV and Excel](http://railscasts.com/episodes/362-exporting-csv-and-excel)  
+[Import Data into Rails from a Spreadsheet](https://www.youtube.com/watch?v=v2Y7cja0b4c&list=PL7A85FD7803A8CB1F&index=8)  
 + In Calendar  
 + format.csv {render text: @calendars.to_csv} #{ send_data @calendars.to_csv }  
 + format.xls # make own templete e.g. index.xls.erb  
@@ -563,4 +597,9 @@ In model :
                                     })
 ```
 
+#### Elastic Search
++ In projects  
++ sudo vi /etc/elasticsearch/elasticsearch.yml  
++ http://localhost:9200/_plugin/head/
++ [head](http://mobz.github.io/elasticsearch-head/) -- [2](https://github.com/EricLondon/Rails-4-ElasticSearch-dynamic-facets/blob/master/README.md)
 

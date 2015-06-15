@@ -5,7 +5,7 @@ namespace :demo do
 
   task import_user: :environment do
     if ENV['USER_FILE'].nil? and ENV['USER_FILE_CSV'].nil?
-      p 'Please specify the file path e.g. rake demo:import_user USER-FILE=/home/sajjad/Desktop/users.json ... '
+      p 'Please specify the file path e.g. rake demo:import_user USER_FILE=/home/sajjad/Desktop/users.json ... '
     else
       if ENV['USER_FILE_CSV'].present?
         csv_file = File.read(ENV['USER_FILE_CSV'])

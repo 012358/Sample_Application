@@ -5,10 +5,17 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
-    if @projects.empty?
-      Project.create(name: 'sm-sample-application', description: 'sm-sample-application.herokuapp.com')
+    if params[:q].blank?
+      @projects = Project.all
+    else
+      @projects = Project.search(params[:q]).records
+      # @articles = Article.search params[:q]
     end
+    @audits_projects=Project.all
+
+    # if @projects.empty?
+    #   Project.create(name: 'sm-sample-application', description: 'sm-sample-application.herokuapp.com')
+    # end
     @projects
   end
 

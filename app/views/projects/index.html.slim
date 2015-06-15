@@ -10,6 +10,13 @@
     br
     #listing
     br
+    = form_for projects_path, method: :get do |f|
+      p
+        = f.label "Search for"
+        = text_field_tag :q, params[:q]
+        = submit_tag "Go"
+    br
+
 
       table.ui.compact.table.data-listing
         thead
@@ -25,7 +32,8 @@
             tr data-invoice=project.id
               td = i
               td.context-menu-one.box.menu-1 = link_to project.name, project_path(project)
-              td = truncate(project.description, length: 17)
+              td = project.description
+
               td
                 = "#{project.tasks.count} tasks associated with #{project.name} project"
               td
@@ -52,7 +60,7 @@
       div style="color: red"
         br
         br
-        - @projects.each do |project|
+        - @audits_projects.each do |project|
           p
             | ******************
           = "#{project.name} => ( Changes #{project.audits.count} times .."
