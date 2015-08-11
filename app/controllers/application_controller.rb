@@ -7,6 +7,11 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_information
 
   def current_user_information
-    User.last.email
+    @user ||= User.last.email
+    testing
+  end
+
+  def testing
+    @user ||= User.last.email
   end
 end

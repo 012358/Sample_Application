@@ -15,6 +15,8 @@ gem 'momentjs-rails'
 gem 'semantic-ui-sass'
 gem 'select2-rails'
 gem 'slim-rails'
+
+#gem 'extra_attributes_for_all_migration', :git => 'https://github.com/sajjadmurtaza49/extra_attributes_for_all_migration'
 ########### AUTHENTICATION
 gem 'devise'
 gem 'omniauth'
@@ -35,6 +37,7 @@ gem 'wkhtmltopdf-binary'
 gem 'pdftk'
 ############### SLIDER ######################################
 gem 'bxslider-rails'
+gem "haml-rails"
 ######################## ELASTIC SEARCH #######################
 gem 'elasticsearch-model', '~> 0.1.6'
 gem 'elasticsearch-rails', '~> 0.1.6'
@@ -44,7 +47,7 @@ gem 'gmaps4rails'
 # ################ AUDIT
 gem "audited-activerecord", "~> 4.0"
 ####### ANGULAR
-gem 'angularjs-rails'
+# gem 'angularjs-rails'
 # ##### Authorization
 gem 'cancancan'
 gem 'hirb'

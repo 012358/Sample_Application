@@ -3,7 +3,7 @@ class EventsController < ApplicationController
 
   def index
     @events = [] #= Event.all
-    user_calendars = Calendar.all.where(user_id: current_user.id)
+    user_calendars = Calendar.includes(:events).where(user_id: current_user.id)
     user_calendars.each do |calendar|
        @events+=(calendar.events)
     end

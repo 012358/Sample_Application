@@ -2,7 +2,6 @@
   <div class="other_containers">
     <br><br>
     <%= link_to "#{semantic_icon('unhide')}  View All Events".html_safe, events_path, class: "ui button mini" %>
-
     <div class="ui form">
       <%= form_for(@event) do |f| %>
 
@@ -20,7 +19,7 @@
           <div class="two fields">
             <div class="field" style="margin: 7px 0 0 0;">
               <%= f.label :calendar_id %>
-              <%= f.text_field :calendar_id, class: "single-field",data: {options: Calendar.all} %>
+              <%= f.text_field :calendar_id, class: "single-field",data: {options: Calendar.all.where(user_id: current_user.id)} %>
               <%#= f.collection_select :calendar_id, Calendar.order(:name),:id,:name, include_blank: false , class: "single-taggable-field"%>
             </div>
             <div class="field">

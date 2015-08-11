@@ -14,9 +14,7 @@
 //= require jquery_ujs
 //= require jquery.Jcrop.min
 //= require jquery.Jcrop
-//= require angular
-//= require angular-animate
-//= require angular-resource
+//= require angular.min
 //= require getorgchart
 //= require moment
 //= require bxslider

@@ -6,7 +6,6 @@ class CalendarsController < ApplicationController
     @last_month_calendars = Calendar.range_events
     #Calendar.first.events.reorder('id')
     @calendar_having_gt_10_events = Calendar.joins(:events).group('calendars.id').having('count(events.id) >10')
-    # p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
     # p Calendar.joins("LEFT JOIN events ON calendars.id = events.calendar_id").group('calendars.id').having("count(case when events.start = '#{Date.today}' then events.id else null end) = ?", 0).count
     # p "+++++++++++++++++++++"
     respond_to do |format|

@@ -36,7 +36,7 @@ class Calendar < ActiveRecord::Base
   end
 
   def self.range_events
-    where(created_at: (Time.now.midnight - 30.day)..Time.now.midnight)
+    where(created_at: (Time.now - 30.day)..Time.now)
   end
 
   def serialize_other_details

@@ -80,3 +80,25 @@
             | Multiplying
           p
             | {{name*1 + last_name*1}}
+
+        div ng-controller="simpleController"
+          div ng-repeat="tag in tags"
+            input type="text" ng-model="tag.text"
+
+javascript:
+  function simpleController($scope) {
+    $scope.tags = [
+
+      {
+        done: false,
+        text: 'fist'
+      },
+      {
+        done: true,
+        text: 'second'
+      }
+
+    ];
+  }
+
+

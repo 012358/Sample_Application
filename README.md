@@ -19,6 +19,8 @@ This Sample_Application covered all basic concepts. [Click for Live Demo](https:
 + Elastic Search  
 + Rake Task  
 + CSV, XLS  
++ contextMenu(Right Click Menu)  
++ Client Side Validation
 
 
 #### Slider(bxslider-rails)
@@ -602,4 +604,14 @@ In model :
 + sudo vi /etc/elasticsearch/elasticsearch.yml  
 + http://localhost:9200/_plugin/head/
 + [head](http://mobz.github.io/elasticsearch-head/) -- [2](https://github.com/EricLondon/Rails-4-ElasticSearch-dynamic-facets/blob/master/README.md)
+
+#### contextMenu
++ in js =>  jquery.contextMenu.js  
++ in cs =>  jquery.contextMenu.css  
++ [Demo](http://medialize.github.io/jQuery-contextMenu/demo.html)
+
+#### Client Side Validation
++ gem 'client_side_validations', github: 'DavyJonesLocker/client_side_validations'  
++ in application.js => //= require rails.validations  
++ [Documentation](https://github.com/DavyJonesLocker/client_side_validations) -- [_*parsleyjs](http://parsleyjs.org/doc/examples/simple.html)  
 

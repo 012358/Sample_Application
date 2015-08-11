@@ -4,4 +4,8 @@ class Enumeration < ActiveRecord::Base
     puts 'Hello this is test in parent'
   end
 
+  def to_param
+    "#{id} #{name}".parameterize
+  end
+
 end
