@@ -5,7 +5,8 @@ class Calendar < ActiveRecord::Base
   has_many :calendar_users
   belongs_to :user
 
-  serialize :other_details
+  serialize :other_details, Array
+  before_save :serialize_other_details
 
   validates_format_of :name, :with => /\A[a-z A-Z]+\z/,  :message => "Please use only regular letters as name"
 
@@ -26,11 +27,12 @@ class Calendar < ActiveRecord::Base
     end
   end
 
+
   def self.to_csv(option = {})
     CSV.generate(option) do |csv|
-      csv << column_names
-      all.each do |calendar|
-        csv << calendar.attributes.values_at(*column_names)
+      csv << ['user_id', 'created_at']
+      [[111,"Tue, 30 Jun 2015 23:50:55 KST +09:00"],[123,"Tue, 30 Jun 2015 23:50:55 KST +09:00"]].each do |array|
+        csv << array
       end
     end
   end
@@ -40,7 +42,8 @@ class Calendar < ActiveRecord::Base
   end
 
   def serialize_other_details
-    self.other_details = {name: 'Sajjad', education: 'Bs Computer Science'}
+    p "^^^^^^^^^^^^^^^^^^"
+    p self.other_details = [name: 'Sajjad', education: 'Bs Computer Science']
   end
 
 

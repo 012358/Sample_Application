@@ -79,11 +79,13 @@
           p
             | Multiplying
           p
-            | {{name*1 + last_name*1}}
+            | {{name*1 + last_name*1 | currency}}
 
         div ng-controller="simpleController"
-          div ng-repeat="tag in tags"
+          input ng-model="search.text" type="text" placeholder= 'Search'
+          div ng-repeat="tag in tags | filter: search | orderBy: 'text'"
             input type="text" ng-model="tag.text"
+            | {{tag.text | uppercase}}
 
 javascript:
   function simpleController($scope) {
@@ -91,7 +93,7 @@ javascript:
 
       {
         done: false,
-        text: 'fist'
+        text: 'first'
       },
       {
         done: true,
