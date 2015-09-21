@@ -615,3 +615,9 @@ In model :
 + in application.js => //= require rails.validations  
 + [Documentation](https://github.com/DavyJonesLocker/client_side_validations) -- [_*parsleyjs](http://parsleyjs.org/doc/examples/simple.html)  
 
+#### Parameterize helper method
++ before_filter { name_of_method("parameter") }  
+
+#### Self Join Examples
++ Follow + User
+

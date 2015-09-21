@@ -1,0 +1,23 @@
+%h1 Listing emplyees
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Manager
+      %th
+      %th
+      %th
+
+  %tbody
+    - @emplyees.each do |emplyee|
+      %tr
+        %td= emplyee.name
+        %td= emplyee.manager_id
+        %td= link_to 'Show', emplyee
+        %td= link_to 'Edit', edit_emplyee_path(emplyee)
+        %td= link_to 'Destroy', emplyee, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Emplyee', new_emplyee_path

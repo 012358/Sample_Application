@@ -32,3 +32,32 @@
           = link_to 'Download Pdf', billing_path(bill, format: :pdf)
         hr
         br
+
+    #jquery
+      ul
+        li
+          | First
+        li
+          | Second
+      ul
+        li
+          | 2 First
+        li
+          | 2 Second
+
+      = link_to 'With Target', '#', target: '_blank'
+      br
+      = link_to 'Without Target', '#'
+      br
+    #paragraph
+      p.hide This is sample paragraph
+      p.delegate daata="This is data -- event.targer - then data" This is sample paragraph for DELEGATE
+
+    .animation
+      = button_tag :animation
+    .reset
+      = button_tag :reset
+
+    br
+    = button_tag :submit, class: 'button'
+    = text_field_tag :text,nil, class: 'text_field'

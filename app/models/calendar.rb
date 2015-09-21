@@ -1,11 +1,13 @@
 class Calendar < ActiveRecord::Base
   include MultiInheri1
   include MultiInheri2
-  has_many :events, -> { order('created_at DESC') }, dependent: :destroy
+  has_many :events, inverse_of: :calendar,  dependent: :destroy
   has_many :calendar_users
   belongs_to :user
 
-  serialize :other_details, Array
+  before_validation :set_calendar_name, on:[:create]
+
+  serialize :other_details
   before_save :serialize_other_details
 
   validates_format_of :name, :with => /\A[a-z A-Z]+\z/,  :message => "Please use only regular letters as name"
@@ -44,6 +46,11 @@ class Calendar < ActiveRecord::Base
   def serialize_other_details
     p "^^^^^^^^^^^^^^^^^^"
     p self.other_details = [name: 'Sajjad', education: 'Bs Computer Science']
+  end
+
+  def set_calendar_name
+    p "********************** Calendar Name Capitalize"
+    p self.name.capitalize
   end
 
 

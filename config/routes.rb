@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :emplyees
+
   resources :friendships
 
   resources :book_marks
