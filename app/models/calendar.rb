@@ -8,7 +8,7 @@ class Calendar < ActiveRecord::Base
   serialize :other_details, Array
   before_save :serialize_other_details
 
-  validates_format_of :name, :with => /\A[a-z A-Z]+\z/,  :message => "Please use only regular letters as name"
+  # validates_format_of :name, :with => /\A[a-z A-Z]+\z/,  :message => "Please use only regular letters as name"
 
 
   def as_json(options= {})

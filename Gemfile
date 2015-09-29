@@ -15,6 +15,8 @@ gem 'momentjs-rails'
 gem 'semantic-ui-sass'
 gem 'select2-rails'
 gem 'slim-rails'
+gem 'smarter_csv'
+gem 'sinatra', :require => nil
 
 #gem 'extra_attributes_for_all_migration', :git => 'https://github.com/sajjadmurtaza49/extra_attributes_for_all_migration'
 ########### AUTHENTICATION
