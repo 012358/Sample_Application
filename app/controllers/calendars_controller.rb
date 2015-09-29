@@ -20,7 +20,11 @@ class CalendarsController < ApplicationController
   end
 
   def import
-    Calendar.import(params[:file])
+    CSV.foreach(params[:file].path, headers: true) do |row|
+      attrs ={name: row[0]} #
+      p "************************#{attrs}"
+      Importcsv.perform_async(attrs)
+    end
     redirect_to calendars_path, notice: "Calendar imported."
   end
 

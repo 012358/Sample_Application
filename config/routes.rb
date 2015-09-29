@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   resources :emplyees
 
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
   resources :friendships
 
   resources :book_marks
