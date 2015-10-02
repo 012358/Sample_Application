@@ -14,7 +14,7 @@ class Calendar < ActiveRecord::Base
 
 
   def as_json(options= {})
-    {id: self.id, text: self.name}
+    {id: self.id, text: self.name, label: self.name, value: self.events.count, completed: self.events.where(completed: true).count}
   end
 
   def self.import(file)

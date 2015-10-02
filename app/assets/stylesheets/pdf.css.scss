@@ -1,85 +1,85 @@
-body{
-  margin: 0;
-  padding: 0;
-}
-.logo, .text, .image, .skill, .detail_information, .detail, .contact_information, .contact_detail, .employment, .portfolio, .amazing, .experience, .availibility{
-  display: inline;
-  float: left;
-}
-#header{
-  min-height: 63px;
-  background-color: #2557A1;
-  .logo{
-    border-right: 1px solid #94ABD8;
-    margin: 25px 0 0 2px;
-    width: 100px;
-  }
-  .text{
-    font-style: italic;
-    font-size: small;
-    color: #CBD4F1;
-    margin: 33px 0 0 0;
-    width: 260px;
-  }
-  .contact{
-    font-size: small;
-    color: #CBD4F1;
-    display: inline;
-    float: right;
-    margin: 33px 0 0 0;
-    width: 200px;
-  }
-}
-#information
-{
-  height: 200px;
-  background-color: #EDF3FF;
-  .image{
-    margin: 30px 0 0 15px;
-    height: 150px;
-    width: 100px;
-  }
-  .name{
-    float: left;
-    margin: 30px 0 0 20px;
-    color: #2557A1;
-    font-size: large;
-    width: 550px ;
-    .since{
-      margin-top: 5px;
-      font-size: x-small;
-    }
-  }
-  .skill_detail{
-    position: relative;
-    float: left;
-    height: 70px;
-    width: 575px;
-    overflow: hidden;
-    .skill{
-      font-size: x-small;
-      margin: 3px 0 0 5px;
-      text-wrap:none;
-      background-color: #2557A1;
-      border: 2px solid #2557A1;
-      border-radius: 3px;
-      color: #CBD4F1;
-      height: 12px;
-      padding: 2px;
-    }
-  }
-  .summary{
-    float: left;
-    margin: 3px 0 0 15px;
-    width: 550px ;
-    font-size: x-small;
-    color: #686868;
-  }
-}
-.nam{
-  border: 2px solid #a1a1a1;
-  padding: 10px 40px;
-  background: #dddddd;
-  width: 300px;
-  border-radius: 25px;
-}
+//body{
+//  margin: 0;
+//  padding: 0;
+//}
+//.logo, .text, .image, .skill, .detail_information, .detail, .contact_information, .contact_detail, .employment, .portfolio, .amazing, .experience, .availibility{
+//  display: inline;
+//  float: left;
+//}
+//#header{
+//  min-height: 63px;
+//  background-color: #2557A1;
+//  .logo{
+//    border-right: 1px solid #94ABD8;
+//    margin: 25px 0 0 2px;
+//    width: 100px;
+//  }
+//  .text{
+//    font-style: italic;
+//    font-size: small;
+//    color: #CBD4F1;
+//    margin: 33px 0 0 0;
+//    width: 260px;
+//  }
+//  .contact{
+//    font-size: small;
+//    color: #CBD4F1;
+//    display: inline;
+//    float: right;
+//    margin: 33px 0 0 0;
+//    width: 200px;
+//  }
+//}
+//#information
+//{
+//  height: 200px;
+//  background-color: #EDF3FF;
+//  .image{
+//    margin: 30px 0 0 15px;
+//    height: 150px;
+//    width: 100px;
+//  }
+//  .name{
+//    float: left;
+//    margin: 30px 0 0 20px;
+//    color: #2557A1;
+//    font-size: large;
+//    width: 550px ;
+//    .since{
+//      margin-top: 5px;
+//      font-size: x-small;
+//    }
+//  }
+//  .skill_detail{
+//    position: relative;
+//    float: left;
+//    height: 70px;
+//    width: 575px;
+//    overflow: hidden;
+//    .skill{
+//      font-size: x-small;
+//      margin: 3px 0 0 5px;
+//      text-wrap:none;
+//      background-color: #2557A1;
+//      border: 2px solid #2557A1;
+//      border-radius: 3px;
+//      color: #CBD4F1;
+//      height: 12px;
+//      padding: 2px;
+//    }
+//  }
+//  .summary{
+//    float: left;
+//    margin: 3px 0 0 15px;
+//    width: 550px ;
+//    font-size: x-small;
+//    color: #686868;
+//  }
+//}
+//.nam{
+//  border: 2px solid #a1a1a1;
+//  padding: 10px 40px;
+//  background: #dddddd;
+//  width: 300px;
+//  border-radius: 25px;
+//}

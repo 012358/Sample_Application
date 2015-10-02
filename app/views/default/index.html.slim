@@ -1,46 +1,203 @@
-.main-container
+section#main-content
+  section.wrapper
+    /! overview start
+    .row
+      .col-lg-12
+        h3.page-header
+          | Dashboard
+        ol.breadcrumb
+          li
+            | Home
+          li
+            | Dashboard
+    .row
+      .col-lg-3.col-md-3.col-sm-12.col-xs-12
+        .info-box.blue-bg
+          .count
+            = Calendar.first.name
+          .title
+            = Calendar.first.events.count
 
-  .other_containers
-    .github-fork style="margin: 30px 0 0 0; float: right"
-      = link_to image_tag('forkme_right_darkblue_121621.png'), 'https://github.com/sajjadmurtaza49/rails-sample-application', target: '_blank'
+
+      .col-lg-3.col-md-3.col-sm-12.col-xs-12
+        .info-box.brown-bg
+          .count
+            = Calendar.second.name
+          .title
+            = Calendar.second.events.count
+
+      .col-lg-3.col-md-3.col-sm-12.col-xs-12
+        .info-box.dark-bg
+          .count
+            = Calendar.third.name
+          .title
+            = Calendar.third.events.count
+
+      .col-lg-3.col-md-3.col-sm-12.col-xs-12
+        .info-box.green-bg
+          .count
+            = Calendar.fourth.name
+          .title
+            = Calendar.third.events.count
+
+    .row
+      .col-lg-9.col-md-12
+        .panel.panel-default
+          .panel-body style="min-height:313px;"
+            table.table.bootstrap-datatable.countries
+              thead
+                tr
+
+                  th Calendar
+                  th Total events
+                  th Completed events
+                  th Progress
+              tbody
+                - Calendar.includes(:events).each do |c|
+                  tr
+
+                    td
+                      = c.name
+                    td
+                      - total = 0
+                      = total = c.events.count
+                    td
+                      - @completed = 0
+                      - @completed = c.events.where(completed: true).count
+                      = @completed == 0 ? '0' : (@completed/total)
+                    td
+                      .progress.thin
+                        .progress-bar.progress-bar-danger aria-valuemax="100" aria-valuemin="0" aria-valuenow="#{@completed}" role="progressbar" style=("width: #{@completed}%")
+                        .progress-bar.progress-bar-warning aria-valuemax="100" aria-valuemin="0" aria-valuenow="#{100 - @completed}" role="progressbar" style=("width: #{100 - @completed}%")
+
+
+
+      .col-lg-3.col-md-3.col-sm-12.col-xs-12
+        = content_tag :div, "", id: "bar-example", data:{calendars:Calendar.all}
+
+    .row
+      .col-md-4.portlets
+        .panel.panel-default
+          .panel-heading
+            .pull-left Calendars
+          .panel-body
+            .padd.sscroll
+              ul.chats
+                li.by-me
+                  - @c1 = Calendar.first
+                  .chat-content
+                    .chat-meta
+                      = @c1.name
+                      span.pull-right
+                        = @c1.created_at
+                    = @c1.color
+                    .clearfix
+
+                li.by-other
+                  .avatar.pull-right
+                    - @c2 = Calendar.second
+                  .chat-content
+                    .chat-meta
+                      = @c2.name
+                      span.pull-right
+                        = @c2.created_at
+                    = @c2.color
+                    .clearfix
+                li.by-me
+                  .avatar.pull-left
+                    - @c3 = Calendar.third
+                  .chat-content
+                    .chat-meta
+                      = @c3.name
+                      span.pull-right
+                        = @c3.created_at
+                    = @c3.color
+                    .clearfix
+                li.by-other
+                  .avatar.pull-right
+                    - @c4 = Calendar.fourth
+                  .chat-content
+                    .chat-meta
+                      = @c4.name
+                      span.pull-right
+                        = @c4.created_at
+                    = @c4.color
+                    .clearfix
+
+
+
+      .col-lg-8
+        /! Project Activity start
+        section.panel
+          .panel-body.progress-panel
+            .row
+              .col-lg-8.task-progress.pull-left
+                h1 Important Links
+              .col-lg-4
+                span.profile-ava.pull-right
+                  | Sajjad Murtaza
+          table.table.table-hover.personal-task
+            tbody
+              tr
+                td 1
+                td
+                  a href="http://stackoverflow.com/users/4060732/sajjad-murtaza" target="_blank"  Stackoverflow
+                td
+                  span.badge.bg-important Question and answer site
+
+              tr
+                td 2
+                td
+                  a href="https://en.gravatar.com/sajjadmurtaza49" target="_blank"  Gravatar
+                td
+                  span.badge.bg-success Display user-provided pictures from a central database
+
+
+              tr
+                td 3
+                td
+                  a href="https://hyperlinkomatic.herokuapp.com" target="_blank"  Hyperlinkomatic
+                td
+                  span.badge.bg-success Personal Book Mark Site
+
+              tr
+                td 4
+                td
+                  a href="https://www.duolingo.com" target="_blank"  Duolingo
+                td
+                  span.badge.bg-primary Learn languages completely free
+
+              tr
+                td 5
+                td
+                  a href="http://www.studyinkorea.go.kr/en/uat/uia/egovLoginUsr.do" target="_blank"  Study-in-korea
+                td
+                  span.badge.bg-info Overseas Study Application Studyin Korea
+
+              tr
+                td 6
+                td
+                  a href="http://www.pk.emb-japan.go.jp/Education.html" target="_blank"  Japan Embassy Pakistan
+                td
+                  span.badge.bg-primary Explore Education Tab
+
     br
-
-    #form
     br
-    #listing
-
-    div style="margin: 30px 0 0 0;"
-      h2
-        font color="#696969"
-          | “The only true wisdom is in knowing you know nothing.”
-
-
-    div style="margin: 80px 0 0 0;"
-      .bxslider
-
-        = image_tag '1.jpg'
-        = image_tag '2.jpg'
-        = image_tag '3.jpg'
-        = image_tag '4.jpg'
-        = image_tag '6.jpg'
-
-        /= audio_tag('aud.mp3',  controls: 'controls')
-        /span style="margin: 0 0 0 240px"
-        /  = audio_tag('aud.mp3',  controls: 'controls')
-
-    footer.ui.three.column.page.grid
-      .column
-      #status-bar
-        .column
-          = "© #{Time.now.strftime("%Y")} - All Rights Reserved - "
-          = mail_to "sajjad.murtaza49@yahoo.com", nil, :style => 'font-weight: bold'
-      .column
+    .row
+      .col-md-12.portlets
+        .panel.panel-default
+          .panel-body
+            #calendar
 
 javascript:
-  $(document).ready(function () {
-    $('.bxslider').bxSlider({
-      auto: true,
-      autoControls: true
+  Morris.Bar({
+    element: 'bar-example',
+    data: $("#bar-example").data('calendars'),
 
-    });
+    xkey: 'label',
+    ykeys: ['value', 'completed'],
+    labels: ['Total Events: ', 'Completed Events: '],
+    xLabelAngle: 60
   });
+
+

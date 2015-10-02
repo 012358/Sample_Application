@@ -15,7 +15,6 @@
  *= require select2
  *= require jquery.datetimepicker
  *= require spectrum
- *= require templete
  *= require jquery.contextMenu
  *= require prettify.sunburst
  *= require bxslider
@@ -25,8 +24,8 @@
  *= require_tree .
 
 
- */
-#paragraph{
-    background-color: lightgoldenrodyellow;
-}
+ /**/
+/*#paragraph{*/
+    /*background-color: lightgoldenrodyellow;*/
+/*}*/
 

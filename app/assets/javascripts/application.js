@@ -26,6 +26,9 @@
 //= require projects
 //= require organize_data
 //= require ckeditor/init
+//= require js
+//= require raphael
+//= require morris
 
 $(document).ready(function(){
    //$("#paragraph").click(function(){

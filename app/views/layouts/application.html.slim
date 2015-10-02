@@ -1,0 +1,44 @@
+html ng-app=""
+  head
+    = favicon_link_tag 'sm.jpg'
+    title Sajjad Murtaza
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+
+    - if user_signed_in?
+      section#container
+        header.header.dark-bg
+          .toggle-nav
+            .icon-reorder.tooltips data-original-title=("Toggle Navigation") data-placement="bottom"
+          a.logo href="index.html"
+            | Scheduly
+            span.lite Bridge
+
+        //////////////////////// SIDE BAR //////////////////////////
+
+
+        aside
+          #sidebar.nav-collapse
+            ul.sidebar-menu
+              li.sub-menu
+                = link_to 'Home', default_index_path
+              li.sub-menu
+                = link_to 'Calender Events', events_path
+              li.sub-menu
+                = link_to 'Project/Tasks', projects_path
+              li
+                = link_to 'Home', default_index_path
+              li
+                = link_to 'Home', default_index_path
+              li.sub-menu
+                = link_to 'Edit Profile', edit_user_path(current_user)
+              li.sub-menu
+                = link_to 'Logout', destroy_user_session_path, method: :delete
+
+
+
+        = yield
+    - else
+      = yield
