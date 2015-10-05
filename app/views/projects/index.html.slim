@@ -1,15 +1,7 @@
-.main-container
+section#main-content
+  section.wrapper
+    = link_to  'New project', new_project_path, class: "ui button mini", remote: true
 
-
-  .other_containers
-    br
-      .ui.buttons
-        br
-        = link_to "#{semantic_icon('add')} Project".html_safe, new_project_path, class: "ui button mini", remote: true
-    #form
-    br
-    #listing
-    br
     = form_for projects_path, method: :get do |f|
       p
         = f.label "Search for"
@@ -18,75 +10,80 @@
     br
 
 
-      table.ui.compact.table.data-listing
-        thead
-          tr
-            th.two.wide.column Serial #
-            th.three.wide.column Project Name
-            th.four.wide.column Description
-            th.six.wide.column Tasks
-            th Actions
-        tbody
-          - i =  1
-          - @projects.each do |project|
-            tr data-invoice=project.id
-              td = i
-              td.context-menu-one.box.menu-1 = link_to project.name, project_path(project)
-              td = project.description
+    #form
+    .col-lg-12.col-md-12
+      .panel.panel-default
+        .panel-heading
+          table.ui.compact.table.data-listing
+            thead
+              tr
+                th.two.wide.column Serial #
+                th.three.wide.column Project Name
+                th.four.wide.column Description
+                th Tools and Technologies
+                th.six.wide.column Tasks
+                th Actions
+            tbody
+              - i =  1
+              - @projects.each do |project|
+                tr
+                  td = i
+                  td.context-menu-one.box.menu-1 = link_to project.name, project_path(project), data:{id: project.id, url: project.url}
+                  td = project.description
+                  td = project.skills.count
+                  td
+                    = project.tasks.count
+                  td
+                    = link_to 'Edit', edit_project_path(project), remote:true
+                    |  |
+                    = link_to 'Delete', project, data: {method: :delete, confirm: 'Are you sure?'}
+                  - i=i+1
 
-              td
-                = "#{project.tasks.count} tasks associated with #{project.name} project"
-              td
-                = link_to(semantic_icon('pencil').html_safe, edit_project_path(project), remote:true)
-                | |
-                = link_to(semantic_icon('trash').html_safe, project, data: {method: :delete, confirm: 'Are you sure?'})
-              - i=i+1
-
-      .ui.small.modal
-        i.close.icon
-        .header
-          | Sajjad are you sure ?
-        .content
-          .description
-            p You cannot edit, delete, copy, paste and quit. Its just for testing.
-
-      div style="color: #006600"
-        | 1. Add Project
-        br
-        | 2. Add one or more Task of Project
-        br
-        | 3. Right-Click on Project-Name, there menu appear.
-
-      div style="color: red"
-        br
-        br
-        - @audits_projects.each do |project|
-          p
-            | ******************
-          = "#{project.name} => ( Changes #{project.audits.count} times .."
-          br
-          - audit = project.try(:audits).try(:last)
-          div style="color:green ; margin-left: 10px;"
-            = audit.try(:action)
-            = "  the #{audit.try(:auditable_type)}"
-          br
-          - changes = audit.try(:audited_changes)
-
-          /++++++++++++ CREATE
-          - if audit.try(:action) == 'create'
-            div style="color: grey; margin-left: 30px;"
-              - changes.each do |key|
-                = "#{key[0]} : #{key[1]}"
-                br
-          /++++++++++++ UPDATE
-          - if audit.try(:action) == 'update'
-            div style="color: grey; margin-left: 30px;"
-              - changes.keys.each do|key|
-                =
-                = "#{key} changed from #{changes[key][0]} to #{changes[key][1]}"
-                br
-          br
-
-
-
-
+      /.ui.small.modal
+      /  i.close.icon
+      /  .header
+      /    | Sajjad are you sure ?
+      /  .content
+      /    .description
+      /      p You cannot edit, delete, copy, paste and quit. Its just for testing.
+      /
+      /div style="color: #006600"
+      /  | 1. Add Project
+      /  br
+      /  | 2. Add one or more Task of Project
+      /  br
+      /  | 3. Right-Click on Project-Name, there menu appear.
+      /
+      /div style="color: red"
+      /  br
+      /  br
+      /  - @audits_projects.each do |project|
+      /    p
+      /      | ******************
+      /    = "#{project.name} => ( Changes #{project.audits.count} times .."
+      /    br
+      /    - audit = project.try(:audits).try(:last)
+      /    div style="color:green ; margin-left: 10px;"
+      /      = audit.try(:action)
+      /      = "  the #{audit.try(:auditable_type)}"
+      /    br
+      /    - changes = audit.try(:audited_changes)
+      /
+      /    /++++++++++++ CREATE
+      /    - if audit.try(:action) == 'create'
+      /      div style="color: grey; margin-left: 30px;"
+      /        - changes.each do |key|
+      /          = "#{key[0]} : #{key[1]}"
+      /          br
+      /    /++++++++++++ UPDATE
+      /    - if audit.try(:action) == 'update'
+      /      div style="color: grey; margin-left: 30px;"
+      /        - changes.keys.each do|key|
+      /          =
+      /          = "#{key} changed from #{changes[key][0]} to #{changes[key][1]}"
+      /          br
+      /    br
+      /
+      /
+      /
+      /

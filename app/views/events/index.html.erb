@@ -1,55 +1,10 @@
-<div class="main-container">
-  <div class="other_containers">
-    <br>
-    <div class="ui buttons">
-      <br>
-      <%= link_to "#{semantic_icon('add')}  Event".html_safe, new_event_path, class: "ui button mini" %>
-      <%= link_to "#{semantic_icon('add')}  Calendar".html_safe, new_calendar_path, class: "ui button mini" %>
-
-    </div>
-    <br>
-
-    <div id="form">
-
-    </div>
-    <br>
+<section id="main-content">
+  <section class="wrapper">
+    <div style="display: block; clear:both" id="calendar"; ></div>
+  </section>
+</section>
 
 
-    <br>
-
-
-    <div id="listing">
-      <div style="width: 100%; height: auto; display: block;">
-        <br>
-        <div style="width: 50%; float: left; display: block;">
-
-
-
-        </div>
-
-        <div style="width: 50%; float: left; display: block;">
-          <div id="form"></div>
-        </div>
-        <div style="display: block; clear:both" id="calendar"; ></div>
-      </div>
-      </div>
-    <div style="color: #006600">
-
-      <br>
-      <div id="help-icon">
-        <%= semantic_icon('help') %>
-      </div>
-
-      <div id="help">
-        1. Add Calendar<br>
-        2. Add one or more Events Against Calendar<br>
-        3. Click On Event(show in Calendar), its goes to Event Show Page.<br>
-        4. On-Hover On Calendar-Event Show DESCRIPTION, TITLE, ASSOCIATED CALENDAR TOTAL EVENTS.
-      </div>
-
-    </div>
-    </div>
-  </div>
 
 
 

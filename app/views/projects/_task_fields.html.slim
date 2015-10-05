@@ -1,5 +1,6 @@
 .nested-fields
-  .fields
-    .eight.wide.field
-      = f.text_field :description, placeholder: 'Add Task'
-  = link_to_remove_association "remove task", f
+  .form-group
+    label.control-label.col-lg-2 for="title"  Task
+    .col-lg-10
+      = f.text_field :description, placeholder: 'Add Task', class: 'form-control'
+    = link_to_remove_association "remove task", f

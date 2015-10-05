@@ -1,25 +1,47 @@
-.ui.form
-  = form_for @project do |f|
-    - if @project.errors.any?
-      #error_explanation
-        h2 = "#{pluralize(@project.errors.count, "error")} prohibited this project from being saved:"
-        ul
-          - @project.errors.full_messages.each do |message|
-            li = message
+section#main-content
+  section.wrapper
+    .col-md-6.portlets
+      .panel.panel-default
+        .panel-heading
+          | Project
+        .panel-body
+          .padd
+            .quick-post
+              .form-horizontal
+                = form_for @project do |f|
+                  - if @project.errors.any?
+                    #error_explanation
+                      h2 = "#{pluralize(@project.errors.count, "error")} prohibited this project from being saved:"
+                      ul
+                        - @project.errors.full_messages.each do |message|
+                          li = message
 
-    .fields
-      .eight.wide.field
-        = f.text_field :name, placeholder: 'Project Name'
-    .fields
-      .eight.wide.field
-        = f.text_area :description, placeholder: 'Description'
-    #tasks
-      = f.fields_for :tasks do |task|
-        = render 'task_fields', :f => task
-      .links
-        = link_to_add_association 'add task', f, :tasks
-    .actions
-      = f.submit f.object.new_record? ? 'Create' : 'Update', class: 'ui blue mini submit button ok'
-      = link_to 'Cancel', url_for(:back), class: 'ui mini black button'
-      br
+                  .form-group
+                    label.control-label.col-lg-2 for="title"  Name
+                    .col-lg-10
+                      = f.text_field :name, placeholder: 'Project Name', class: 'form-control'
+                  .form-group
+                    label.control-label.col-lg-2 for="title"  URL
+                    .col-lg-10
+                      = f.text_field :url, placeholder: 'URL', class: 'form-control'
+                  .form-group
+                    label.control-label.col-lg-2 for="title"  Description
+                    .col-lg-10
+                      = f.text_area :description, placeholder: 'Description', class: 'form-control'
+                  #tasks
+                    = f.fields_for :tasks do |task|
+                      = render 'task_fields', :f => task
+                    .links
+                      = link_to_add_association 'add task', f, :tasks
+
+                    br
+                  #skills
+                    = f.fields_for :skills do |skill|
+                      = render 'skill_fields', :f => skill
+                    .links
+                      = link_to_add_association 'add skill', f, :skills
+                  .actions
+                    = f.submit f.object.new_record? ? 'Create' : 'Update', class: 'btn btn-primary'
+                    = link_to 'Cancel', url_for(:back), class: 'btn btn-default'
+                    br
 

@@ -166,7 +166,7 @@
     <orderEntry type="library" scope="PROVIDED" name="factory_girl (v4.5.0, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="factory_girl_rails (v4.5.0, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="faraday (v0.9.0, rbenv: 2.1.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="fullcalendar-rails (v2.2.3.0, rbenv: 2.1.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="fullcalendar-rails (v2.3.1.0, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="geocoder (v1.2.7, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="gmaps4rails (v2.1.2, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="haml (v4.0.7, rbenv: 2.1.1) [gem]" level="application" />
@@ -179,15 +179,15 @@
     <orderEntry type="library" scope="PROVIDED" name="i18n (v0.7.0, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.2.6, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jcrop-rails-v2 (v0.9.12.3, rbenv: 2.1.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v3.1.2, rbenv: 2.1.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="json (v1.8.1, rbenv: 2.1.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v3.1.4, rbenv: 2.1.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="json (v1.8.3, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jwt (v1.0.0, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="kaminari (v0.16.1, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.5.4, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mime-types (v1.25.1, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mini_portile (v0.6.2, rbenv: 2.1.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="minitest (v5.5.0, rbenv: 2.1.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="momentjs-rails (v2.8.3, rbenv: 2.1.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="minitest (v5.8.1, rbenv: 2.1.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="momentjs-rails (v2.10.3, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.10.1, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_xml (v0.5.5, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multipart-post (v2.0.0, rbenv: 2.1.1) [gem]" level="application" />
@@ -207,9 +207,9 @@
     <orderEntry type="library" scope="PROVIDED" name="pdftk (v0.0.4, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg (v0.17.1, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="polyglot (v0.3.5, rbenv: 2.1.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack (v1.5.2, rbenv: 2.1.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack (v1.5.5, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-protection (v1.5.3, rbenv: 2.1.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack-test (v0.6.2, rbenv: 2.1.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-test (v0.6.3, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails (v4.1.5, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-observers (v0.1.2, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails_12factor (v0.0.3, rbenv: 2.1.1) [gem]" level="application" />
@@ -243,7 +243,7 @@
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v2.2.2, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="temple (v0.6.9, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v0.19.1, rbenv: 2.1.1) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="thread_safe (v0.3.4, rbenv: 2.1.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="thread_safe (v0.3.5, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v1.4.1, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="timers (v4.0.1, rbenv: 2.1.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="treetop (v1.4.15, rbenv: 2.1.1) [gem]" level="application" />

@@ -1,106 +1,119 @@
-<div class="main-container">
-  <div class="other_containers">
-        <br><br>
+<section id="main-content">
+  <section class="wrapper">
+
     <%= link_to "CSV", calendars_path(format: "csv") %> |
     <%= link_to "Excel", calendars_path(format: "xls") %>
+    <br>
+    <div class="col-lg-10 col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">Last 30 days Calendars List
+            <table class="table bootstrap-datatable countries">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Color</th>
+                  <th colspan="3">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @calendars.each do |calendar| %>
+                  <tr>
 
-        <table class="ui compact table data-listing">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Color</th>
-              <th colspan="3">Action</th>
-            </tr>
-          </thead>
+                    <td><font color="<%= calendar.color %>"><%= calendar.name %></font></td>
+                    <td><%= calendar.color %></td>
+                    <td>
+                      <%= link_to 'Edit', edit_calendar_path(calendar) %> |
+                      <%= link_to 'Delete', calendar, data: {method: :delete, confirm: 'Are you sure?'}%> |
+                      <%= link_to 'Show', calendar%>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
 
-          <tbody>
-            <% @calendars.each do |calendar| %>
+    <div class="col-lg-10 col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">Last 30 days Calendars List
+
+          <table class="table bootstrap-datatable countries">
+            <thead>
               <tr>
-
-                <td><%= calendar.name %></td>
-                <td><%= calendar.color %></td>
-                <td>
-                <%= link_to(semantic_icon('pencil').html_safe, edit_calendar_path(calendar)) %>
-
-                <%= link_to(semantic_icon('trash').html_safe, calendar, data: {method: :delete, confirm: 'Are you sure?'})%>
-                  <%= link_to(semantic_icon('unhide').html_safe, calendar) %>
+                <th>Name</th>
+                <th>Color</th>
+                <th colspan="3">Action</th>
               </tr>
+            </thead>
+            <tbody>
+            <% @last_month_calendars.each do |calendar| %>
+                <tr>
+                  <td><font color="<%= calendar.color %>"><%= calendar.name %></font></td>
+                  <td><%= calendar.color %></td>
+                  <td>
+                    <%= link_to 'Edit', edit_calendar_path(calendar) %> |
+                    <%= link_to 'Delete', calendar, data: {method: :delete, confirm: 'Are you sure?'}%> |
+                    <%= link_to 'Show', calendar%>
+                </tr>
             <% end %>
-          </tbody>
-        </table>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 
-    <h2>Import Products</h2>
+    <div class="col-lg-10 col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">Calendar having greater than 10 events
+           <table class="table bootstrap-datatable countries">
+              <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Color</th>
+                    <th colspan="3">Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <% @calendar_having_gt_10_events.each do |calendar| %>
+                      <tr>
+                        <td><font color="<%= calendar.color %>"><%= calendar.name %></font></td>
+                        <td><%= calendar.color %></td>
+                        <td>
+                          <%= link_to 'Edit', edit_calendar_path(calendar) %> |
+                          <%= link_to 'Delete', calendar, data: {method: :delete, confirm: 'Are you sure?'}%> |
+                          <%= link_to 'Show', calendar%>
+                      </tr>
+                  <% end %>
+              </tbody>
+           </table>
+        </div>
+      </div>
+    </div>
+
 
     <%= form_tag import_calendars_path, multipart: true do %>
-        <%= file_field_tag :file %>
-        <%= submit_tag "Import" %>
+        <%= file_field_tag :file %><br>
+        <%= submit_tag 'Import' , class: 'btn btn-primary' %>
     <% end %>
 
-        <br>
-    <p>Last 30 days Calendars(range)</p>
-    <table class="ui compact table data-listing">
-      <thead>
-      <tr>
-        <th>Name</th>
-        <th>Color</th>
-        <th colspan="3">Action</th>
-      </tr>
-      </thead>
-    <tbody>
-    <% @last_month_calendars.each do |calendar| %>
-        <tr>
-
-          <td><%= calendar.name %></td>
-          <td><%= calendar.color %></td>
-          <td>
-            <%= link_to(semantic_icon('pencil').html_safe, edit_calendar_path(calendar)) %>
-
-            <%= link_to(semantic_icon('trash').html_safe, calendar, data: {method: :delete, confirm: 'Are you sure?'})%>
-            <%= link_to(semantic_icon('unhide').html_safe, calendar) %>
-
-        </tr>
-    <% end %>
-    </tbody>
-    </table>
-    <br>
-    <p>Calendar having greater than 10 events</p>
-    <table class="ui compact table data-listing">
-      <thead>
-      <tr>
-        <th>Name</th>
-        <th>Color</th>
-        <th colspan="3">Action</th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @calendar_having_gt_10_events.each do |calendar| %>
-          <tr>
-
-            <td><%= calendar.name %></td>
-            <td><%= calendar.color %></td>
-            <td>
-              <%= link_to(semantic_icon('pencil').html_safe, edit_calendar_path(calendar)) %>
-
-              <%= link_to(semantic_icon('trash').html_safe, calendar, data: {method: :delete, confirm: 'Are you sure?'})%>
-              <%= link_to(semantic_icon('unhide').html_safe, calendar) %>
-
-          </tr>
-      <% end %>
-      </tbody>
-    </table>
-    <br>
-    <div style="color: #006600">
-      1. Show All Calendar.<br>
-      2. Edit, Delete, Show(with all Events of associated Calendar).
-      <br><br>
-      <%#= link_to "get 'all_calendars', 'calendar#index'", all_calendars_path%><br>
-      <%#= link_to "get 'calendar/:id', 'calendar#show', as: 'show-me_last_calendar' ", showme_last_calendar_path(Calendar.last) %><br>
-      <%#= link_to "get 'calendar/:id/edit', 'calendar#edit', as: 'last_calendar_toupdate' ", last_calendar_toupdate_path(Calendar.last) %><br>
-
-
-      </div>
-
-    <div>HELPER METHOD EXample: <%= current_user_information %></div>
-
-</div>
+    <div class=".col-lg-10.col-md-10 col-sm-10 col-xs-10">
+      <%= content_tag :div, "", id: "bar-example", data:{calendars:Calendar.all} %>
     </div>
+
+  </section>
+</section>
+
+<script>
+    Morris.Bar({
+        element: 'bar-example',
+        data: $("#bar-example").data('calendars'),
+
+        xkey: 'label',
+        ykeys: ['value', 'completed'],
+        labels: ['Total Events: ', 'Completed Events: '],
+        xLabelAngle: 60
+    });
+</script>
+
+
+

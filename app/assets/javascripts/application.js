@@ -26,7 +26,6 @@
 //= require projects
 //= require organize_data
 //= require ckeditor/init
-//= require js
 //= require raphael
 //= require morris
 

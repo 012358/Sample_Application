@@ -1,15 +1,28 @@
-= form_for @skill, url:  @skill.new_record? ? skills_path : skill_path do |f|
-  - if @skill.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@skill.errors.count, "error")} prohibited this skill from being saved:"
-      ul
-        - @skill.errors.full_messages.each do |message|
-          li = message
+section#main-content
+  section.wrapper
+    .col-md-6.portlets
+      .panel.panel-default
+        .panel-heading
+          | Skill
+        .panel-body
+          .padd
+            .quick-post
+              .form-horizontal
+                = form_for(@skill, url:{action:  @skill.new_record? ? :create : :update}) do |f|
+                  - if @skill.errors.any?
+                    #error_explanation
+                      h2 = "#{pluralize(@skill.errors.count, "error")} prohibited this skill from being saved:"
+                      ul
+                        - @skill.errors.full_messages.each do |message|
+                          li = message
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :skill_type_id
-    = f.number_field :skill_type_id
-  .actions = f.submit 'Save'
+                  .form-group
+                    label.control-label.col-lg-2 for="title"  Name
+                    .col-lg-10
+                      = f.text_field :name, placeholder: 'Name', class: 'form-control'
+                  .form-group
+                    label.control-label.col-lg-2 for="title"  Type
+                    .col-lg-10
+                      = f.select(:skill_type_id, SkillType.all.collect {|s| [s.name, s.id]}, :prompt => 'Select')
+                      /= f.number_field :skill_type_id, class: 'form-control'
+                  .actions = f.submit 'Save'

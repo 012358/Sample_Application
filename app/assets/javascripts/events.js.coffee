@@ -28,17 +28,19 @@ $(document).on "page:change", ->
       right: 'month,basicWeek,basicDay'
     }
 
-    # Event sources from where data come that show on calendar.
+    googleCalendarApiKey: 'AIzaSyBE9zIE5p7fBqu8E2XYNdjd2bYOrMMF0OE'
     eventSources: [
       {
         url: '/events.json',
         type: 'GET',
-      #color: '#CBE2FA',
         allDay: false,
         borderColor: '#bccee0',
         textColor: 'black'
         error: ->
           alert('there was an error while fetching events!')
+      }
+      {
+        url: 'sajjadmurtaza.nxb@gmail.com'
       }
     ]
 

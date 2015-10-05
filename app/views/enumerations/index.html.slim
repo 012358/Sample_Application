@@ -1,106 +1,92 @@
-.main-container
-  - if can? :read,  @enumerations
-    p '@'
+section#main-content
+  section.wrapper
+    - @enumerations.subclasses.each do |subclass|
 
-  .other_containers
-    br
-      .ui.buttons
-
-    #form
-      .ui.modal
-        h3 Sample
-        i.close.icon
-        .header
-          | Archive Old Messages
-    #listing
-      br
-        - @enumerations.subclasses.each do |subclass|
-          = link_to "#{semantic_icon('add')} #{subclass}".html_safe, new_enumeration_path(type: subclass), class: "ui button mini"
-          br
-          br
-          table.ui.striped.large.table
-            thead
-              tr
-                th.three.wide Type
-                th.three.wide Name
-                th.three.wide Value
-                th.three.wide Action
-
-
-
-            tbody
-              - @enumerations.where(type: subclass).each_with_index do |enumeration, index|
+      .col-lg-7.col-md-12
+        .panel.panel-default
+          .panel-heading
+            = link_to subclass, new_enumeration_path(type: subclass)
+            table.table.bootstrap-datatable.countries
+              thead
                 tr
-                  td
-                    - if index == 0
-                      = enumeration.type
-                  td = enumeration.name
-                  td = enumeration.value
-                  /td = link_to 'Show', enumeration_path(enumeration)
-                  td
-                    = link_to semantic_icon('pencil').html_safe, edit_enumeration_path(enumeration)
-                    | |
-                    = link_to semantic_icon('trash').html_safe, enumeration_path(enumeration), data: {:confirm => 'Are you sure?'}, :method => :delete
+                  th.three.wide Type
+                  th.three.wide Name
+                  th.three.wide Value
+                  th.three.wide Action
 
-        br
-
-        p
-          | Setup the Rails Application for Internationalization (en.yml) and Helper(application_helper.rb)
-          br
-          = link_to t('hello'), '#'
-          br
-          = link_to t('menu.show'), '#'
-          br
-          = t('last_update', :date => l(Enumeration.last.created_at, format: :short))
-          br
-          = show_helping_data t'hello'
-          br
-          = t 'contact.prices.show_price' , :price_dollar => 50
-          br
-          = I18n.l Enumeration.last.created_at, format: :short
-          br
-          = I18n.l Enumeration.last.created_at, format: :short
-        br
-
-
-        div ng-app=""
-          p Input something in the input box:
-          p
-            | Name:
-            br
-            input ng-model="name" type="text" placeholder= 'First Name'
-            br
-            input ng-model="last_name" type="text" placeholder= 'Last Name'
-          p
-            | Full Name:
-            span ng-bind="name"
-            span style="left-margin: 3px;" ng-bind="last_name"
-          br
-          p
-            | Multiplying
-          p
-            | {{name*1 + last_name*1 | currency}}
-
-        div ng-controller="simpleController"
-          input ng-model="search.text" type="text" placeholder= 'Search'
-          div ng-repeat="tag in tags | filter: search | orderBy: 'text'"
-            input type="text" ng-model="tag.text"
-            | {{tag.text | uppercase}}
-
-javascript:
-  function simpleController($scope) {
-    $scope.tags = [
-
-      {
-        done: false,
-        text: 'first'
-      },
-      {
-        done: true,
-        text: 'second'
-      }
-
-    ];
-  }
-
-
+              tbody
+                - @enumerations.where(type: subclass).each_with_index do |enumeration, index|
+                  tr
+                    td
+                      - if index == 0
+                        = enumeration.type
+                    td = enumeration.name
+                    td = enumeration.value
+                    /td = link_to 'Show', enumeration_path(enumeration)
+                    td
+                      = link_to 'Edit', edit_enumeration_path(enumeration)
+                      |  |
+                      = link_to 'Delete', enumeration_path(enumeration), data: {:confirm => 'Are you sure?'}, :method => :delete
+/
+/        br
+/
+/        p
+/          | Setup the Rails Application for Internationalization (en.yml) and Helper(application_helper.rb)
+/          br
+/          = link_to t('hello'), '#'
+/          br
+/          = link_to t('menu.show'), '#'
+/          br
+/          = t('last_update', :date => l(Enumeration.last.created_at, format: :short))
+/          br
+/          = show_helping_data t'hello'
+/          br
+/          = t 'contact.prices.show_price' , :price_dollar => 50
+/          br
+/          = I18n.l Enumeration.last.created_at, format: :short
+/          br
+/          = I18n.l Enumeration.last.created_at, format: :short
+/        br
+/
+/
+/        div ng-app=""
+/          p Input something in the input box:
+/          p
+/            | Name:
+/            br
+/            input ng-model="name" type="text" placeholder= 'First Name'
+/            br
+/            input ng-model="last_name" type="text" placeholder= 'Last Name'
+/          p
+/            | Full Name:
+/            span ng-bind="name"
+/            span style="left-margin: 3px;" ng-bind="last_name"
+/          br
+/          p
+/            | Multiplying
+/          p
+/            | {{name*1 + last_name*1 | currency}}
+/
+/        div ng-controller="simpleController"
+/          input ng-model="search.text" type="text" placeholder= 'Search'
+/          div ng-repeat="tag in tags | filter: search | orderBy: 'text'"
+/            input type="text" ng-model="tag.text"
+/            | {{tag.text | uppercase}}
+/
+//javascript:
+//  function simpleController($scope) {
+//    $scope.tags = [
+//
+//      {
+//        done: false,
+//        text: 'first'
+//      },
+//      {
+//        done: true,
+//        text: 'second'
+//      }
+//
+//    ];
+//  }
+//
+//
