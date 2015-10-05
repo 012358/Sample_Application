@@ -28,20 +28,3 @@
 //= require ckeditor/init
 //= require raphael
 //= require morris
-
-$(document).ready(function(){
-   //$("#paragraph").click(function(){
-   //   //$("*").hide();
-   //   // $("ul li:first-child").hide();
-   //   // $("a[target='_blank']").hide();
-   //
-   //});
-
-   //$('#paragraph').mouseenter(function(){
-   //   alert("==========")
-   //});
-   // $("#paragraph").delegate("p.delegate", "click", function(){
-   //    $("p").css('background-color', 'pink');
-   // });
-
-});
