@@ -626,12 +626,6 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     margin-top: 1px;    
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    /* Safari and Chrome */
-    .dropdown-menu.extended  {
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.176) !important;
-    };
-}
 /* bootstrape editor*/
  #editor {
     max-height: 250px;
@@ -758,7 +752,6 @@ div[data-role="editor-toolbar"] {
 .dropdown-menu.inbox li a .message {
     display: block !important;
     font-size: 11px;
-	
 }
 
 .top-nav  {
@@ -1201,7 +1194,6 @@ div[data-role="editor-toolbar"] {
   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.1);
   
 }
-}
 .panel.panel-default.panel-heading {
   background: #97d3c5;   
 }
@@ -1508,7 +1500,6 @@ div[data-role="editor-toolbar"] {
   -moz-box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.1);
 }
-* /Widget-Content */
 
 .widget-content .error .form-inline button{
 	margin-left:-2px;
@@ -1686,7 +1677,7 @@ div[data-role="editor-toolbar"] {
   cursor:move;
 }
 /*-----	map-----*/
-* Google maps */
+
 
 .gmap iframe{
 	width: 100%;
@@ -1694,8 +1685,6 @@ div[data-role="editor-toolbar"] {
 	padding: 0px;
 }
 
-/* Google maps ends */
-/* Today datas */
 
 .today-datas{
 	list-style-type: none;
@@ -2078,12 +2067,6 @@ div[data-role="editor-toolbar"] {
     display: inline-block;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    /* Safari and Chrome */
-    .panel-footer.revenue-foot {
-        margin-bottom: -4px;
-    };
-    }
 
 
 .panel-footer.revenue-foot ul  {
