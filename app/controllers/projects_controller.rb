@@ -57,7 +57,6 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     redirect_to projects_path
-
   end
 
   private
@@ -66,8 +65,6 @@ class ProjectsController < ApplicationController
     end
 
     def project_params
-      params.require(:project).permit(:name, :description, :url, tasks_attributes: [:id, :description, :done, :_destroy],
-                                      skills_attributes: [:id, :name, :_destroy])
-
+      params.require(:project).permit(:name, :description, :url, :skill_ids => [], tasks_attributes: [:id, :description, :done, :_destroy])
     end
 end

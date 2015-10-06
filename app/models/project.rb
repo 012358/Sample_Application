@@ -2,7 +2,7 @@ class Project < ActiveRecord::Base
   audited
 
   has_many :tasks, dependent: :destroy
-  has_and_belongs_to_many :skills
+  has_and_belongs_to_many :skills, :join_table => 'projects_skills'
 
   accepts_nested_attributes_for :skills, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :tasks, :reject_if => :all_blank, :allow_destroy => true
@@ -11,6 +11,8 @@ class Project < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
   include Elasticsearch::Model::Indexing
+
+  default_scope {order('created_at')}
 
   def as_indexed_json(options={})
     {

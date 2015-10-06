@@ -42,12 +42,12 @@ class ImportantPointsController < ApplicationController
 
   def update
     @important_point.update(important_point_params)
-
+    redirect_to important_points_path
   end
 
   def destroy
     @important_point.destroy
-
+    redirect_to important_points_path
   end
 
   private

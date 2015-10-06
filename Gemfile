@@ -13,7 +13,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'semantic-ui-sass'
-gem 'select2-rails'
+gem 'select2-rails', '~> 3.5.9.1'
 gem 'slim-rails'
 gem 'smarter_csv'
 gem 'sinatra', :require => nil

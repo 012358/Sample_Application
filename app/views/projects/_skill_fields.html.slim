@@ -3,6 +3,6 @@
     label.control-label.col-lg-2 for="title"  Skill
     .col-lg-10
       /= f.select :manufacturer_id, Manufacturer.find(:all).collect {|u| [u.name, u.id]}, :prompt => 'Select')
-      = f.select(:name, Skill.all.collect {|s| [s.name, s.id]}, :prompt => 'Select')
+      = f.select(:name, Skill.pluck(:name), :prompt => 'Select')
 
     = link_to_remove_association "remove task", f

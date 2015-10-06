@@ -10,9 +10,7 @@ html ng-app=""
     - if user_signed_in?
       section#container
         header.header.dark-bg
-          .toggle-nav
-            .icon-reorder.tooltips data-original-title=("Toggle Navigation") data-placement="bottom"
-          a.logo href="index.html"
+          a.logo href="/default/index"
             | Scheduly
             span.lite Bridge
 
@@ -38,6 +36,8 @@ html ng-app=""
                 = link_to 'Enumeration', enumerations_path
               li
                 = link_to 'Skills', skills_path
+              li
+                = link_to 'Notes', important_points_path
               li.sub-menu
                 = link_to 'Edit Profile', edit_user_path(current_user)
               li.sub-menu

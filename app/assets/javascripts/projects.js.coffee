@@ -9,12 +9,16 @@ $(document).on 'ready page:load page:change', ->
         window.location.href = "/events"  if key is "calendar"
         window.location.href = input.attr("data-url")  if key is "url"
 #        $(".small.modal").modal "show"  if key isnt "" and key isnt "show"
-
-
       items:
         calendar:
           name: "Go to Calendar"
 
         url:
           name: 'Project Url'
+
+  $('.multiple-field').each ->
+    $(this).select2
+      data: $(this).data('options')
+      width: "505px"
+      multiple: true
 

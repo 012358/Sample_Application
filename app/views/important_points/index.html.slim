@@ -1,28 +1,16 @@
-.main-container
-
-
-  .other_containers
-    br
-    .ui.buttons
-      br
-        = link_to "<i class='ui user icon'></i> Users".html_safe, sign_up_user_index_path, class: "ui button mini"
-        = link_to "<i class='ui user icon'></i> Change Password".html_safe, edit_user_registration_path, class: "ui button mini"
-        = link_to "<i class='ui help icon'></i> Notes".html_safe, important_points_path, class: "ui button mini"
-    #form
-    br
-      
-      br
-      = link_to 'New Important point', new_important_point_path
-    #listing
-    br
-
-
+section#main-content
+  section.wrapper
+    = link_to 'New Note', new_important_point_path
+    .object_book_mark_form
       - @important_points.each do |important_point|
         br
-          - if important_point.title.present?
-            .ui.red.tag.label = important_point.title
-            = important_point.description.html_safe
+        .object_book_marks.container-list
+          .record
+            p style="color:rgba(14, 22, 134, 0.87);"
+              b
+                - if important_point.title.present?
+                  = important_point.title
+            div style="margin: 0 0 0 10px;"
+              = important_point.description.html_safe
             = link_to 'Edit', edit_important_point_path(important_point)
-
-
 

@@ -1,6 +1,6 @@
 section#main-content
   section.wrapper
-    .col-md-6.portlets
+    .col-md-8.portlets
       .panel.panel-default
         .panel-heading
           | Project
@@ -36,10 +36,18 @@ section#main-content
 
                     br
                   #skills
-                    = f.fields_for :skills do |skill|
-                      = render 'skill_fields', :f => skill
-                    .links
-                      = link_to_add_association 'add skill', f, :skills
+                    .form-group
+                      label.control-label.col-lg-2 for="title"  Skills
+                      .col-lg-10
+                        = f.select :skill_ids, Skill.all.collect {|x| [x.name, x.id]}, {}, :multiple => true
+                    br
+                        /= f.text_field :skill_ids,  class: 'multiple-field', data: { options: Skill.all}
+                        /= f.text_field :skill_ids, data: {options: Skill.all}, class: "multiple-field"
+
+                    /= f.fields_for :skills do |skill|
+                    /  = render 'skill_fields', :f => skill
+                    /.links
+                    /  = link_to_add_association 'add skill', f, :skills
                   .actions
                     = f.submit f.object.new_record? ? 'Create' : 'Update', class: 'btn btn-primary'
                     = link_to 'Cancel', url_for(:back), class: 'btn btn-default'

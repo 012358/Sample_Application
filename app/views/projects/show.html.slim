@@ -1,14 +1,5 @@
-.main-container
-
-
-  .other_containers
-    br
-      .ui.buttons
-        = link_to "#{semantic_icon('add')} Project".html_safe, new_project_path, class: "ui button mini", remote: true
-    #form
-    br
-    #listing
-    br
+section#main-content
+  section.wrapper
     p
       strong Name:
       = @project.name
@@ -16,19 +7,39 @@
       strong Description:
       = @project.description
     p
-      strong Tasks:
-    .text
-      - @project.tasks.each do |task|
+      strong Url:
+      = link_to @project.name.capitalize, @project.url
+    .row
+      .col-md-4.portlets
+        .panel-heading
+          .pull-left Tasks
+          .panel-body
+            .padd.sscroll
+              ul.chats
+                - @project.tasks.each do |task|
+                  li.by-me
+                    .chat-content
+                      .chat-meta
+                        = task.description
+                        span.pull-right
+                          = "#{time_ago_in_words(task.created_at)} ago"
 
-        .ui.divided.list
-          .item
-            i.map.marker.icon
-            .content
-              a.header = "#{time_ago_in_words(task.created_at)} ago"
-              .description = task.description
-        br
-    p
-      = link_to 'Cancel', url_for(:back)
+    .row
+      .col-md-4.portlets
+        .panel-heading
+          .pull-left Skills
+          br
+          br
+          .panel-body
+            .padd.sscroll
+              ul.chats
+                - @project.skills.each do |skill|
+                  li.by-other
+                    .chat-content
+                      .chat-meta
+                        = skill.name
+                        span.pull-right
+                          = skill.skill_type.try(:name)
 
-
-
+    br
+    = link_to 'Cancel', url_for(:back), class: 'btn btn-default'

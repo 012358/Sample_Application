@@ -1,27 +1,36 @@
-br
-.ui.form
-  = form_for @user do |f|
-    .two.fields
-      .field
-        = f.label :name
-        = f.text_field :name
-    .two.fields
-      .field
-        = f.label :phone
-        = f.text_field :phone
-    .two.fields
-      .field
-        = f.label :job_title
-        = f.text_field :job_title
-    .two.fields
-      .field
-        = f.label :country
-        = country_select("user", "country", priority_countries: ["GB", "FR", "DE"])
-    .one.fields
-      .field
-        = f.label :address
-        = f.cktext_area :address
-
-
-
-    .actions = f.submit 'Save'
+section#main-content
+  section.wrapper
+    .col-md-12.portlets
+      .panel.panel-default
+        .panel-heading
+          | Edit Profile
+        .panel-body
+          .padd
+            .quick-post
+              .form-horizontal
+                = form_for @user do |f|
+                  .form-group
+                    label.control-label.col-lg-2 for="title"  Name
+                    .col-lg-10
+                      = f.text_field :name, class: 'form-control'
+                  .form-group
+                    label.control-label.col-lg-2 for="title"  Email
+                    .col-lg-10
+                      = f.text_field :email, class: 'form-control'
+                  .form-group
+                    label.control-label.col-lg-2 for="title"  Phone
+                    .col-lg-10
+                      = f.text_field :phone, class: 'form-control'
+                  .form-group
+                    label.control-label.col-lg-2 for="title"  Job Title
+                    .col-lg-10
+                      = f.text_field :job_title, class: 'form-control'
+                  .form-group
+                    label.control-label.col-lg-2 for="title"  Country
+                    .col-lg-10
+                      = country_select("user", "country", priority_countries: ["GB", "FR", "DE"])
+                  .form-group
+                    label.control-label.col-lg-2 for="title"  Address
+                    .col-lg-10
+                      = f.cktext_area :address
+                  .actions = f.submit 'Save', class: 'btn btn-primary'
