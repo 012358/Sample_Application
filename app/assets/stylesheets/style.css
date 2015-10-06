@@ -3293,7 +3293,7 @@ ul.inbox-pagination li {
 .profile-nav .user-heading.round a  {
     border-radius: 50%;
     -webkit-border-radius: 50%;
-    border: 10px solid rgba(256,256,256,0.3);
+    border: 10px solid rgba(255,255,255,0.3);
     display: inline-block;
 }
 
@@ -3483,7 +3483,7 @@ ul.inbox-pagination li {
 }
 
 .summary-head p {
-    color: rgba(256,256,256,0.6);
+    color: rgba(255,255,255,0.6);
 }
 
 ul.summary-list {
