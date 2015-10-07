@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   # delete '/billings/:id', to: 'billings#destroy', as: 'billing_destroy'
   resources :billings
   get 'switch_task_completed' => 'billings#switch_task_completed'
+  get 'switch_event_completed' => 'events#switch_event_completed'
   ############################### END ROUTES EXAMPLES ################################################
   get 'search', to: 'search#search'
   resources :calendars do

@@ -4,6 +4,14 @@ $(document).on "page:change", ->
   $('#help-icon').click ->
     $('#help').show();
 
+
+  $(document).on 'click', '.event_check_box', (event) ->
+    input = $(event.target)
+    $.ajax
+      dataType: 'script'
+      type: 'GET'
+      url: input.attr("data-load-event-url")
+
   # apply select2(taggable) in events form for calendar column(support for searching).
   $('.single-field').each ->
     $(this).select2

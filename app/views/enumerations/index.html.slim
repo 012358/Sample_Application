@@ -1,5 +1,14 @@
 section#main-content
   section.wrapper
+    .row
+      .col-lg-12
+        h3.page-header
+          | Enumerations
+        ol.breadcrumb
+          li
+            = link_to 'SchedulyBridge Documentaion', important_point_path(ImportantPoint.last)
+          li
+            | Enumerations
     - @enumerations.subclasses.each do |subclass|
 
       .col-lg-7.col-md-12

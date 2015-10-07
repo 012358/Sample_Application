@@ -25,19 +25,13 @@ html ng-app=""
               li.sub-menu
                 = link_to 'Calender Events', events_path
               li.sub-menu
-                = link_to 'New Calender', new_calendar_path
-              li.sub-menu
-                = link_to 'Calenders Reports', calendars_path
-              li.sub-menu
-                = link_to 'New Event', new_event_path
-              li.sub-menu
                 = link_to 'Project/Tasks', projects_path
               li
                 = link_to 'Enumeration', enumerations_path
               li
-                = link_to 'Skills', skills_path
-              li
                 = link_to 'Notes', important_points_path
+              li
+                = link_to 'Hyperlinkomatic Book Marks', default_book_marks_list_path
               li.sub-menu
                 = link_to 'Edit Profile', edit_user_path(current_user)
               li.sub-menu

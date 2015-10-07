@@ -1,2 +1,22 @@
 section#main-content
   section.wrapper
+
+    .col-lg-12.col-md-12
+      .panel.panel-default
+        .panel-heading
+          table.ui.compact.table.data-listing
+            thead
+              tr
+                th Serial #
+                th Title
+                th Link
+
+            tbody
+              - @hyperlinkomatic_book_marks.each_with_index do |book_mark, index|
+                tr
+                  td
+                    = index + 1
+                  td
+                    = link_to book_mark['title'], book_mark['link_path'], target: '_blank'
+                  td
+                    = book_mark['link_path']

@@ -1,5 +1,16 @@
 section#main-content
   section.wrapper
+    .row
+      .col-lg-12
+        h3.page-header
+          | New Skill
+        ol.breadcrumb
+          li
+            = link_to 'Skills', skills_path
+          li
+            = link_to 'New project', new_project_path
+          li
+            | New Skill
     .col-md-6.portlets
       .panel.panel-default
         .panel-heading
@@ -25,4 +36,7 @@ section#main-content
                     .col-lg-10
                       = f.select(:skill_type_id, SkillType.all.collect {|s| [s.name, s.id]}, :prompt => 'Select')
                       /= f.number_field :skill_type_id, class: 'form-control'
-                  .actions = f.submit 'Save'
+                  .actions
+                    = f.submit f.object.new_record? ? 'Create' : 'Update', class: 'btn btn-primary'
+                    = link_to 'Cancel', url_for(:back), class: 'btn btn-default'
+                    br

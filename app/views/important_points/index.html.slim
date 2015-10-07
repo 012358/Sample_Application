@@ -1,6 +1,16 @@
 section#main-content
   section.wrapper
-    = link_to 'New Note', new_important_point_path
+    .row
+      .col-lg-12
+        h3.page-header
+          | Notes
+        ol.breadcrumb
+          li
+            = link_to 'SchedulyBridge Documentaion', important_point_path(ImportantPoint.last)
+          li
+            = link_to 'New Note', new_important_point_path
+          li
+            | Notes
     .object_book_mark_form
       - @important_points.each do |important_point|
         br

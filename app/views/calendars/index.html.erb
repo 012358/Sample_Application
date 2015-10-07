@@ -1,9 +1,20 @@
 <section id="main-content">
   <section class="wrapper">
+    <div class="row">
+      <div class="col-lg-12">
+        <h3 class="page-header"> Calendar Reports</h3>
+        <ol class="breadcrumb">
+          <li><%= link_to 'Calender Events', events_path%></li>
+          <li><%= link_to 'New Event', new_event_path%></li>
+          <li><%= link_to 'New Calenders', new_calendar_path  %></li>
+          <li>Calendar Reports</li>
+        </ol>
+      </div>
+    </div>
 
     <%= link_to "CSV", calendars_path(format: "csv") %> |
     <%= link_to "Excel", calendars_path(format: "xls") %>
-    <br>
+    <br><br>
     <div class="col-lg-10 col-md-12">
       <div class="panel panel-default">
         <div class="panel-heading">Last 30 days Calendars List

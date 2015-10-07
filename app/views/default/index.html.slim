@@ -14,31 +14,35 @@ section#main-content
       .col-lg-3.col-md-3.col-sm-12.col-xs-12
         .info-box.blue-bg
           .count
-            = Calendar.first.name
+            - first =  Calendar.first
+            = first.name
           .title
-            = Calendar.first.events.count
+            = first.events.count
 
 
       .col-lg-3.col-md-3.col-sm-12.col-xs-12
         .info-box.brown-bg
           .count
-            = Calendar.second.name
+            - sec = Calendar.second
+            = sec.name
           .title
-            = Calendar.second.events.count
+            = sec.events.count
 
       .col-lg-3.col-md-3.col-sm-12.col-xs-12
         .info-box.dark-bg
           .count
-            = Calendar.third.name
+            - third = Calendar.third
+            = third.name
           .title
-            = Calendar.third.events.count
+            = third.events.count
 
       .col-lg-3.col-md-3.col-sm-12.col-xs-12
         .info-box.green-bg
           .count
-            = Calendar.fourth.name
+            - fourth = Calendar.fourth
+            = fourth.name
           .title
-            = Calendar.third.events.count
+            = fourth.events.count
 
     .row
       .col-lg-9.col-md-12
@@ -84,44 +88,40 @@ section#main-content
             .padd.sscroll
               ul.chats
                 li.by-me
-                  - @c1 = Calendar.first
                   .chat-content
                     .chat-meta
-                      = @c1.name
+                      = first.name
                       span.pull-right
-                        = @c1.created_at
-                    = @c1.color
+                        = first.created_at
+                    = first.color
                     .clearfix
 
                 li.by-other
                   .avatar.pull-right
-                    - @c2 = Calendar.second
                   .chat-content
                     .chat-meta
-                      = @c2.name
+                      = sec.name
                       span.pull-right
-                        = @c2.created_at
-                    = @c2.color
+                        = sec.created_at
+                    = sec.color
                     .clearfix
                 li.by-me
                   .avatar.pull-left
-                    - @c3 = Calendar.third
                   .chat-content
                     .chat-meta
-                      = @c3.name
+                      = third.name
                       span.pull-right
-                        = @c3.created_at
-                    = @c3.color
+                        = third.created_at
+                    = third.color
                     .clearfix
                 li.by-other
                   .avatar.pull-right
-                    - @c4 = Calendar.fourth
                   .chat-content
                     .chat-meta
-                      = @c4.name
+                      = fourth.name
                       span.pull-right
-                        = @c4.created_at
-                    = @c4.color
+                        = fourth.created_at
+                    = fourth.color
                     .clearfix
 
 

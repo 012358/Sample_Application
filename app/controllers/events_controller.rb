@@ -23,6 +23,14 @@ class EventsController < ApplicationController
   def show
   end
 
+  def switch_event_completed
+    @event = Event.find(params[:event])
+    p 'saasasasasasasasasasa@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
+    p @event.completed
+    @event.update_attribute(:completed, !@event.completed)
+    render js: "window.location= '#{events_url}'"
+  end
+
   # GET /events/new
   def new
     @event = Event.new

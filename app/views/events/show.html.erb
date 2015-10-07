@@ -27,6 +27,16 @@
       <strong>Calendar:</strong>
       <%= @event.calendar.name %>
     </p>
+    <p>
+      <strong>Completion:</strong>
+      <%if @event.completed? %>
+          Completed
+      <% else %>
+
+          Not Completed
+      <% end %>
+      <%= check_box_tag 'completed', @event.id, @event.completed, class: 'event_check_box', 'data-load-event-url' => switch_event_completed_path(event: @event.id) %>
+    </p>
 
 
 
