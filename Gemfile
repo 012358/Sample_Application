@@ -28,6 +28,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-linkedin-oauth2'
 gem 'omniauth-github'
 ############ PAGINATION
+gem 'twilio-ruby', '~> 4.2.1'
 gem 'kaminari'
 gem 'paperclip', '~> 4.2.1'
 gem 'jcrop-rails-v2', '~> 0.9.12.3'

@@ -14,13 +14,13 @@ section#main-content
     .object_book_mark_form
       - @important_points.each do |important_point|
         br
-        .object_book_marks.container-list
-          .record
-            p style="color:rgba(14, 22, 134, 0.87);"
-              b
-                - if important_point.title.present?
+        - unless important_point.title == 'SchedulyBridge'
+          .object_book_marks.container-list
+            .record
+              p style="color:rgba(14, 22, 134, 0.87);"
+                b
                   = important_point.title
-            div style="margin: 0 0 0 10px;"
-              = important_point.description.html_safe
-            = link_to 'Edit', edit_important_point_path(important_point)
+              div style="margin: 0 0 0 10px;"
+                = important_point.description.html_safe
+              = link_to 'Edit', edit_important_point_path(important_point)
 
