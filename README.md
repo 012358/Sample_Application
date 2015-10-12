@@ -1,6 +1,8 @@
 ### ![alt text](https://raw.githubusercontent.com/sajjadmurtaza49/SchedulyBridge/master/app/assets/images/logo.png "SchedulyBridge Screenshot")
 [Click for Live Demo](https://scheduly-bridge.herokuapp.com)  
 
+![alt text](https://raw.githubusercontent.com/sajjadmurtaza49/SchedulyBridge/master/app/assets/images/demo.png "SchedulyBridge Screenshot")
+
 + Slider(bxslider-rails)  
 + Calendar(Full Calendar Plugin)  
 + Taggable(Select2)  
@@ -28,10 +30,10 @@
 
 
 ##### Slider(bxslider-rails)
-```json
- [Documentation](https://github.com/manfe/bxslider-rails)  
- [Live Demo](http://bxslider.com/)  
-```
+
+[Documentation](https://github.com/manfe/bxslider-rails)  
+[Live Demo](http://bxslider.com/)  
+
 
 
 ####### How To Implement
@@ -66,14 +68,13 @@
 =================================================================================================
 
 ##### Calendar(Full Calendar Plugin) 
-```html 
- [Calendar view like Full Calendar](http://fullcalendar.io)  
- (FullCalendar is for displaying events, and it is a solution for event content-management. Beyond dragging an event to a different time/day, you can change an event's  name, etc. )  
- + You can add Calendar(e.g Test-Calendar 1), Every calendar has color
- + Add Events for particular Calendar, Events have different color.  
- 1. Calendars(there is also importing data from file and save in db)  
- 2. Events  
- ```
+
+[Calendar view like Full Calendar](http://fullcalendar.io)  
+(FullCalendar is for displaying events, and it is a solution for event content-management. Beyond dragging an event to a different time/day, you can change an event's  name, etc. )  
++ You can add Calendar(e.g Test-Calendar 1), Every calendar has color
++ Add Events for particular Calendar, Events have different color.  
+1. Calendars(there is also importing data from file and save in db)  
+
 
 ###### How To Implement
 
@@ -120,13 +121,14 @@
 =================================================================================================
 =================================================================================================
 
-#### Taggable(Select2)
+##### Taggable(Select2)
 [Taggable View Like Demo Select2](https://select2.github.io/examples.html)  
 (Select2 add a form field which can auto fill text & can take multiple tabs(similar to fb) and gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options.). Here in our application  
 + Multiple attribute show in select2 field
 + You can choise and search from dropdown and also add new which is not predefined in select2 dropdown.   
-+ [In sm-sample-application search in following files](https://sm-sample-application.herokuapp.com/)  
+
 1. TaggingSelectTos
+
 
 ###### How To Implement  
  
@@ -177,7 +179,11 @@ tags: [sajjad, moin]
     				{id: self.id, text: self.name}  
   			end  
 ```
-#### Nested forms(cocoon)
+=================================================================================================
+=================================================================================================
+
+
+##### Nested forms(cocoon)
 [Cocoon Documentation](https://github.com/nathanvda/cocoon)  
 (Make dynamic nested forms). In Our application
 + Add multiple task(form) against project.  
@@ -185,6 +191,10 @@ tags: [sajjad, moin]
 gem "cocoon"  
 
 ```
+=================================================================================================
+=================================================================================================
+
+
 #### PDF(Wicked PDF)
 [Wicked PDF](https://github.com/mileszs/wicked_pdf)  
 (PDF generator (from HTML) plugin for Ruby on Rails)  
@@ -220,6 +230,9 @@ gem 'wkhtmltopdf-binary'
                              :encoding => 'UTF-8'  
       		send_data(pdf, :filename => @bill.title,  :type=>'application/pdf')  
 ```
+=================================================================================================
+=================================================================================================
+
 
 #### STI-Single Table Inheritance(Enumeration)
 [STI lets you save different models inheriting from the same model inside a single table.](http://samurails.com/tutorial/single-table-inheritance-with-rails-4-part-1/)  
@@ -265,6 +278,9 @@ For example
 become use for
               Change from a superclass to a subclass without accessing the “type” attribute directly.Returns an instance of the specified klass with the attributes of the current record.
 ```
+=================================================================================================
+=================================================================================================
+
 #### Pagination(Kaminari)
 [Flexible solution for pagination](https://github.com/amatsuda/kaminari)
 ###### How To Implement  
@@ -275,6 +291,8 @@ bundle install
 In CONTROLLER :  @instance_variable = Model.all.order("id asc").page( params[:page]).per(2)
 In VIEW       :  <%= paginate @instance_variable %>
 ```
+=================================================================================================
+=================================================================================================
 
 
 #### Authentication(Devise)
@@ -441,6 +459,12 @@ production:
 + [LinkedIn](https://www.linkedin.com/secure/developer)  
 + [GitHub](https://github.com/settings/applications)  
 
+=================================================================================================
+=================================================================================================
+
+=================================================================================================
+=================================================================================================
+
 #### Chart(GetOrgChart)  
 
 [GetOrgChart Documentation](http://www.getorgchart.com/Documentation)  
@@ -472,10 +496,13 @@ OR
 + org_chart.png(images)  
 + if icon not show try this => asset-url("org_chart.png") replcae with url('org_chart.png')  
 ```
+=================================================================================================
+=================================================================================================
 
 
 
-#### Rake Task
+
+##### Rake Task
 
 [Rake-Task-Management-Essentials](http://it-ebooks.info/book/3561/)  
 [Intro to Rake](https://www.youtube.com/watch?v=gR0YfJrg9pg&index=7&list=PL7A85FD7803A8CB1F)  
@@ -538,8 +565,10 @@ rake rake_task
 
 rake sample:say_hello_task TITLE='sm-sample-application'
 ```
+=================================================================================================
+=================================================================================================
 
-#### CSV, XLS
+##### CSV, XLS
 
 [Exporting CSV and Excel](http://railscasts.com/episodes/362-exporting-csv-and-excel)  
 [Import Data into Rails from a Spreadsheet](https://www.youtube.com/watch?v=v2Y7cja0b4c&list=PL7A85FD7803A8CB1F&index=8)  
@@ -562,31 +591,46 @@ In model :
   end  
 
 ```
+=================================================================================================
+=================================================================================================
 
-#### Google map  
+##### Google map  
 
 + In Location
+=================================================================================================
+=================================================================================================
 
-#### Audits
+
+##### Audits
 
 + In Project
+=================================================================================================
+=================================================================================================
 
-#### cEditor
+
+##### cEditor
 
 + [editor](https://github.com/galetahub/ckeditor)  
 + Employee
+=================================================================================================
+=================================================================================================
 
-#### Test Cases(RSpec, FactoryGirl)
+
+##### Test Cases(RSpec, FactoryGirl)
 
 + In RSpec
 
 + [1](https://leanpub.com/everydayrailsrspec/read)  
+=================================================================================================
+=================================================================================================
 
-#### Delayed::Job
+##### Delayed::Job
 + [Documentation](https://github.com/collectiveidea/delayed_job)
 + [Lecture](http://railscasts.com/episodes/171-delayed-job?view=asciicast)  
+=================================================================================================
+=================================================================================================
 
-#### Twilio
+##### Twilio
 
 + [Documentation](https://www.twilio.com/blog/2014/10/twilio-on-rails-part-2-rails-4-app-sending-sms-mms.html)  
 
@@ -609,26 +653,40 @@ In model :
                                         :body => "Please enter #{code} ",
                                     })
 ```
+=================================================================================================
+=================================================================================================
 
-#### Elastic Search
+##### Elastic Search
 + In projects  
 + sudo vi /etc/elasticsearch/elasticsearch.yml  
 + http://localhost:9200/_plugin/head/
 + [head](http://mobz.github.io/elasticsearch-head/) -- [2](https://github.com/EricLondon/Rails-4-ElasticSearch-dynamic-facets/blob/master/README.md)
+=================================================================================================
+=================================================================================================
 
-#### contextMenu
+##### contextMenu
 + in js =>  jquery.contextMenu.js  
 + in cs =>  jquery.contextMenu.css  
 + [Demo](http://medialize.github.io/jQuery-contextMenu/demo.html)
+=================================================================================================
+=================================================================================================
 
-#### Client Side Validation
+##### Client Side Validation
 + gem 'client_side_validations', github: 'DavyJonesLocker/client_side_validations'  
 + in application.js => //= require rails.validations  
 + [Documentation](https://github.com/DavyJonesLocker/client_side_validations) -- [_*parsleyjs](http://parsleyjs.org/doc/examples/simple.html)  
+=================================================================================================
+=================================================================================================
 
-#### Parameterize helper method
+##### Parameterize helper method
 + before_filter { name_of_method("parameter") }  
+=================================================================================================
+=================================================================================================
 
-#### Self Join Examples
+
+##### Self Join Examples
 + Follow + User + Emplyee
+=================================================================================================
+=================================================================================================
+
 

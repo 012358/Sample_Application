@@ -35,7 +35,7 @@
 
           Not Completed
       <% end %>
-      <%= check_box_tag 'completed', @event.id, @event.completed, class: 'event_check_box', 'data-load-event-url' => switch_event_completed_path(event: @event.id) %>
+      <%= check_box_tag 'completed', @event.id, @event.completed, class: 'event_check_box', 'data-load-event-url' => switch_event_completed_path(id: @event.id) %>
     </p>
 
 

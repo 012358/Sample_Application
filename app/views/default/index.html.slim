@@ -57,6 +57,7 @@ section#main-content
                   th Completed events
                   th Progress
               tbody
+                - @completed = 0
                 - Calendar.includes(:events).each do |c|
                   tr
 
@@ -66,9 +67,9 @@ section#main-content
                       - total = 0
                       = total = c.events.count
                     td
-                      - @completed = 0
                       - @completed = c.events.where(completed: true).count
-                      = @completed == 0 ? '0' : (@completed/total)
+                      - @completed == 0 ? '0' : (@completed/total)
+                      = @completed
                     td
                       .progress.thin
                         .progress-bar.progress-bar-danger aria-valuemax="100" aria-valuemin="0" aria-valuenow="#{@completed}" role="progressbar" style=("width: #{@completed}%")
