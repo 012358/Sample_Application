@@ -1,4 +1,4 @@
-### SCHEDULY BRIDGE ![alt text](https://raw.githubusercontent.com/sajjadmurtaza49/SchedulyBridge/master/app/assets/images/logo.png "SchedulyBridge Screenshot")
+### ![alt text](https://raw.githubusercontent.com/sajjadmurtaza49/SchedulyBridge/master/app/assets/images/logo.png "SchedulyBridge Screenshot")
 [Click for Live Demo](https://scheduly-bridge.herokuapp.com)  
 
 + Slider(bxslider-rails)  
@@ -21,68 +21,73 @@
 + CSV, XLS  
 + contextMenu(Right Click Menu)  
 + Client Side Validation  
++ Sidekiq
 
 =================================================================================================
 =================================================================================================
 
 
-#### Slider(bxslider-rails)
-[Documentation](https://github.com/manfe/bxslider-rails)  
-[Live Demo](http://bxslider.com/)  
+##### Slider(bxslider-rails)
+```json
+ [Documentation](https://github.com/manfe/bxslider-rails)  
+ [Live Demo](http://bxslider.com/)  
+```
 
-+ [In sm-sample-application search in following files](https://sm-sample-application.herokuapp.com/)  
-+ Defaults
 
-###### How To Implement
+####### How To Implement
 
 ```javascript
-gem 'bxslider-rails'  
-bundle install  
-'application.js must appear like': 
+ gem 'bxslider-rails'  
+ bundle install  
+ 'application.js must appear like': 
 			//= require jquery
 			//= require jquery_ujs
 			//= require bxslider
 
-'stylesheets/application.css like this':
+ 'stylesheets/application.css like this':
 			*= require_self
 			*= require bxslider
 			*= require_tree .
 
-'In View':
+ 'In View':
 			.bxslider
 			      = image_tag '1.png'  
 			      = image_tag '2.png'  
 
-'In coffee script' :
+ 'In coffee script' :
 			$(document).ready ->
 			  $(".bxslider").bxSlider  
 			    auto: true  
 			    autoControls: true  
 
 
-```
-#### Calendar(Full Calendar Plugin)  
-[Calendar view like Full Calendar](http://fullcalendar.io)  
-(FullCalendar is for displaying events, and it is a solution for event content-management. Beyond dragging an event to a different time/day, you can change an event's name, etc. )  
-+ You can add Calendar(e.g Test-Calendar 1), Every calendar has color
-+ Add Events for particular Calendar, Events have different color.  
-+ [In sm-sample-application search in following files](https://sm-sample-application.herokuapp.com/)  
-1. Calendars(there is also importing data from file and save in db)  
-2. Events  
+ ```
+=================================================================================================
+=================================================================================================
+
+##### Calendar(Full Calendar Plugin) 
+```html 
+ [Calendar view like Full Calendar](http://fullcalendar.io)  
+ (FullCalendar is for displaying events, and it is a solution for event content-management. Beyond dragging an event to a different time/day, you can change an event's  name, etc. )  
+ + You can add Calendar(e.g Test-Calendar 1), Every calendar has color
+ + Add Events for particular Calendar, Events have different color.  
+ 1. Calendars(there is also importing data from file and save in db)  
+ 2. Events  
+ ```
 
 ###### How To Implement
 
 ```javascript
-gem 'fullcalendar-rails'  
-bundle install  
-'In your application.css.scss':  
+ gem 'fullcalendar-rails'  
+ bundle install  
+ 'In your application.css.scss':  
 			*= require fullcalendar
 
-'In application.js':  
+ 'In application.js':  
 			//= require fullcalendar
 			//= require gcal
 			//= require fullcalendar/gcal
-'In application.js the try to follow this sequence'  
+ 'In application.js the try to follow this sequence'  
 			//= require moment
 			//= require jquery
 			//= require jquery_ujs
@@ -90,10 +95,10 @@ bundle install
 			//= require fullcalendar
 			//= require fullcalendar/gcal
 
-'In html file'  
-		#calendar').fullCalendar();
+ 'In html file':  
+		$('#calendar').fullCalendar();
 
-'In coffee file(events.coffee.js)'  
+ 'In coffee file(events.coffee.js)':  
 		    eventSources: [
 		      {
 			url: '/events.json',  
@@ -111,6 +116,9 @@ bundle install
 			textColor: '#FFB504'
 		      }
 ```
+
+=================================================================================================
+=================================================================================================
 
 #### Taggable(Select2)
 [Taggable View Like Demo Select2](https://select2.github.io/examples.html)  
