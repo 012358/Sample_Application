@@ -33,7 +33,7 @@
 
 [Documentation](https://github.com/manfe/bxslider-rails)  
 [Live Demo](http://bxslider.com/)  
-
++ Others
 
 
 ####### How To Implement
@@ -377,7 +377,7 @@ rake db:migrate
 				    data = access_token.info
 				    user = User.where(:email => data["email"]).first
 
-				    # Uncomment the section below if you want users to be created if they don't exist
+				    # Uncomment the section below if you want users to be created if they dont exist
 				    if user.blank?
 					user = User.new(email: data["email"],
 					   password: Devise.friendly_token[0,20]
@@ -591,29 +591,22 @@ In model :
   end  
 
 ```
-=================================================================================================
-=================================================================================================
+
 
 ##### Google map  
 
 + In Location
-=================================================================================================
-=================================================================================================
 
 
 ##### Audits
 
 + In Project
-=================================================================================================
-=================================================================================================
 
 
 ##### cEditor
 
 + [editor](https://github.com/galetahub/ckeditor)  
 + Employee
-=================================================================================================
-=================================================================================================
 
 
 ##### Test Cases(RSpec, FactoryGirl)
@@ -621,14 +614,11 @@ In model :
 + In RSpec
 
 + [1](https://leanpub.com/everydayrailsrspec/read)  
-=================================================================================================
-=================================================================================================
 
 ##### Delayed::Job
 + [Documentation](https://github.com/collectiveidea/delayed_job)
 + [Lecture](http://railscasts.com/episodes/171-delayed-job?view=asciicast)  
-=================================================================================================
-=================================================================================================
+
 
 ##### Twilio
 
@@ -653,40 +643,32 @@ In model :
                                         :body => "Please enter #{code} ",
                                     })
 ```
-=================================================================================================
-=================================================================================================
 
 ##### Elastic Search
 + In projects  
 + sudo vi /etc/elasticsearch/elasticsearch.yml  
 + http://localhost:9200/_plugin/head/
 + [head](http://mobz.github.io/elasticsearch-head/) -- [2](https://github.com/EricLondon/Rails-4-ElasticSearch-dynamic-facets/blob/master/README.md)
-=================================================================================================
-=================================================================================================
 
 ##### contextMenu
 + in js =>  jquery.contextMenu.js  
 + in cs =>  jquery.contextMenu.css  
 + [Demo](http://medialize.github.io/jQuery-contextMenu/demo.html)
-=================================================================================================
-=================================================================================================
 
 ##### Client Side Validation
 + gem 'client_side_validations', github: 'DavyJonesLocker/client_side_validations'  
 + in application.js => //= require rails.validations  
 + [Documentation](https://github.com/DavyJonesLocker/client_side_validations) -- [_*parsleyjs](http://parsleyjs.org/doc/examples/simple.html)  
-=================================================================================================
-=================================================================================================
+
 
 ##### Parameterize helper method
 + before_filter { name_of_method("parameter") }  
-=================================================================================================
-=================================================================================================
+
 
 
 ##### Self Join Examples
 + Follow + User + Emplyee
-=================================================================================================
-=================================================================================================
 
+##### Sidekiq
++ Events
 

@@ -28,3 +28,4 @@
 //= require ckeditor/init
 //= require raphael
 //= require morris
+//= require others
