@@ -44,13 +44,14 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        if @event.calendar.name == 'Birthday'
-          t = @event.start.to_time.to_i - @event.created_at.to_time.to_i
-          mm, ss = t.divmod(60)
-          time="%d" % [mm]
-          time = time.to_i
-          Reminder.perform_at(time.minutes, @event)
-        end
+        # --------------------- Sidekiq ------------------
+        # if @event.calendar.name == 'Birthday'
+        #   t = @event.start.to_time.to_i - @event.created_at.to_time.to_i
+        #   mm, ss = t.divmod(60)
+        #   time="%d" % [mm]
+        #   time = time.to_i
+        #   Reminder.perform_at(time.minutes, @event)
+        # end
         format.html { redirect_to events_url}
         format.json { render :show, status: :created, location: events_url }
       else

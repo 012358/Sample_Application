@@ -1,5 +1,5 @@
-## SM-Sample_Application
-This Sample_Application covered all basic concepts. [Click for Live Demo](https://sm-sample-application.herokuapp.com/)  
+### SCHEDULY BRIDGE ![alt text](https://raw.githubusercontent.com/sajjadmurtaza49/SchedulyBridge/master/app/assets/images/logo.png "SchedulyBridge Screenshot")
+[Click for Live Demo](https://scheduly-bridge.herokuapp.com)  
 
 + Slider(bxslider-rails)  
 + Calendar(Full Calendar Plugin)  
@@ -20,7 +20,10 @@ This Sample_Application covered all basic concepts. [Click for Live Demo](https:
 + Rake Task  
 + CSV, XLS  
 + contextMenu(Right Click Menu)  
-+ Client Side Validation
++ Client Side Validation  
+
+=================================================================================================
+=================================================================================================
 
 
 #### Slider(bxslider-rails)
