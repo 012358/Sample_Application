@@ -17,7 +17,6 @@ gem 'select2-rails', '~> 3.5.9.1'
 gem 'slim-rails'
 gem 'smarter_csv'
 gem 'sinatra', :require => nil
-
 #gem 'extra_attributes_for_all_migration', :git => 'https://github.com/sajjadmurtaza49/extra_attributes_for_all_migration'
 ########### AUTHENTICATION
 gem 'devise'

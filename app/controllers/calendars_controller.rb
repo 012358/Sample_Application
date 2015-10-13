@@ -2,9 +2,10 @@ class CalendarsController < ApplicationController
   before_action :set_calendar, only: [:show, :edit, :update, :destroy]
 
   def index
-    @calendars = Calendar.all#.where(user_id: current_user.id) # Return Current User Calendar
-    @last_month_calendars = Calendar.range_events
-    @calendar_having_gt_10_events = Calendar.joins(:events).group('calendars.id').having('count(events.id) >10')
+    @calendars = current_user.calendars#.where(user_id: current_user.id) # Return Current User Calendar
+    @last_month_calendars = current_user.calendars.range_events
+    @calendar_having_gt_10_events = current_user.calendars.joins(:events).group('calendars.id').having('count(events.id) >10')
+    # Calendar.joins(:events).group('calendars.id').having('count(events.id) >10')
     # Calendar.joins("LEFT JOIN events ON calendars.id = events.calendar_id").group('calendars.id').having("count(case when events.start = '#{Date.today}' then events.id else null end) = ?", 0).count
 
     respond_to do |format|
