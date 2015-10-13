@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :current_user_information
-  load_and_authorize_resource
+
+  load_and_authorize_resource :unless => :devise_controller?
 
   rescue_from CanCan::AccessDenied do |exception|
     # render :text => "You have no access - go back"
