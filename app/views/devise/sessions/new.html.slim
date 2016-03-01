@@ -3,22 +3,4 @@ body.login-img3-body
     .login-form
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .login-wrap
-          p.login-img
-            i.icon_lock_alt
-          .input-group
-            span.input-group-addon
-              i.icon_profile
-            = f.email_field :email, autofocus: true, placeholder: 'sajjad.murtaza49@yahoo.com', class: 'form-control'
-
-          .input-group
-            span.input-group-addon
-              i.icon_key_alt
-            = f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password'
-
-          label.checkbox
-            -if devise_mapping.rememberable?
-              = f.check_box :remember_me
-              = f.label :remember_me
-
-          = f.submit 'Log in', class: 'button btn btn-primary btn-lg btn-block'
           = render 'devise/shared/links'

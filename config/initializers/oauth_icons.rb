@@ -1,3 +1,3 @@
 ICONS = { google_oauth2: 'google plus', twitter: 'twitter', facebook: 'facebook', linkedin: 'linkedin', github: 'fa fa-github'}
 COLOR = { google_oauth2: 'btn-primary', twitter: 'btn-primary', facebook: 'btn-primary', linkedin: 'btn-primary', github: 'btn btn-social-icon btn-lg btn-github' }
-NAME  = { google_oauth2: 'Google - ', twitter: 'Twitter - ', facebook: 'Facebook - ', linkedin: 'Linkedin - ', github: 'Github'}
+NAME  = { google_oauth2: 'LogIn with Google', twitter: 'LogIn with Twitter', facebook: 'LogIn with Facebook', linkedin: 'LogIn with Linkedin', github: 'LogIn with Github'}

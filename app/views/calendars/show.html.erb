@@ -10,7 +10,7 @@
 
         <p>
           <strong>Color:</strong>
-          <%= @calendar.color %>
+          <span style="background-color: <%= @calendar.color %>;"><%= @calendar.color %></span>
         </p>
 
     <p>
@@ -22,19 +22,29 @@
       <div class="col-md-4 portlets">
 
           <div class="panel-heading">
-            <div class="pull-left">Events</div>
+            <div class="pull-left">Events</div><br>
 
 
           <div class="panel-body">
             <div class="padd sscroll">
               <ul class="chats">
-                <% @calendar.events.each do |event|%>
+                <% @calendar.events.each_with_index do |event, index|%>
+                    <%= index+1 %>
                     <li class="by-me">
                       <div class="chat-content">
-                        <div class="chat-meta"><%= event.title %> <span class="pull-right"><%= event.start %> -- <%= event.end %></span></div>
+                        <div class="chat-meta"><%= event.title %> <span class="pull-right"><%= event.start.strftime('%d-%m-%Y') %> -- <%= event.end.strftime('%d-%m-%Y') %></span></div>
                         <%= event.description %>
                         <br>
-                        <%= event.completed ? 'Done' : 'Not Completed' %>
+                        <% eventStatus = event.completed ? 'Done' : 'Not Completed' %>
+                        <% if eventStatus == 'Done' %>
+                            <span style="color: darkslategray">
+                              Done
+                            </span>
+                        <% else %>
+                            <span style="color: indianred;">
+                                 Not Completed
+                            </span>
+                        <% end %>
                       </div>
                     </li>
                 <% end %>
