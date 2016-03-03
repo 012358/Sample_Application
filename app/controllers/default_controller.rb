@@ -20,6 +20,9 @@ class DefaultController < ApplicationController
         response = http.request request # Net::HTTPResponse object
         @hyperlinkomatic_book_marks =  JSON.parse(response.body)
       end
+      @hyperlinkomatic_book_marks.each do |bm|
+        BookMark.find_or_create_by(title: bm['title'], url: bm['link_path'])
+      end
 
       # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
       # uri = URI('http://localhost:3000/api/v1/users')

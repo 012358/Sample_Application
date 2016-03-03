@@ -11,7 +11,7 @@ section#main-content
           li
             | Dashboard
     .row
-      .col-lg-3.col-md-3.col-sm-12.col-xs-12
+      .col-lg-2.col-md-2.col-sm-3.col-xs-3
         .info-box.blue-bg
           .count
             - first =  Calendar.first
@@ -20,7 +20,7 @@ section#main-content
             = "#{first.events.count} / #{first.events.where(completed: true).count}"
 
 
-      .col-lg-3.col-md-3.col-sm-12.col-xs-12
+      .col-lg-2.col-md-2.col-sm-3.col-xs-3
         .info-box.brown-bg
           .count
             - sec = Calendar.second
@@ -28,7 +28,7 @@ section#main-content
           .title
             = "#{sec.events.count} / #{sec.events.where(completed: true).count}"
 
-      .col-lg-3.col-md-3.col-sm-12.col-xs-12
+      .col-lg-2.col-md-2.col-sm-3.col-xs-3
         .info-box.dark-bg
           .count
             - third = Calendar.third
@@ -36,13 +36,24 @@ section#main-content
           .title
             = "#{third.events.count} / #{third.events.where(completed: true).count}"
 
-      .col-lg-3.col-md-3.col-sm-12.col-xs-12
+      .col-lg-2.col-md-2.col-sm-3.col-xs-3
         .info-box.green-bg
           .count
             - fourth = Calendar.fourth
             = fourth.name
           .title
             = "#{fourth.events.count} / #{fourth.events.where(completed: true).count}"
+      .col-lg-2.col-md-2.col-sm-3.col-xs-3
+        .info-box.green-bg
+          .count
+            - fifth = Calendar.fifth
+            = fifth.name
+          .title
+            = "#{fifth.events.count} / #{fifth.events.where(completed: true).count}"
+      .col-lg-2.col-md-2.col-sm-3.col-xs-3
+        .info-box.green-bg
+          .count
+            = link_to 'All Calendars >>', calendars_path
 
     .row
       .col-lg-9.col-md-12
@@ -87,106 +98,57 @@ section#main-content
         = content_tag :div, "", id: "bar-example", data:{calendars:Calendar.all}
 
     .row
-      .col-md-4.portlets
+      .col-md-4.portlets style="overflow:scroll; overflow-x:hidden; max-height:450px;"
         .panel.panel-default
           .panel-heading
-            .pull-left Calendars
+            .pull-left Up Comming Events
           .panel-body
             .padd.sscroll
               ul.chats
-                li.by-me
-                  .chat-content
-                    .chat-meta
-                      = first.name
+                -  Event.where("events.start >=? AND events.start <= ?", Time.zone.now.beginning_of_month, Time.zone.now.end_of_month).each do |event|
+                  li class="#{cycle('by-me', 'by-other')}"
+                    .chat-content
+                      = event.title
                       span.pull-right
-                        = first.created_at
-                    = first.color
-                    .clearfix
-
-                li.by-other
-                  .avatar.pull-right
-                  .chat-content
-                    .chat-meta
-                      = sec.name
-                      span.pull-right
-                        = sec.created_at
-                    = sec.color
-                    .clearfix
-                li.by-me
-                  .avatar.pull-left
-                  .chat-content
-                    .chat-meta
-                      = third.name
-                      span.pull-right
-                        = third.created_at
-                    = third.color
-                    .clearfix
-                li.by-other
-                  .avatar.pull-right
-                  .chat-content
-                    .chat-meta
-                      = fourth.name
-                      span.pull-right
-                        = fourth.created_at
-                    = fourth.color
-                    .clearfix
+                        .chat-meta
+                          = event.start.strftime("%d-%m-%Y / %a - %b")
+                      .chat-meta
+                        = event.calendar.name
+                      .clearfix
 
 
 
-      .col-lg-8
-        /! Project Activity start
+
+
+      .col-lg-4 style="overflow:scroll; overflow-x:hidden; max-height:450px;"
         section.panel
           .panel-body.progress-panel
             .row
               .col-lg-8.task-progress.pull-left
                 h1 Important Links
-              .col-lg-4
-                span.profile-ava.pull-right
-                  | Sajjad Murtaza
           table.table.table-hover.personal-task
             tbody
-              tr
-                td 1
-                td
-                  a href="https://www.visualcv.com/sajjad-murtaza-ror" target="_blank"  CV Builder
-                td
-                  span.badge.bg-important Online CV builder to create stunning PDF
+              - BookMark.all.each_with_index do |bm, index|
+                tr
+                  td #{index + 1}
+                  td
+                    code
+                      a href="#{bm.url}" target="_blank"  #{bm.title[/(.*)\s/,1]}
+                  td
+                    span.badge class="#{cycle('bg-important', 'bg-success', 'bg-primary')}" No Desc.
 
-              tr
-                td 2
-                td
-                  a href="https://en.gravatar.com/sajjadmurtaza49" target="_blank"  Gravatar
-                td
-                  span.badge.bg-success Display user-provided pictures from a central database
-
-
-              tr
-                td 3
-                td
-                  a href="https://hyperlinkomatic.herokuapp.com" target="_blank"  Hyperlinkomatic
-                td
-                  span.badge.bg-success Personal Book Mark Site
-
-              tr
-                td 4
-                td
-                  a href="https://www.duolingo.com" target="_blank"  Duolingo
-                td
-                  span.badge.bg-primary Learn languages completely free
-
-              tr
-                td 5
-                td
-                  a href="http://www.studyinkorea.go.kr/en/uat/uia/egovLoginUsr.do" target="_blank"  Study-in-korea
-                td
-                  span.badge.bg-info Overseas Study Application Studyin Korea
-
-              tr
-                td 6
-                td
-                  a href="http://www.pk.emb-japan.go.jp/Education.html" target="_blank"  Japan Embassy Pakistan
-                td
-                  span.badge.bg-primary Explore Education Tab
+      .col-md-4.portlets style="overflow:scroll; overflow-x:hidden; max-height:450px;"
+        .panel.panel-default
+          .panel-heading
+            .pull-left Notes
+          .panel-body
+            .padd.sscroll
+              ul.chats
+                - ImportantPoint.all.order('title ASC').each do |point|
+                  li.by-other
+                    .chat-content
+                      = link_to point.title, point
+                      .clearfix
 
     br
     br

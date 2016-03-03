@@ -11,14 +11,13 @@ section#main-content
             | New Note
 
 
-    - important_point = ImportantPoint.where(title: 'SchedulyBridge').first
-    br
+
     .object_book_marks.container-list
       .record
         p style="color:rgba(14, 22, 134, 0.87);"
           b
-            - if important_point.title.present?
-              = important_point.title
+            - if @important_point.title.present?
+              = @important_point.title
         div style="margin: 0 0 0 10px;"
-          = important_point.description.html_safe
-        = link_to 'Edit', edit_important_point_path(important_point)
+          = @important_point.description.html_safe
+        = link_to 'Edit', edit_important_point_path(@important_point)

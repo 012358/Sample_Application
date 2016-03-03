@@ -16,12 +16,12 @@
 
         <p>
           <strong>Start time:</strong>
-          <%= @event.start %>
+          <%= @event.start.strftime("%d-%m-%Y / %a - %b") %>
         </p>
 
         <p>
           <strong>End time:</strong>
-          <%= @event.end %>
+          <%= @event.end.strftime("%d-%m-%Y / %a - %b") %>
         </p>
     <p>
       <strong>Calendar:</strong>
