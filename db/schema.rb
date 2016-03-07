@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151009121915) do
+ActiveRecord::Schema.define(version: 20160307075506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,10 +50,10 @@ ActiveRecord::Schema.define(version: 20151009121915) do
   create_table "book_marks", force: true do |t|
     t.string   "title"
     t.string   "url"
-    t.string   "description"
-    t.integer  "api_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
+    t.integer  "api_id"
   end
 
   create_table "calendar_users", force: true do |t|
