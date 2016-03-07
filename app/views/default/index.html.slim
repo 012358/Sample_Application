@@ -135,7 +135,7 @@ section#main-content
                     code
                       a href="#{bm.url}" target="_blank"  #{bm.title[/(.*)\s/,1]}
                   td
-                    span.badge class="#{cycle('bg-important', 'bg-success', 'bg-primary')}" No Desc.
+                    span.badge class="#{cycle('bg-important', 'bg-success', 'bg-primary')}" #{bm.description.present? ? bm.description : 'No Desc.'}
 
       .col-md-4.portlets style="overflow:scroll; overflow-x:hidden; max-height:450px;"
         .panel.panel-default

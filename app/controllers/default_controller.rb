@@ -21,7 +21,11 @@ class DefaultController < ApplicationController
         @hyperlinkomatic_book_marks =  JSON.parse(response.body)
       end
       @hyperlinkomatic_book_marks.each do |bm|
-        BookMark.find_or_create_by(title: bm['title'], url: bm['link_path'])
+        @bk = BookMark.find_or_create_by(api_id: bm['id'])
+        @bk.title = bm['title']
+        @bk.url = bm['link_path']
+        @bk.description = bm['description']
+        @bk.save
       end
 
       # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

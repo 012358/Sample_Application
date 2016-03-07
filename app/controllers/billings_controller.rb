@@ -91,8 +91,6 @@ class BillingsController < ApplicationController
   ##################################################
   def switch_task_completed
     @bill = Billing.find(params[:bill])
-    p 'saasasasasasasasasasa@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
-    p @bill.completed
     @bill.update_attribute(:completed, !@bill.completed)
     render js: "window.location= '#{billings_url}'"
     # end

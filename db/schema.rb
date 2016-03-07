@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 20151009121915) do
   create_table "book_marks", force: true do |t|
     t.string   "title"
     t.string   "url"
+    t.string   "description"
+    t.integer  "api_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
