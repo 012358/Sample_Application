@@ -16,6 +16,14 @@ class ApplicationController < ActionController::Base
     # render file: "#{Rails.root}/public/403", formats: [:html], status: 403, layout: false
   end
 
+  def after_sign_in_path_for(resource)
+    if current_user.email[0..5]=='sajjad'
+      redirect_to root_path
+    else
+      sign_out @user
+    end
+  end
+
   def current_user_information
     @user ||= User.last.email
     testing
