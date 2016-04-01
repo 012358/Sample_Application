@@ -1,5 +1,9 @@
 body.login-img3-body
   .container
+    - if alert.present?
+      strong style="color: red;"
+        = alert
+        = image_tag 'smili.gif'
     .login-form
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .login-wrap
