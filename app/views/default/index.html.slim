@@ -14,7 +14,7 @@ section#main-content
       .col-lg-2.col-md-2.col-sm-3.col-xs-3
         .info-box.blue-bg
           .count
-            - first =  Calendar.first
+            - first =  @calendars.first
             = first.name
           .title
             = "#{first.events.count} / #{first.events.where(completed: true).count}"
@@ -23,7 +23,7 @@ section#main-content
       .col-lg-2.col-md-2.col-sm-3.col-xs-3
         .info-box.brown-bg
           .count
-            - sec = Calendar.second
+            - sec = @calendars.second
             = sec.name
           .title
             = "#{sec.events.count} / #{sec.events.where(completed: true).count}"
@@ -31,7 +31,7 @@ section#main-content
       .col-lg-2.col-md-2.col-sm-3.col-xs-3
         .info-box.dark-bg
           .count
-            - third = Calendar.third
+            - third = @calendars.third
             = third.name
           .title
             = "#{third.events.count} / #{third.events.where(completed: true).count}"
@@ -39,14 +39,14 @@ section#main-content
       .col-lg-2.col-md-2.col-sm-3.col-xs-3
         .info-box.green-bg
           .count
-            - fourth = Calendar.fourth
+            - fourth = @calendars.fourth
             = fourth.name
           .title
             = "#{fourth.events.count} / #{fourth.events.where(completed: true).count}"
       .col-lg-2.col-md-2.col-sm-3.col-xs-3
         .info-box.green-bg
           .count
-            - fifth = Calendar.fifth
+            - fifth = @calendars.fifth
             = fifth.name
           .title
             = "#{fifth.events.count} / #{fifth.events.where(completed: true).count}"
@@ -70,7 +70,7 @@ section#main-content
                   th ProgressBar
               tbody
                 - @completed = 0
-                - Calendar.includes(:events).each do |c|
+                - @calendars.each do |c|
                   tr
 
                     td.calendar_name
@@ -95,7 +95,7 @@ section#main-content
 
 
       .col-lg-3.col-md-3.col-sm-12.col-xs-12
-        = content_tag :div, "", id: "bar-example", data:{calendars:Calendar.all}
+        = content_tag :div, "", id: "bar-example", data:{calendars:@calendars.all}
 
     .row
       .col-md-4.portlets style="overflow:scroll; overflow-x:hidden; max-height:450px;"

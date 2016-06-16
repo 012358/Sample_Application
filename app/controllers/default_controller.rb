@@ -1,6 +1,7 @@
 class DefaultController < ApplicationController
   skip_load_and_authorize_resource
   def index
+    @calendars = Calendar.includes(:events).all
   end
 
   def book_marks_list
