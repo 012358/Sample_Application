@@ -1,3 +1,18 @@
+
+Three or more...
+
+---
+
+Hyphens
+
+***
+
+Asterisks
+
+___
+
+Underscores
+
 ### ![alt text](https://raw.githubusercontent.com/sajjadmurtaza49/SchedulyBridge/master/app/assets/images/logo.png "SchedulyBridge Screenshot")
 [Click for Live Demo](https://scheduly-bridge.herokuapp.com)  
 
